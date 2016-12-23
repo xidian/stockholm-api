@@ -12,6 +12,6 @@ allprojects {
   Add the dependency
   ```
   dependencies {
-	        compile 'com.github.xinyer:stockholm-api:v1.0.0'
+	        compile 'com.github.xidian:stockholm-api:0.1.0'
 	}
   ```
