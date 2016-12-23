@@ -4,8 +4,8 @@ public class BindReq {
 
     private ClockBean clock;
 
-    public BindReq(String uuid, String devicePushId, String installedApps) {
-        new ClockBean(uuid, devicePushId, installedApps);
+    public BindReq(String uuid, String installedApps) {
+        new ClockBean(uuid, installedApps);
     }
 
     public ClockBean getClock() {
@@ -19,12 +19,10 @@ public class BindReq {
     public static class ClockBean {
 
         private String uuid;
-        private String devicePushId;
         private String installedApps;
 
-        public ClockBean(String uuid, String devicePushId, String installedApps) {
+        public ClockBean(String uuid, String installedApps) {
             setUuid(uuid);
-            setDevicePushId(devicePushId);
             setInstalledApps(installedApps);
         }
 
@@ -44,12 +42,5 @@ public class BindReq {
             this.uuid = uuid;
         }
 
-        public String getDevicePushId() {
-            return devicePushId;
-        }
-
-        public void setDevicePushId(String devicePushId) {
-            this.devicePushId = devicePushId;
-        }
     }
 }
