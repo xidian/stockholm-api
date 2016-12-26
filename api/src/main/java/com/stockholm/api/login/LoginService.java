@@ -17,9 +17,9 @@ public interface LoginService {
     @POST("verification_codes")
     Observable<SendVerifiCodeResp> sendVerifiCode(@Body SendVerifiCodeReq verifiCodeReq);
 
-    @POST("/verification_codes/verify")
+    @POST("verification_codes/verify")
     Observable<CheckVerifiCodeResp> checkVerifiCode(@Body CheckVerifiCodeReq checkVerifiCodeReq);
 
-    @PUT("/users/update-password")
+    @PUT("users/update-password")
     Observable<ResetPwdResp> resetPwd(@Body ResetPwdReq resetPwdReq);
 }

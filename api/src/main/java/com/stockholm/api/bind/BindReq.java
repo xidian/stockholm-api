@@ -5,7 +5,7 @@ public class BindReq {
     private ClockBean clock;
 
     public BindReq(String uuid, String installedApps) {
-        new ClockBean(uuid, installedApps);
+       setClock(new ClockBean(uuid, installedApps));
     }
 
     public ClockBean getClock() {
