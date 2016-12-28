@@ -1,5 +1,7 @@
 # 账号密码相关API
 
+以下API默认调用者为手机端
+
 ## **1.注册API：**
 
 * POST /users/register
