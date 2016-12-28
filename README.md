@@ -22,3 +22,4 @@ server ip address: 119.254.98.170:3000
 
 * [Account related api](/server-api/account-related-api.md)
 * [Binding device related api](/server-api/binding-device-related-api.md)
+* [Device apps related api](/server-api/device-apps-related-api.md)
