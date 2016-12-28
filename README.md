@@ -20,5 +20,5 @@ allprojects {
 
 server ip address: 119.254.98.170:3000
 
-* [Account related api](/tree/master/server-api/account-related-api.md)
-* [Binding device related api](/tree/master/server-api/binding-device-related-api.md)
+* [Account related api](/server-api/account-related-api.md)
+* [Binding device related api](/server-api/binding-device-related-api.md)
