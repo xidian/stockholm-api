@@ -131,3 +131,18 @@ responseBody:
 				"phoneNumber": "18514760073"
 			      }
 	}
+
+## **6.更新推送token与设备平台的接口**
+
+* POST /users/:id/update-device-token
+
+requestBody
+
+	{
+		"device": {
+			"pushToken": "apns push token",
+			"platform": 1 (备注：这一项是整数，0代表android，1代表ios)
+		}
+	}
+
+使用极光推送的Android设备无需使用这个借口
