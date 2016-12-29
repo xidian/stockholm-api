@@ -94,6 +94,27 @@ requestHeader：
 
 requestBody为空
 
+responseBody
+```json
+{
+  "success": true,
+  "msg": "新闻的设置项",
+  "data": {
+    "id": 4,
+    "name": "新闻",
+    "icon": null,
+    "config": {
+      "channel": [
+        1,
+        3,
+        5,
+        6
+      ]
+    }
+  }
+}
+```
+
 ### 6.根据app\_id，将指定设备与app关联起来并配置config（可以理解为用户从我们的应用商店初次安装这个应用到指定clock上）：
 
 * POST /mobile/clocks/:clock\_id/apps
@@ -123,9 +144,38 @@ requestHeader：
 
 requestBody: (备注，config只需要保证使用合法的JSON格式即可，数组/object都可以)
 
-	{
-		"config": "a valid json config"
+```json
+{
+	"config": {
+		"channel": [1,3,5,6]
 	}
+}
+```
+
+
+responseBody
+
+```json
+{
+  "success": true,
+  "msg": "成功更新新闻",
+  "data": {
+    "clock_id": 3,
+    "id": 21,
+    "config": {
+      "channel": [
+        1,
+        3,
+        5,
+        6
+      ]
+    },
+    "app_id": 4,
+    "created_at": "2016-12-29T15:24:59.000+08:00",
+    "updated_at": "2016-12-29T15:51:42.000+08:00"
+  }
+}
+```
 
 ----
 
