@@ -2,15 +2,12 @@ package com.stockholm.api.setting;
 
 import java.util.List;
 
-/**
- * Created by taopu on 2016/12/29.
- */
 
 public class GetClockAppsResp {
 
     private boolean success;
     private String msg;
-    private ClockBean clock;
+    private DataBean data;
 
     public boolean isSuccess() {
         return success;
@@ -28,35 +25,16 @@ public class GetClockAppsResp {
         this.msg = msg;
     }
 
-    public ClockBean getClock() {
-        return clock;
+    public DataBean getData() {
+        return data;
     }
 
-    public void setClock(ClockBean clock) {
-        this.clock = clock;
+    public void setData(DataBean data) {
+        this.data = data;
     }
 
-    public static class ClockBean {
-
-        private int id;
-        private String uuid;
+    public static class DataBean {
         private List<AppsBean> apps;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getUuid() {
-            return uuid;
-        }
-
-        public void setUuid(String uuid) {
-            this.uuid = uuid;
-        }
 
         public List<AppsBean> getApps() {
             return apps;
@@ -69,8 +47,8 @@ public class GetClockAppsResp {
         public static class AppsBean {
 
             private int id;
-            private String name;
             private String icon;
+            private String name;
             private Object type;
             private String packageName;
 
@@ -82,20 +60,20 @@ public class GetClockAppsResp {
                 this.id = id;
             }
 
-            public String getName() {
-                return name;
-            }
-
-            public void setName(String name) {
-                this.name = name;
-            }
-
             public String getIcon() {
                 return icon;
             }
 
             public void setIcon(String icon) {
                 this.icon = icon;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public void setName(String name) {
+                this.name = name;
             }
 
             public Object getType() {
