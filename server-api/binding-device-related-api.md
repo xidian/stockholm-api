@@ -2,20 +2,6 @@
 
 以下API默认调用者为设备端
 
-## 0. 创建表端
-
-表端发送uuid，到服务器上创建记录。
-
-* POST /clocks
-
-requestBody:
-
-	{
-		"uuid": "123123"
-	}
-
-clock.device_token中的platform和device_type都默认是0。
-
 ## 1.与手机进行绑定的API：
 
 表端发送以下信息：
