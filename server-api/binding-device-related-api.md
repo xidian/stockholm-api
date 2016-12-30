@@ -10,16 +10,16 @@
 
 requestBody:
 
-	{
-		"clock": {
-			"uuid": "device_uuid",
-			"installedApps": "packagename1,packagename2,packagename3"
-		}
-	}
+```json
+{
+ 	"uuid": "liusining1",
+ 	"installedApps": "com.1,com.2"
+}
+```
 
 requestHeader：
 
-	Access-Token： QMHrMxbsrFhvj7qM0Cbypg1472117692
+	Access-Token： <user's access token>
 
 responseBody:
 
