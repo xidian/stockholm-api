@@ -2,7 +2,17 @@
 
 以下API默认调用者为设备端
 
-## 1.与手机进行绑定的API：
+## 发送registrationId
+
+```json
+{
+	"uuid": "liusining1",
+	"pushToken": "test"
+}
+```
+
+
+## 设备绑定
 
 表端发送以下信息：
 
