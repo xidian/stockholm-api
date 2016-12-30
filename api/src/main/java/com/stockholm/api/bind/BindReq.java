@@ -2,45 +2,27 @@ package com.stockholm.api.bind;
 
 public class BindReq {
 
-    private ClockBean clock;
+    private String uuid;
+    private String installedApps;
 
     public BindReq(String uuid, String installedApps) {
-       setClock(new ClockBean(uuid, installedApps));
+        setUuid(uuid);
+        setInstalledApps(installedApps);
     }
 
-    public ClockBean getClock() {
-        return clock;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setClock(ClockBean clock) {
-        this.clock = clock;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
-    public static class ClockBean {
+    public String getInstalledApps() {
+        return installedApps;
+    }
 
-        private String uuid;
-        private String installedApps;
-
-        public ClockBean(String uuid, String installedApps) {
-            setUuid(uuid);
-            setInstalledApps(installedApps);
-        }
-
-        public String getInstalledApps() {
-            return installedApps;
-        }
-
-        public void setInstalledApps(String installedApps) {
-            this.installedApps = installedApps;
-        }
-
-        public String getUuid() {
-            return uuid;
-        }
-
-        public void setUuid(String uuid) {
-            this.uuid = uuid;
-        }
-
+    public void setInstalledApps(String installedApps) {
+        this.installedApps = installedApps;
     }
 }
