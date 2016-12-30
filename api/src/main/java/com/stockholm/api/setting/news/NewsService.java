@@ -18,6 +18,7 @@ public interface NewsService {
 
     @PUT("/mobile/clocks/apps/{appid}")
     Observable<SetChannelResp> setMobileNewsChannel(@HeaderMap Map<String, String> headerMap,
+                                                    @Path("appid") String appid,
                                                     @Body SetChannelReq setChannelReq);
 
 }
