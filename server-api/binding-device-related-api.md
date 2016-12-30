@@ -4,10 +4,24 @@
 
 ## 发送registrationId
 
+* POST /clocks/register-push-token
+
+requestBody
+要求参数`uuid`和`pushToken`
+
 ```json
 {
 	"uuid": "liusining1",
 	"pushToken": "test"
+}
+```
+
+responseBody
+
+```json
+{
+  "success": true,
+  "msg": "成功更新推送id"
 }
 ```
 
