@@ -50,7 +50,7 @@ public class GetClockAppsResp {
             private String icon;
             private String name;
             private Object type;
-            private String packageName;
+            private String package_name;
 
             public int getId() {
                 return id;
@@ -84,12 +84,12 @@ public class GetClockAppsResp {
                 this.type = type;
             }
 
-            public String getPackageName() {
-                return packageName;
+            public String getPackage_name() {
+                return package_name;
             }
 
-            public void setPackageName(String packageName) {
-                this.packageName = packageName;
+            public void setPackage_name(String package_name) {
+                this.package_name = package_name;
             }
         }
     }
