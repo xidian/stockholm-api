@@ -2,7 +2,14 @@
 
 以下API默认调用者为手机端
 
-## **1.注册API：**
+	- [注册](#user-content-注册API)
+	- [登录](#user-content-登陆API)
+	- [更新密码](#user-content-更新密码)
+	- [发送短信验证码](#user-content-发送短信验证码)
+	- [验证验证码](#user-content-验证验证码)
+	- [更新用户推送地址](#user-content-更新用户推送地址)
+
+## 注册API
 
 * POST /users/register
 
@@ -35,7 +42,7 @@ responseExample:
 	  }
 	}
 
-## **2.登陆API：**
+## 登陆API
 
 * POST /users/login
 
@@ -68,7 +75,7 @@ responseExample:
 	    "accessToken": "XAllpqfc5Mt7WZu8YBoWsw1482486131"
 	  }
 
-## **3. 更新密码**
+## 更新密码
 
 * PUT /users/update-password
 
@@ -87,7 +94,7 @@ responseBody:
 	  "msg": "修改密码成功"
 	}
 
-## **4. 发送短信验证码**
+## 发送短信验证码
 
 * POST /verification_codes
 
@@ -110,7 +117,7 @@ responseBody
 		      }
 	}
 
-## **5. 验证验证码**
+## 验证验证码
 
 * POST /verification_codes/verify
 
@@ -132,7 +139,8 @@ responseBody:
 			      }
 	}
 
-## **6.更新推送token与设备平台的接口**
+## 更新用户推送地址
+在不同设备登录时，需要更新用户的推送地址
 
 * POST /users/:id/update-device-token
 
