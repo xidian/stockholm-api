@@ -22,7 +22,7 @@ public interface NewsService {
                                                     @Path("appid") String appid,
                                                     @Body SetChannelReq setChannelReq);
 
-    @POST("/device/apps/{appid}")
+    @POST("device/apps/{appid}")
     Observable<DeviceChannelResp> getDeviceNewsChannel(@Path("appid") String appid,
                                                        @Body DeviceChannelReq deviceChannelReq);
 }
