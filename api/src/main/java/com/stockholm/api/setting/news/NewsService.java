@@ -21,4 +21,7 @@ public interface NewsService {
                                                     @Path("appid") String appid,
                                                     @Body SetChannelReq setChannelReq);
 
+    @GET("/device/apps/{appid}")
+    Observable<DeviceChannelResp> getDeviceNewsChannel(@Path("appid") String appid,
+                                                    @Body DeviceChannelReq deviceChannelReq);
 }
