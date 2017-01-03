@@ -6,6 +6,7 @@ import java.util.Map;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.HeaderMap;
+import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import rx.Observable;
@@ -21,7 +22,7 @@ public interface NewsService {
                                                     @Path("appid") String appid,
                                                     @Body SetChannelReq setChannelReq);
 
-    @GET("/device/apps/{appid}")
+    @POST("/device/apps/{appid}")
     Observable<DeviceChannelResp> getDeviceNewsChannel(@Path("appid") String appid,
-                                                    @Body DeviceChannelReq deviceChannelReq);
+                                                       @Body DeviceChannelReq deviceChannelReq);
 }
