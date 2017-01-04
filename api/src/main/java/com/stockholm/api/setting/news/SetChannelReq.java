@@ -6,7 +6,7 @@ public class SetChannelReq {
 
     private ConfigBean config;
 
-    public SetChannelReq(List<Integer> channel){
+    public SetChannelReq(List<ConfigBean.ChannelBean> channel) {
         setConfig(new ConfigBean(channel));
     }
 
@@ -19,18 +19,45 @@ public class SetChannelReq {
     }
 
     public static class ConfigBean {
-        private List<Integer> channel;
+        private List<ChannelBean> channel;
 
-        public ConfigBean(List<Integer> channel){
+        public ConfigBean(List<ChannelBean> channel) {
             setChannel(channel);
         }
 
-        public List<Integer> getChannel() {
+        public List<ChannelBean> getChannel() {
             return channel;
         }
 
-        public void setChannel(List<Integer> channel) {
+        public void setChannel(List<ChannelBean> channel) {
             this.channel = channel;
+        }
+
+        public static class ChannelBean {
+
+            private int id;
+            private String name;
+
+            public ChannelBean(int id, String name) {
+                setId(id);
+                setName(name);
+            }
+
+            public int getId() {
+                return id;
+            }
+
+            public void setId(int id) {
+                this.id = id;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public void setName(String name) {
+                this.name = name;
+            }
         }
     }
 }
