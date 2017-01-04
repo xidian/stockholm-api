@@ -7,6 +7,5 @@ import rx.Observable;
 
 public interface ClockConfigService {
     @POST("mobile/device-configs/clocks")
-    Observable configClcok(@Body ClockConfigReq body);
-
+    Observable<ClockConfigResp> configClcok(@Body ClockConfigReq body);
 }

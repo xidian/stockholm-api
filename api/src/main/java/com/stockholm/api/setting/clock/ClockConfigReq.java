@@ -3,8 +3,18 @@ package com.stockholm.api.setting.clock;
 
 public class ClockConfigReq {
 
+    public enum TYPE {
+        SKIN,
+        SOUND
+    }
+
     private String uuid;
     private DeviceConfigBean deviceConfig;
+
+    public ClockConfigReq(String uuid, TYPE type, boolean isChecked) {
+        setUuid(uuid);
+        setDeviceConfig(new DeviceConfigBean(type, isChecked));
+    }
 
     public String getUuid() {
         return uuid;
@@ -24,23 +34,28 @@ public class ClockConfigReq {
 
     public static class DeviceConfigBean {
 
-        private boolean autoChangeSkin;
-        private boolean openSecondSound;
+        private TYPE type;
+        private boolean isChecked;
 
-        public boolean isAutoChangeSkin() {
-            return autoChangeSkin;
+        public DeviceConfigBean(TYPE type, boolean isChecked) {
+            setType(type);
+            setChecked(isChecked);
         }
 
-        public void setAutoChangeSkin(boolean autoChangeSkin) {
-            this.autoChangeSkin = autoChangeSkin;
+        public TYPE getType() {
+            return type;
         }
 
-        public boolean isOpenSecondSound() {
-            return openSecondSound;
+        public void setType(TYPE type) {
+            this.type = type;
         }
 
-        public void setOpenSecondSound(boolean openSecondSound) {
-            this.openSecondSound = openSecondSound;
+        public boolean isChecked() {
+            return isChecked;
+        }
+
+        public void setChecked(boolean checked) {
+            isChecked = checked;
         }
     }
 }
