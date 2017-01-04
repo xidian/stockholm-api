@@ -81,14 +81,36 @@ public class AllChannelResp {
         }
 
         public static class ConfigBean {
-            private List<Integer> channel;
+            private List<ChannelBean> channel;
 
-            public List<Integer> getChannel() {
+            public List<ChannelBean> getChannel() {
                 return channel;
             }
 
-            public void setChannel(List<Integer> channel) {
+            public void setChannel(List<ChannelBean> channel) {
                 this.channel = channel;
+            }
+
+            public static class ChannelBean {
+
+                private int id;
+                private String name;
+
+                public int getId() {
+                    return id;
+                }
+
+                public void setId(int id) {
+                    this.id = id;
+                }
+
+                public String getName() {
+                    return name;
+                }
+
+                public void setName(String name) {
+                    this.name = name;
+                }
             }
         }
 
