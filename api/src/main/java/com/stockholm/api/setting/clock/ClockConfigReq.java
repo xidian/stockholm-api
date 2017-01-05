@@ -3,17 +3,12 @@ package com.stockholm.api.setting.clock;
 
 public class ClockConfigReq {
 
-    public enum TYPE {
-        SKIN,
-        SOUND
-    }
-
     private String uuid;
     private DeviceConfigBean deviceConfig;
 
-    public ClockConfigReq(String uuid, TYPE type, boolean isChecked) {
+    public ClockConfigReq(String uuid, boolean skinAutoChange, boolean openSecondSound) {
         setUuid(uuid);
-        setDeviceConfig(new DeviceConfigBean(type, isChecked));
+        setDeviceConfig(new DeviceConfigBean(skinAutoChange, openSecondSound));
     }
 
     public String getUuid() {
@@ -34,28 +29,28 @@ public class ClockConfigReq {
 
     public static class DeviceConfigBean {
 
-        private TYPE type;
-        private boolean isChecked;
+        private boolean skinAutoChange;
+        private boolean openSecondSound;
 
-        public DeviceConfigBean(TYPE type, boolean isChecked) {
-            setType(type);
-            setChecked(isChecked);
+        public DeviceConfigBean(boolean skinAutoChange, boolean openSecondSound) {
+            setSkinAutoChange(skinAutoChange);
+            setOpenSecondSound(openSecondSound);
         }
 
-        public TYPE getType() {
-            return type;
+        public boolean isOpenSecondSound() {
+            return openSecondSound;
         }
 
-        public void setType(TYPE type) {
-            this.type = type;
+        public void setOpenSecondSound(boolean openSecondSound) {
+            this.openSecondSound = openSecondSound;
         }
 
-        public boolean isChecked() {
-            return isChecked;
+        public boolean isSkinAutoChange() {
+            return skinAutoChange;
         }
 
-        public void setChecked(boolean checked) {
-            isChecked = checked;
+        public void setSkinAutoChange(boolean skinAutoChange) {
+            this.skinAutoChange = skinAutoChange;
         }
     }
 }
