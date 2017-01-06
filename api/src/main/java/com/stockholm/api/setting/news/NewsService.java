@@ -13,16 +13,13 @@ import rx.Observable;
 
 public interface NewsService {
 
-    @GET("/mobile/clocks/apps/{appid}")
-    Observable<AllChannelResp> getMobileNewsChannel(@HeaderMap Map<String, String> headerMap,
-                                                    @Path("appid") String appid);
+    @GET("/mobile/clock/app")
+    Observable<AllChannelResp> getChannelCoonfig(@HeaderMap Map<String, String> headerMap);
 
-    @PUT("/mobile/clocks/apps/{appid}")
-    Observable<SetChannelResp> setMobileNewsChannel(@HeaderMap Map<String, String> headerMap,
-                                                    @Path("appid") String appid,
-                                                    @Body SetChannelReq setChannelReq);
+    @PUT("/mobile/clock/app")
+    Observable<SetChannelResp> setChannelConfig(@HeaderMap Map<String, String> headerMap,
+                                                @Body SetChannelReq setChannelReq);
 
-    @POST("device/apps/{appid}")
-    Observable<DeviceChannelResp> getDeviceNewsChannel(@Path("appid") String appid,
-                                                       @Body DeviceChannelReq deviceChannelReq);
+    @POST("device/app")
+    Observable<DeviceChannelResp> getDeviceNewsChannel(@HeaderMap Map<String, String> headerMap);
 }
