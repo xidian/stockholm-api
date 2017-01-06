@@ -2,8 +2,8 @@
 
 以下API默认调用者为手机端
 
-* [注册](#user-content-注册API)
-* [登录](#user-content-登陆API)
+* [注册](#user-content-注册api)
+* [登录](#user-content-登陆api)
 * [更新密码](#user-content-更新密码)
 * [发送短信验证码](#user-content-发送短信验证码)
 * [验证验证码](#user-content-验证验证码)

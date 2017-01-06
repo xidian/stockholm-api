@@ -1,26 +1,35 @@
 # 设备端app相关API
 
 [第一部分API](#user-content-第一部分手机端)默认调用者为手机端
+	* [查询公共apps](#user-content-查询所有公共apps)
+	* [获取某app的公共信息](#user-content-获取某app的信息)
+	* [获取某设备上所有apps](#user-content-获取某设备上所有apps)
+	* [获取某已安装app配置信息](#user-content-获取某已安装app配置信息)
+	* [更新某app设置项](#user-content-更新某app设置项)
 
 [第二部分API](#user-content-第二部分设备端)默认调用者为设备端
-	- [安装app](#user-content-设备请求安装app)
-	- [更新app设置](#user-content-更新app设置)
-	- [查询app的config](#user-content-查询app的config)
+	* [安装app](#user-content-设备请求安装app)
+	* [更新app设置](#user-content-更新app设置)
+	* [查询app的config](#user-content-查询app的config)
 
 ----
 ## 第一部分：手机端
 
-### 1.查询所有apps：
+### 查询所有公共apps
 
 * GET /apps
 
 不需要requestBody与requestHeader
 
-### 2.查看单个app及其可用设置项
+### 获取某app的公共信息
 
-* GET /apps/APP_ID
+* GET /app
 
-不需要requestBody与requestHeader
+requestHeader：
+
+	PackageName: <your-package-name>
+
+不需要requestBody
 
 responseBody
 
@@ -37,25 +46,15 @@ responseBody
       {
         "id": 2,
         "name": "政治"
-      },
-			...
+      }
     ]
   }
 }
 ```
 
-### 3.获取所有跟当前用户绑定的设备APP及配置信息
+### 获取某设备上所有apps
 
-* GET /mobile/apps
-
-requestHeader：
-	Access-Token： QMHrMxbsrFhvj7qM0Cbypg1472117692
-
-requestBody为空
-
-### 4.获取跟当前用户绑定的设备的全部设备端app
-
-* GET /mobile/clocks/apps
+* GET /mobile/clock/apps
 
 requestHeader：
 	Access-Token： <your-access-token>
@@ -86,14 +85,16 @@ responseBody
 	  }
 	}
 
-### 5.获取跟当前用户绑定的指定设备的指定app的配置信息：
+### 获取某已安装app配置信息
+获取当前配置信息(config)和所有可用设置项(available_config)
 
-* GET /mobile/clocks/apps/:app\_id
+* GET /mobile/clock/app
 
 requestHeader：
 
 	Access-Token： <your-access-token>
 	UUID: <the clock uuid>
+	PackageName: <your-package-name>
 
 requestBody为空
 
@@ -118,36 +119,18 @@ responseBody
 }
 ```
 
-### 6.根据app\_id，将指定设备与app关联起来并配置config（可以理解为用户从我们的应用商店初次安装这个应用到指定clock上）：
+### 更新某app设置项
+根据UUID和PackageName，更新某设备上某App的配置。也可以用来创建App配置信息。
 
-* POST /mobile/clocks/apps
-
-requestHeader：
-
-	Access-Token： <your-access-token>
-	UUID: <the clock uuid>
-
-requestBody:** (备注，config只需要保证使用合法的JSON格式即可，数组/object都可以)**
-
-	{
-		"appId": "APP_ID", (备注，这里填入想关联并配置config的AppId)
-		"config": {
-			"testKey": "configValue",
-			"testKey2": "configValue2"
-		}
-	}
-
-### 更新app设置项
-根据uuid和app\_id，更新指定表盘的指定App的配置信息：
-
-* PUT /mobile/clocks/apps/:app_id
+* PUT /mobile/clock/app
 
 requestHeader：
 
 	Access-Token： <your-access-token>
 	UUID: <the clock uuid>
+	PackageName: <your-package-name>
 
-requestBody: (备注，config只需要保证使用合法的JSON格式即可，数组/object都可以)
+requestBody: (备注，config只需要保证使用合法的JSON格式即可，array/object都可以)
 
 ```json
 {
@@ -156,7 +139,6 @@ requestBody: (备注，config只需要保证使用合法的JSON格式即可，�
 	}
 }
 ```
-
 
 responseBody
 
