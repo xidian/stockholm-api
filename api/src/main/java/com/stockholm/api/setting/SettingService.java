@@ -9,6 +9,9 @@ import rx.Observable;
 
 public interface SettingService {
 
-    @GET("/mobile/clocks/apps")
+    @GET("/clocks")
+    Observable<GetBindClocksResp> getBindClocks();
+
+    @GET("/mobile/clock/apps")
     Observable<GetClockAppsResp> getClockApps(@HeaderMap Map<String, String> headerMap);
 }
