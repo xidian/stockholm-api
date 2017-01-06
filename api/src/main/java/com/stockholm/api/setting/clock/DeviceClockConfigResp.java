@@ -1,9 +1,7 @@
-package com.stockholm.api.setting.news;
+package com.stockholm.api.setting.clock;
 
-import java.util.List;
 
-public class SetChannelResp {
-
+public class DeviceClockConfigResp {
     private boolean success;
     private String msg;
     private DataBean data;
@@ -33,11 +31,10 @@ public class SetChannelResp {
     }
 
     public static class DataBean {
-
         private int clock_id;
+        private int app_id;
         private int id;
         private ConfigBean config;
-        private int app_id;
         private String created_at;
         private String updated_at;
 
@@ -47,6 +44,14 @@ public class SetChannelResp {
 
         public void setClock_id(int clock_id) {
             this.clock_id = clock_id;
+        }
+
+        public int getApp_id() {
+            return app_id;
+        }
+
+        public void setApp_id(int app_id) {
+            this.app_id = app_id;
         }
 
         public int getId() {
@@ -63,14 +68,6 @@ public class SetChannelResp {
 
         public void setConfig(ConfigBean config) {
             this.config = config;
-        }
-
-        public int getApp_id() {
-            return app_id;
-        }
-
-        public void setApp_id(int app_id) {
-            this.app_id = app_id;
         }
 
         public String getCreated_at() {
@@ -90,36 +87,23 @@ public class SetChannelResp {
         }
 
         public static class ConfigBean {
-            private List<ChannelBean> channel;
+            private boolean openSecondSound;
+            private boolean skinAutoChange;
 
-            public List<ChannelBean> getChannel() {
-                return channel;
+            public boolean isOpenSecondSound() {
+                return openSecondSound;
             }
 
-            public void setChannel(List<ChannelBean> channel) {
-                this.channel = channel;
+            public void setOpenSecondSound(boolean openSecondSound) {
+                this.openSecondSound = openSecondSound;
             }
 
-            public static class ChannelBean {
+            public boolean isSkinAutoChange() {
+                return skinAutoChange;
+            }
 
-                private int id;
-                private String name;
-
-                public int getId() {
-                    return id;
-                }
-
-                public void setId(int id) {
-                    this.id = id;
-                }
-
-                public String getName() {
-                    return name;
-                }
-
-                public void setName(String name) {
-                    this.name = name;
-                }
+            public void setSkinAutoChange(boolean skinAutoChange) {
+                this.skinAutoChange = skinAutoChange;
             }
         }
     }

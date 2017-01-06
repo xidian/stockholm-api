@@ -2,7 +2,7 @@ package com.stockholm.api.setting.news;
 
 import java.util.List;
 
-public class AllChannelResp {
+public class DeviceChannelResp {
 
     private boolean success;
     private String msg;
@@ -35,10 +35,11 @@ public class AllChannelResp {
     public static class DataBean {
 
         private int id;
-        private String name;
-        private String icon;
+        private int app_id;
+        private int clock_id;
         private ConfigBean config;
-        private AvailableConfigBean available_config;
+        private String created_at;
+        private String updated_at;
 
         public int getId() {
             return id;
@@ -48,20 +49,20 @@ public class AllChannelResp {
             this.id = id;
         }
 
-        public String getName() {
-            return name;
+        public int getApp_id() {
+            return app_id;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setApp_id(int app_id) {
+            this.app_id = app_id;
         }
 
-        public String getIcon() {
-            return icon;
+        public int getClock_id() {
+            return clock_id;
         }
 
-        public void setIcon(String icon) {
-            this.icon = icon;
+        public void setClock_id(int clock_id) {
+            this.clock_id = clock_id;
         }
 
         public ConfigBean getConfig() {
@@ -72,12 +73,20 @@ public class AllChannelResp {
             this.config = config;
         }
 
-        public AvailableConfigBean getAvailable_config() {
-            return available_config;
+        public String getCreated_at() {
+            return created_at;
         }
 
-        public void setAvailable_config(AvailableConfigBean available_config) {
-            this.available_config = available_config;
+        public void setCreated_at(String created_at) {
+            this.created_at = created_at;
+        }
+
+        public String getUpdated_at() {
+            return updated_at;
+        }
+
+        public void setUpdated_at(String updated_at) {
+            this.updated_at = updated_at;
         }
 
         public static class ConfigBean {
@@ -110,40 +119,6 @@ public class AllChannelResp {
 
                 public void setName(String name) {
                     this.name = name;
-                }
-            }
-        }
-
-        public static class AvailableConfigBean {
-            private List<ChannelsBean> channels;
-
-            public List<ChannelsBean> getChannels() {
-                return channels;
-            }
-
-            public void setChannels(List<ChannelsBean> channels) {
-                this.channels = channels;
-            }
-
-            public static class ChannelsBean {
-
-                private int categoryId;
-                private String categoryName;
-
-                public int getCategoryId() {
-                    return categoryId;
-                }
-
-                public void setCategoryId(int categoryId) {
-                    this.categoryId = categoryId;
-                }
-
-                public String getCategoryName() {
-                    return categoryName;
-                }
-
-                public void setCategoryName(String categoryName) {
-                    this.categoryName = categoryName;
                 }
             }
         }
