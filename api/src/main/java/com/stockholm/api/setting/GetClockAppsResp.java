@@ -1,13 +1,12 @@
 package com.stockholm.api.setting;
 
+import java.util.ArrayList;
 import java.util.List;
 
-
 public class GetClockAppsResp {
-
     private boolean success;
     private String msg;
-    private DataBean data;
+    private List<DataBean> data = new ArrayList<>();
 
     public boolean isSuccess() {
         return success;
@@ -25,72 +24,59 @@ public class GetClockAppsResp {
         this.msg = msg;
     }
 
-    public DataBean getData() {
+    public List<DataBean> getData() {
         return data;
     }
 
-    public void setData(DataBean data) {
+    public void setData(List<DataBean> data) {
         this.data = data;
     }
 
     public static class DataBean {
-        private List<AppsBean> apps;
+        private String packageName;
+        private String name;
+        private String icon;
+        private String uuid;
+        private String config;
 
-        public List<AppsBean> getApps() {
-            return apps;
+        public String getPackageName() {
+            return packageName;
         }
 
-        public void setApps(List<AppsBean> apps) {
-            this.apps = apps;
+        public void setPackageName(String packageName) {
+            this.packageName = packageName;
         }
 
-        public static class AppsBean {
+        public String getName() {
+            return name;
+        }
 
-            private int id;
-            private String icon;
-            private String name;
-            private Object type;
-            private String package_name;
+        public void setName(String name) {
+            this.name = name;
+        }
 
-            public int getId() {
-                return id;
-            }
+        public String getIcon() {
+            return icon;
+        }
 
-            public void setId(int id) {
-                this.id = id;
-            }
+        public void setIcon(String icon) {
+            this.icon = icon;
+        }
 
-            public String getIcon() {
-                return icon;
-            }
+        public String getUuid() {
+            return uuid;
+        }
 
-            public void setIcon(String icon) {
-                this.icon = icon;
-            }
+        public void setUuid(String uuid) {
+            this.uuid = uuid;
+        }
 
-            public String getName() {
-                return name;
-            }
+        public String getConfig() {
+            return config;
+        }
 
-            public void setName(String name) {
-                this.name = name;
-            }
-
-            public Object getType() {
-                return type;
-            }
-
-            public void setType(Object type) {
-                this.type = type;
-            }
-
-            public String getPackage_name() {
-                return package_name;
-            }
-
-            public void setPackage_name(String package_name) {
-                this.package_name = package_name;
-            }
+        public void setConfig(String config) {
+            this.config = config;
         }
     }
 }
