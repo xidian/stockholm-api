@@ -170,61 +170,51 @@ responseBody
 
 ## 第二部分：设备端
 
+### 获取某已安装app的配置
+设备端下载app的配置
+
+* GET /device/app
+
+requestHeaders:
+
+	UUID: <your-device-uuid>
+	PackageName: <your-package-name>
+
+### 查询某设备的所有apps
+
+* GET /device/apps
+
+requestHeaders:
+
+	UUID: <your-device-uuid>
+
+
 ### 设备请求安装app
-安装并进行配置某一指定id的app到clock上（表端安装app时使用）：
+数据库中链接app和clock上
 
 * POST /device/apps/install
 
-requestBody
+	requestBody
 
-```json
-{
-	"uuid": "123123",
-	"appId": 2
-}
-```
-
-responseBody
-
-```json
-{
-  "appsConfig": {
-    "config": {},
-    "app": {
-      "id": 1,
-      "name": "test_app_1",
-      "icon": null,
-      "packageName": "com.test.1"
-    }
-  }
-}
-```
-
-### 更新app设置
-更新指定app的config（更新app设置项）：
-
-* PUT /device/apps/:app\_id/config
-
-TBC：表端的 No.5 与 No.6 接口其实已经完成了，但由于现阶段我们不需要从表端推送回去的流程，故先不更新这两个API，等功能需要的时候再添加
-
-### 查询app的config
-查询clock安装过的指定app的config：
-
-POST /device/apps/:app\_id
-(备注：app\_id可以从No.3的表端接口获得)
-
-requestBody:
-
+	```json
 	{
-		"uuid": "example-clock-uuid-10004"
+		"uuid": "123123",
+		"appId": 2
 	}
+	```
 
-### 4.查询clock安装过的所有app的configs（例如设备恢复时候使用）：
+	responseBody
 
-POST /device/apps
-
-requestBody:
-
+	```json
 	{
-	"uuid": "example-clock-uuid-10004"
+	  "appsConfig": {
+	    "config": {},
+	    "app": {
+	      "id": 1,
+	      "name": "test_app_1",
+	      "icon": null,
+	      "packageName": "com.test.1"
+	    }
+	  }
 	}
+	```
