@@ -34,6 +34,7 @@ public class GetClockAppsResp {
 
     public static class DataBean {
         private String packageName;
+        private String phoneNumber;
         private String name;
         private String icon;
         private String uuid;
@@ -45,6 +46,14 @@ public class GetClockAppsResp {
 
         public void setPackageName(String packageName) {
             this.packageName = packageName;
+        }
+
+        public String getPhoneNumber() {
+            return phoneNumber;
+        }
+
+        public void setPhoneNumber(String phoneNumber) {
+            this.phoneNumber = phoneNumber;
         }
 
         public String getName() {
