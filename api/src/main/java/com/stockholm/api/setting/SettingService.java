@@ -3,8 +3,10 @@ package com.stockholm.api.setting;
 
 import java.util.Map;
 
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.HeaderMap;
+import retrofit2.http.PUT;
 import rx.Observable;
 
 public interface SettingService {
@@ -14,4 +16,8 @@ public interface SettingService {
 
     @GET("/mobile/clock/apps")
     Observable<GetClockAppsResp> getClockApps(@HeaderMap Map<String, String> headerMap);
+
+    @PUT("/mobile/clock/app")
+    Observable<UpdateAppConfigResp> updateAppConfig(@HeaderMap Map<String, String> headerMap,
+                                                    @Body UpdateAppConfigReq config);
 }
