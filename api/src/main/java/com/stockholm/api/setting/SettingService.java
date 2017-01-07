@@ -14,7 +14,7 @@ public interface SettingService {
     @GET("/clocks")
     Observable<GetBindClocksResp> getBindClocks();
 
-    @GET("/mobile/clock/apps")
+    @GET("/mobile/clock/apps_configs")
     Observable<GetClockAppsResp> getClockApps(@HeaderMap Map<String, String> headerMap);
 
     @PUT("/mobile/clock/app")
