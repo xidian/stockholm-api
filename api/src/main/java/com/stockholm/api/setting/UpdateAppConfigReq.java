@@ -4,6 +4,13 @@ public class UpdateAppConfigReq {
 
     private String config;
 
+    public UpdateAppConfigReq() {
+    }
+
+    public UpdateAppConfigReq(String config) {
+        setConfig(config);
+    }
+
     public String getConfig() {
         return config;
     }
