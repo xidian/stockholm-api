@@ -4,6 +4,7 @@
 
 * [注册](#user-content-注册api)
 * [登录](#user-content-登陆api)
+* [登出](@user-content-登出)
 * [更新密码](#user-content-更新密码)
 * [发送短信验证码](#user-content-发送短信验证码)
 * [验证验证码](#user-content-验证验证码)
@@ -74,6 +75,14 @@ responseExample:
 	    "isFresh": true,
 	    "accessToken": "XAllpqfc5Mt7WZu8YBoWsw1482486131"
 	  }
+
+## 登出
+
+* POST /users/logout
+
+requestHeaders
+
+	Access-Token: <your-access-token>
 
 ## 更新密码
 
