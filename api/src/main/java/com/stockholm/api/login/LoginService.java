@@ -2,7 +2,6 @@ package com.stockholm.api.login;
 
 
 import retrofit2.http.Body;
-import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import rx.Observable;
@@ -23,7 +22,4 @@ public interface LoginService {
 
     @PUT("users/update-password")
     Observable<ResetPwdResp> resetPwd(@Body ResetPwdReq resetPwdReq);
-
-    @POST("users/logout")
-    Observable<LogoutResp> logout(@Header("Access-Token") String accessToken);
 }
