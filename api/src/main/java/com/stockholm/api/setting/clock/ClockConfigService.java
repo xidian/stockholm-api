@@ -8,6 +8,6 @@ import retrofit2.http.HeaderMap;
 import rx.Observable;
 
 public interface ClockConfigService {
-    @GET("device/app")
-    Observable<DeviceClockConfigResp> getClockConfig(@HeaderMap Map<String, String> headerMap);
+    @GET("/mobile/apps_configs/skins")
+    Observable<GetClockSkinsResp> getClockSkins(@HeaderMap Map<String, String> headerMap);
 }
