@@ -1,13 +1,13 @@
 package com.stockholm.api.setting;
 
-public class AppUpdateConfigReq {
+public class UpdateAppConfigReq {
 
     private String config;
 
-    public AppUpdateConfigReq() {
+    public UpdateAppConfigReq() {
     }
 
-    public AppUpdateConfigReq(String config) {
+    public UpdateAppConfigReq(String config) {
         setConfig(config);
     }
 
