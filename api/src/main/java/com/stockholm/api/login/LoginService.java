@@ -2,10 +2,10 @@ package com.stockholm.api.login;
 
 
 import retrofit2.http.Body;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import rx.Observable;
-import rx.Observer;
 
 public interface LoginService {
 
@@ -25,5 +25,5 @@ public interface LoginService {
     Observable<ResetPwdResp> resetPwd(@Body ResetPwdReq resetPwdReq);
 
     @POST("users/logout")
-    Observable<LogoutResp> logout();
+    Observable<LogoutResp> logout(@Header("Access-Token") String accessToken);
 }
