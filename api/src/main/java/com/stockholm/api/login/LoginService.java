@@ -5,6 +5,7 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import rx.Observable;
+import rx.Observer;
 
 public interface LoginService {
 
@@ -22,4 +23,7 @@ public interface LoginService {
 
     @PUT("users/update-password")
     Observable<ResetPwdResp> resetPwd(@Body ResetPwdReq resetPwdReq);
+
+    @POST("users/logout")
+    Observable<LogoutResp> logout();
 }
