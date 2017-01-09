@@ -30,3 +30,16 @@ requestBody
 	}
 }
 ```
+
+## 创建clock（app）皮肤
+
+* POST /mobile/apps_configs/skins
+
+requestBody
+
+```json
+{
+	"name": "<your-clock_skin-name>",
+	"url": "<your-clock_skin-url>"
+}
+```
