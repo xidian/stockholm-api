@@ -1,6 +1,6 @@
 package com.stockholm.api.setting;
 
-public class UpdateAppConfigResp {
+public class AppUpdateConfigResp {
 
     private boolean success;
     private String msg;
