@@ -4,10 +4,10 @@ public class AppUpdateConfigReq {
 
     private String config;
 
-    public UpdateAppConfigReq() {
+    public AppUpdateConfigReq() {
     }
 
-    public UpdateAppConfigReq(String config) {
+    public AppUpdateConfigReq(String config) {
         setConfig(config);
     }
 
