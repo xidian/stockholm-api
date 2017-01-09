@@ -18,6 +18,9 @@ public interface SettingService {
     Observable<GetClockAppsResp> getClockApps(@HeaderMap Map<String, String> headerMap);
 
     @PUT("/mobile/clock/app")
-    Observable<UpdateAppConfigResp> updateAppConfig(@HeaderMap Map<String, String> headerMap,
-                                                    @Body UpdateAppConfigReq config);
+    Observable<AppUpdateConfigResp> appUpdateConfig(@HeaderMap Map<String, String> headerMap,
+                                                    @Body AppUpdateConfigReq config);
+
+    @GET("device/app")
+    Observable<DeviceGetConfigResp> deviceGetConfig(@HeaderMap Map<String, String> headerMap);
 }
