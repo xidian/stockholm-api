@@ -61,5 +61,15 @@ public class GetClockSkinsResp {
         public void setUrl(String url) {
             this.url = url;
         }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ClockSkinBean) {
+                if (((ClockSkinBean) obj).getId() == id) {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
