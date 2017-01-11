@@ -20,5 +20,5 @@ requestHeaders
 requestBody
 
 ```json
-"clockSkinId": <your-clock_skin-id>
+{"clockSkinId": 1}
 ```

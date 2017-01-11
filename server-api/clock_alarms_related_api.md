@@ -6,6 +6,7 @@
 * GET /mobile/apps_configs/clock_alarms
 
 requestHeaders
+
   Access-Token: <your-access-token>
   UUID: <your-device-uuid>
 
@@ -15,6 +16,7 @@ requestHeaders
 * POST /mobile/apps_configs/clock_alarms
 
 requestHeaders
+
   Access-Token: <your-access-token>
   UUID: <your-device-uuid>
 
@@ -36,6 +38,7 @@ requestBody
 * PUT /mobile/apps_configs/clock_alarm
 
 requestHeaders
+
   Access-Token: <your-access-token>
   UUID: <your-device-uuid>
 
@@ -49,5 +52,22 @@ requestBody
 	"repeatType": 1,
 	"name": "test2",
 	"status": false
+}
+```
+
+## 删除闹钟
+
+* DELETE /mobile/apps_configs/clock_alarm
+
+requestHeaders
+
+  Access-Token: <your-access-token>
+  UUID: <your-device-uuid>
+
+requestBody
+
+```json
+{
+  "clockAlarmId": 1
 }
 ```
