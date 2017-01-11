@@ -7,8 +7,10 @@
 
 requestHeaders
 
+```
   Access-Token: <your-access-token>
   UUID: <your-device-uuid>
+```
 
 ## 创建闹钟
 给某设备创建闹钟
@@ -17,18 +19,22 @@ requestHeaders
 
 requestHeaders
 
+```
   Access-Token: <your-access-token>
   UUID: <your-device-uuid>
+```
 
 requestBody
 
 ```json
 {
-	"time": "13:10",
-	"ring": "ring",
-	"repeatType": 1,
-	"name": "test2",
-	"status": false
+	"clockAlarm": {
+		"time": "13:10",
+		"ring": "ring",
+		"repeatType": 1,
+		"name": "test2",
+		"status": false
+	}
 }
 ```
 
@@ -39,19 +45,23 @@ requestBody
 
 requestHeaders
 
+```
   Access-Token: <your-access-token>
   UUID: <your-device-uuid>
+```
 
 requestBody
 
 ```json
 {
-  "clockAlarmId": 1,
-  "time": "13:10",
-	"ring": "ring",
-	"repeatType": 1,
-	"name": "test2",
-	"status": false
+	"clockAlarm": {
+		"clockAlarmId": 1,
+		"time": "123",
+		"ring": "ring",
+		"repeatType": 1,
+		"name": "test2",
+		"status": false
+	}
 }
 ```
 
@@ -61,8 +71,10 @@ requestBody
 
 requestHeaders
 
+```
   Access-Token: <your-access-token>
   UUID: <your-device-uuid>
+```
 
 requestBody
 

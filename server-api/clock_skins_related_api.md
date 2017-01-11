@@ -6,8 +6,10 @@
 
 requestHeaders
 
+```
   Access-Token: <your-access-token>
   UUID: <your-device-uuid>
+```
 
 ## 绑定用户和皮肤
 
@@ -15,7 +17,9 @@ requestHeaders
 
 requestHeaders
 
+```
   Access-Token: <your-access-token>
+```
 
 requestBody
 

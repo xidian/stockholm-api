@@ -29,7 +29,9 @@
 
 requestHeader：
 
+```
 	PackageName: <your-package-name>
+```
 
 不需要requestBody
 
@@ -59,13 +61,16 @@ responseBody
 * GET /mobile/clock/apps
 
 requestHeader：
+```
 	Access-Token： <your-access-token>
 	UUID: <the clock uuid>
+```
 
 requestBody为空
 
 responseBody
 
+```json
 	{
 	  "clock": {
 	    "id": 2,
@@ -86,6 +91,7 @@ responseBody
 	    ]
 	  }
 	}
+```
 
 ### 获取某已安装app配置信息
 获取当前配置信息(config)和所有可用设置项(available_config)
@@ -94,9 +100,11 @@ responseBody
 
 requestHeader：
 
+```
 	Access-Token： <your-access-token>
 	UUID: <the clock uuid>
 	PackageName: <your-package-name>
+```
 
 requestBody为空
 
@@ -127,10 +135,11 @@ responseBody
 * PUT /mobile/clock/app
 
 requestHeader：
-
+```
 	Access-Token： <your-access-token>
 	UUID: <the clock uuid>
 	PackageName: <your-package-name>
+```
 
 requestBody: (备注，config只需要保证使用合法的JSON格式即可，array/object都可以)
 
@@ -175,10 +184,12 @@ responseBody
 
 * GET /device/app
 
-requestHeaders:
+requestHeaders
 
+```
 	UUID: <your-device-uuid>
 	PackageName: <your-package-name>
+```
 
 ### 查询某设备的所有apps
 
@@ -186,8 +197,9 @@ requestHeaders:
 
 requestHeaders:
 
+```
 	UUID: <your-device-uuid>
-
+```
 
 ### 设备请求安装app
 数据库中链接app和clock上
@@ -196,7 +208,7 @@ requestHeaders:
 
 	requestBody
 
-	```json
+```json
 	{
 		"uuid": "123123",
 		"appId": 2
@@ -217,4 +229,4 @@ requestHeaders:
 	    }
 	  }
 	}
-	```
+```
