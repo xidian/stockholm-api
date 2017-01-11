@@ -230,3 +230,15 @@ requestHeaders:
 	  }
 	}
 ```
+
+### 获取某app的细节
+部分app的设置接受order参数
+
+* POST /device/app/order_details
+
+requestHeaders
+
+```
+	UUID: <your-device-uuid>
+	PackageName: <your-package-name>
+```
