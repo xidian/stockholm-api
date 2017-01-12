@@ -242,3 +242,9 @@ requestHeaders
 	UUID: <your-device-uuid>
 	PackageName: <your-package-name>
 ```
+
+requestBody
+
+```json
+{"order": "clockAlarm"}
+```
