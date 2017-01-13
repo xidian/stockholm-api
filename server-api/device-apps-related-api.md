@@ -231,14 +231,13 @@ requestHeaders:
 	}
 ```
 
-### 获取某app的细节
+### 获取闹钟
 部分app的设置接受order参数
 
-* POST /device/app/order_details
+* GET /device/app/get_clock_alarms
 
 requestHeaders
 
 ```
 	UUID: <your-device-uuid>
-	PackageName: <your-package-name>
 ```
