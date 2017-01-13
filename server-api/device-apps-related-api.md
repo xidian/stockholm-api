@@ -241,9 +241,3 @@ requestHeaders
 ```
 	UUID: <your-device-uuid>
 ```
-
-requestBody
-
-```json
-{"order": "clockAlarm"}
-```
