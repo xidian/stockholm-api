@@ -41,6 +41,7 @@ public class GetClockAlarmResp {
         private String ring;
         private String time;
         private boolean status;
+        private String repeat;
 
         public int getClockAlarmId() {
             return clockAlarmId;
@@ -88,6 +89,14 @@ public class GetClockAlarmResp {
 
         public void setStatus(boolean status) {
             this.status = status;
+        }
+
+        public String getRepeat() {
+            return repeat;
+        }
+
+        public void setRepeat(String repeat) {
+            this.repeat = repeat;
         }
     }
 
