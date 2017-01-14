@@ -1,12 +1,4 @@
-# 设备端app相关API
-
-[第一部分API](#user-content-第一部分手机端)默认调用者为手机端
-
-* [查询公共apps](#user-content-查询所有公共apps)
-* [获取某app的公共信息](#user-content-获取某app的信息)
-* [获取某设备上所有apps](#user-content-获取某设备上所有apps)
-* [获取某已安装app配置信息](#user-content-获取某已安装app配置信息)
-* [更新某app设置项](#user-content-更新某app设置项)
+# 设备端设置app
 
 [第二部分API](#user-content-第二部分设备端)默认调用者为设备端
 
