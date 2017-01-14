@@ -1,6 +1,8 @@
 package com.stockholm.api.setting;
 
 
+import com.stockholm.api.setting.clock.alarm.GetClockAlarmResp;
+
 import java.util.Map;
 
 import retrofit2.http.Body;
@@ -27,4 +29,7 @@ public interface SettingService {
 
     @GET("device/app")
     Observable<DeviceGetConfigResp> deviceGetConfig(@HeaderMap Map<String, String> headerMap);
+
+    @GET("/device/app/get_clock_alarms")
+    Observable<GetClockAlarmResp> deviceGetAlarm(@HeaderMap Map<String, String> headerMap);
 }
