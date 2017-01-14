@@ -4,7 +4,6 @@ package com.stockholm.api.setting.clock.alarm;
 import java.util.Map;
 
 import retrofit2.http.Body;
-import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.HeaderMap;
 import retrofit2.http.POST;
@@ -21,6 +20,6 @@ public interface ClockAlarmService {
     @PUT("/mobile/apps_configs/clock_alarm")
     Observable<ClockAlarmResp> updateClockAlarm(@HeaderMap Map<String, String> headerMap,@Body ClockAlarmReq req);
 
-    @DELETE("/mobile/apps_configs/clock_alarm")
+    @POST("/mobile/apps_configs/clock_alarm/delete")
     Observable<ClockAlarmResp> deleteClockAlarm(@HeaderMap Map<String, String> headerMap,@Body DeleteClockAlarmReq req);
 }
