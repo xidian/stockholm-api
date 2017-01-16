@@ -22,4 +22,7 @@ public interface ClockAlarmService {
 
     @POST("/mobile/apps_configs/clock_alarm/delete")
     Observable<ClockAlarmResp> deleteClockAlarm(@HeaderMap Map<String, String> headerMap,@Body DeleteClockAlarmReq req);
+
+    @POST("/device/app/clock_alarm/delete")
+    Observable<ClockAlarmResp> deviceDeleteClockAlarm(@HeaderMap Map<String, String> headerMap,@Body DeleteClockAlarmReq req);
 }
