@@ -67,7 +67,7 @@ requestBody
 
 ## 删除闹钟
 
-* DELETE /mobile/apps_configs/clock_alarm
+* POST /mobile/apps_configs/clock_alarm/delete
 
 requestHeaders
 
@@ -78,6 +78,22 @@ requestHeaders
 
 requestBody
 
+```json
+{
+  "clockAlarmId": 1
+}
+```
+
+## 处理过期闹钟
+设备端响过闹钟后，发request来删除闹钟
+
+requestHeaders
+
+```
+UUID： <your-device-uuid>
+```
+
+requestBody
 ```json
 {
   "clockAlarmId": 1
