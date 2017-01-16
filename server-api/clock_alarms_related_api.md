@@ -87,6 +87,8 @@ requestBody
 ## 处理过期闹钟
 设备端响过闹钟后，发request来删除闹钟
 
+* POST /device/app/clock_alarm/delete
+
 requestHeaders
 
 ```
