@@ -6,13 +6,14 @@
 requestHeader
 ```
 Access-Token: <your-access-token>
+UUID: <your-device-uuid>
 ```
 requestBody
-```json
-{"key": "<your-image-key>"}
-```
+要求参数：上传图片的数量。
 
-备注：your-image-key是uuid和图片名称拼成的字符串，例如`a02c36138a15/yourimage.png`
+```json
+{ "count": 10 }
+```
 
 responseBody["data"]
 ```json
@@ -22,5 +23,3 @@ responseBody["data"]
   "key": "test-1.jpg"
 }
 ```
-
-回传的key可能与请求的key不一样，这是为了防止文件重名。
