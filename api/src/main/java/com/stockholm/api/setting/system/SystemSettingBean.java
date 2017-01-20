@@ -1,7 +1,9 @@
 package com.stockholm.api.setting.system;
 
 
-public class SystemSettingBean {
+import java.io.Serializable;
+
+public class SystemSettingBean implements Serializable {
 
     private int alarmVolume;
 
