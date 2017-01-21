@@ -36,6 +36,7 @@ public class GetClockSkinsResp {
     public static class ClockSkinBean {
         private int id;
         private String name;
+        private String packageName;
         private String url;
 
         public int getId() {
@@ -52,6 +53,14 @@ public class GetClockSkinsResp {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        public String getPackageName() {
+            return packageName;
+        }
+
+        public void setPackageName(String packageName) {
+            this.packageName = packageName;
         }
 
         public String getUrl() {
