@@ -24,7 +24,7 @@ UUID: <your-device-uuid>
 
 WebSocket通信
 
-* ws://<your-domain>/ws
+* ws://YOUR-DOMAIN/ws
 
 requestBody
 ```
