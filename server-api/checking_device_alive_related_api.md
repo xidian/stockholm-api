@@ -39,11 +39,7 @@ requestBody
 requestHeader
 ```
 Access-Token: <your-access-token>
-```
-
-requestBody
-```json
-{"uuid": "<your-device-uuid>"}
+UUID: <your-device-uuid>
 ```
 
 jpushOrder
