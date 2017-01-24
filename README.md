@@ -18,7 +18,7 @@ allprojects {
 
 # server-api
 
-server ip address: 119.254.98.170:3000
+server ip address: api.meowtechnology.com
 
 * [Account related api](/server-api/account-related-api.md)
 * [Binding device related api](/server-api/binding-device-related-api.md)

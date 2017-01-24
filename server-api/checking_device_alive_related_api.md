@@ -30,3 +30,24 @@ requestBody
 ```
 {"command":"subscribe","identifier":"{\"channel\":\"DeviceChannel\",\"uuid\":\"<your-device-uuid>\",\"phoneNumber\":\"<your-phone-number>\"}"}
 ```
+
+##重连成功
+设备重新连wifi时调用这个借口
+
+* POST /clocks/report_wifi_connection
+
+requestHeader
+```
+Access-Token: <your-access-token>
+```
+
+requestBody
+```json
+{"uuid": "<your-device-uuid>"}
+```
+
+jpushOrder
+推向手机端的order
+```
+finishWifiSetting
+```

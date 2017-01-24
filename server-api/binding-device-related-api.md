@@ -54,7 +54,7 @@ responseBody:
 
 `clocks_users`中间表生成一条记录。
 
-## 2.查询绑定User数量的接口：
+## 查询绑定User数量的接口：
 
 * POST /clocks/check-binding-status
 
