@@ -11,5 +11,8 @@ public interface AlbumTokenService {
 
     @POST("/mobile/apps_configs/album_images")
     Observable<AlbumTokenResp> getQiniuToken(@HeaderMap Map<String, String> headerMap,
-                                               @Body AlbumTokenReq albumTokenReq);
+                                             @Body AlbumTokenReq albumTokenReq);
+
+    @POST("device/apps_configs/album_images")
+    Observable<AlbumPathResp> getImagePath(@HeaderMap Map<String, String> headerMap);
 }
