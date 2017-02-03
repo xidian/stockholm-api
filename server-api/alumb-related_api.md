@@ -23,3 +23,20 @@ responseBody["data"]
   "key": "test-1.jpg"
 }
 ```
+##下载图片
+设备端获得下载url
+
+* GET /device/apps_configs/album_images
+requestHeader
+```
+UUID: <your-device-uuid>
+```
+
+responseBody["data"]
+```json
+[
+  "<url1>",
+  "<url2>",
+  "..."
+]
+```
