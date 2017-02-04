@@ -36,7 +36,7 @@ responseBody["data"]
 ```json
 {
   "config":{},
-  downloadUrls:[
+  "downloadUrls":[
     "<url1>",
     "<url2>",
     "..."
