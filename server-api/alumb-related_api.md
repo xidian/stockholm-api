@@ -34,9 +34,12 @@ UUID: <your-device-uuid>
 
 responseBody["data"]
 ```json
-[
-  "<url1>",
-  "<url2>",
-  "..."
-]
+{
+  "config":{},
+  downloadUrls:[
+    "<url1>",
+    "<url2>",
+    "..."
+  ]
+}
 ```
