@@ -32,4 +32,6 @@ public interface SettingService {
 
     @GET("/device/app/get_clock_alarms")
     Observable<GetClockAlarmResp> deviceGetAlarm(@HeaderMap Map<String, String> headerMap);
+
+
 }
