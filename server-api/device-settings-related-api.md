@@ -45,3 +45,19 @@ responseBody["data"]
 	}
 ]
 ```
+
+## 重命名
+给设备命名
+
+* PUT /clock/name
+
+requestHeader
+```
+Access-Token: <your-access-token>
+UUID: <your-device-uuid>
+```
+
+requestBody
+```json
+{"name": "<your-device-name>"}
+```
