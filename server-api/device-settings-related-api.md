@@ -25,3 +25,23 @@ responseBody
   "msg": "设置成功"
 }
 ```
+
+## 获取所有设备
+获取某用户所有设备
+
+* GET /clocks
+
+requestHeader
+```
+Access-Token: <your-access-token>
+```
+
+responseBody["data"]
+```json
+[
+	{
+		"uuid": "<first-uuid>",
+		"name": "<your clock's name>"
+	}
+]
+```
