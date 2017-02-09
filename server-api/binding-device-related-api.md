@@ -68,3 +68,13 @@ responseBody:
 	  "success": false,
 	  "msg": "没有这个设备"
 	}
+
+## 解绑
+
+* POST /clocks/unbind
+
+requestHeader
+```
+Access-Token: <your-access-token>
+UUID: <your-device-uuid>
+```
