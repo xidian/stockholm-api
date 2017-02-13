@@ -8,6 +8,7 @@ import java.util.Map;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.HeaderMap;
+import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import rx.Observable;
 
@@ -33,5 +34,11 @@ public interface SettingService {
     @GET("/device/app/get_clock_alarms")
     Observable<GetClockAlarmResp> deviceGetAlarm(@HeaderMap Map<String, String> headerMap);
 
+    @POST("/clocks/unbind")
+    Observable<UnbindDeviceResp> unbindDevice(@HeaderMap Map<String, String> headerMap);
+
+    @PUT("/clock/name")
+    Observable<RenameDeviceResp> renameDevice(@HeaderMap Map<String, String> headerMap,
+                                              @Body RenameDeviceReq renameDeviceReq);
 
 }
