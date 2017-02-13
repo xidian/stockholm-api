@@ -24,7 +24,7 @@ UUID: <your-device-uuid>
 requestBody
 ```json
 {
-  "id": "如果要更新日程，请发送id；如果创建日程，可忽略id",
+  "eventId": "如果要更新日程，请发送id；如果创建日程，可忽略id",
   "config": "{}"
 }
 ```
