@@ -1,104 +1,46 @@
 
 package com.stockholm.api.weather;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.Generated;
-
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@Generated("org.jsonschema2pojo")
-@JsonPropertyOrder({
-    "desc",
-    "status",
-    "data"
-})
 public class Weather {
 
-    @JsonProperty("desc")
     private String desc;
-    @JsonProperty("status")
     private Integer status;
-    @JsonProperty("data")
     private Data data;
-    @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    /**
-     * 
-     * @return
-     *     The desc
-     */
-    @JsonProperty("desc")
     public String getDesc() {
         return desc;
     }
 
-    /**
-     * 
-     * @param desc
-     *     The desc
-     */
-    @JsonProperty("desc")
     public void setDesc(String desc) {
         this.desc = desc;
     }
 
-    /**
-     * 
-     * @return
-     *     The status
-     */
-    @JsonProperty("status")
     public Integer getStatus() {
         return status;
     }
 
-    /**
-     * 
-     * @param status
-     *     The status
-     */
-    @JsonProperty("status")
     public void setStatus(Integer status) {
         this.status = status;
     }
 
-    /**
-     * 
-     * @return
-     *     The data
-     */
-    @JsonProperty("data")
     public Data getData() {
         return data;
     }
 
-    /**
-     * 
-     * @param data
-     *     The data
-     */
-    @JsonProperty("data")
     public void setData(Data data) {
         this.data = data;
     }
 
-    @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
     }
 
-    @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
