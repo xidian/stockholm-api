@@ -24,15 +24,36 @@ UUID: <your-device-uuid>
 requestBody
 ```json
 {
-  "eventId": "如果要更新日程，请发送id；如果创建日程，可忽略id",
-  "config": "{}"
+  "calendarEvent": {
+    "eventId": "如果要更新日程，请发送id；如果创建日程，可忽略id",
+    "time": "",
+    "name": "",
+    "repeatType": "",
+	  "repeatValue": ""
+  }
 }
 ```
 
 responseBody["data"]
 ```json
 {
-  "id": 7,
-  "config": "{}"
+  "eventId": 7,
+}
+```
+
+##删除日程
+
+* POST /mobile/apps_configs/calendar_events/delete
+
+requestHeaders
+```
+Access-Token: <your-access-token>
+UUID: <your-device-uuid>
+```
+
+requestBody
+```json
+{
+  "eventId": 1
 }
 ```
