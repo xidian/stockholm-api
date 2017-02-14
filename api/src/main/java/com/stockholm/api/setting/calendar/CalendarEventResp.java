@@ -1,7 +1,7 @@
-package com.stockholm.api.setting.clock.alarm;
+package com.stockholm.api.setting.calendar;
 
 
-public class ClockAlarmResp {
+public class CalendarEventResp {
     private boolean success;
     private String msg;
 
