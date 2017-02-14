@@ -42,5 +42,5 @@ public interface SettingService {
                                               @Body RenameDeviceReq renameDeviceReq);
 
     @GET("/mobile/clock/app")
-    Observable<GetClockAlarmResp> getAppConfig(@HeaderMap Map<String, String> headerMap);
+    Observable<DeviceAppConfigResp> getAppConfig(@HeaderMap Map<String, String> headerMap);
 }
