@@ -18,7 +18,7 @@ public class City {
         return data;
     }
 
-    private static class Data {
+    public static class Data {
         public String prov;
         public String name;
         public String country;
