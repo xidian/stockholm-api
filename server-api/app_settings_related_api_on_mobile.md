@@ -51,7 +51,7 @@ requestBody: (备注，config只需要保证使用合法的JSON格式即可，ar
 ```
 
 ## 获取某已安装app配置信息
-获取当前配置信息(config)和所有可用设置项(available_config)
+获取当前配置信息(config)
 
 * GET /mobile/clock/app
 
@@ -63,4 +63,7 @@ requestHeader：
 	PackageName: <your-package-name>
 ```
 
-requestBody为空
+responseBody["data"]
+```json
+{"config": "{}"}
+```
