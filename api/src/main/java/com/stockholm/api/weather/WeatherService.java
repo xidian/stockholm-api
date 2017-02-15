@@ -1,5 +1,7 @@
 package com.stockholm.api.weather;
 
+import java.util.List;
+
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 import rx.Single;
@@ -10,7 +12,7 @@ public interface WeatherService {
     String TYPE = "search";
 
     @GET("/Ecalender/openapi/city4weather")
-    Single<City> getCityIdByName(@Query("key") String key, @Query("type") String search, @Query("keyword") String name);
+    Single<List<City>> getCityIdByName(@Query("key") String key, @Query("type") String search, @Query("keyword") String name);
 
     @GET("/Ecalender/openapi/weather")
     Single<Weather> getWeatherByCityId(@Query("key") String key, @Query("citykey") String cityId);
