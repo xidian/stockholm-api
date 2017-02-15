@@ -1,16 +1,16 @@
 
-package com.stockholm.api.weather;
+package com.stockholm.api.weather.api;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Night {
+public class Day {
 
     private String wthr;
     private String bgPic;
     private String wp;
-    private String notice;
     private Integer type;
+    private String notice;
     private String wd;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -38,20 +38,20 @@ public class Night {
         this.wp = wp;
     }
 
-    public String getNotice() {
-        return notice;
-    }
-
-    public void setNotice(String notice) {
-        this.notice = notice;
-    }
-
     public Integer getType() {
         return type;
     }
 
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    public String getNotice() {
+        return notice;
+    }
+
+    public void setNotice(String notice) {
+        this.notice = notice;
     }
 
     public String getWd() {

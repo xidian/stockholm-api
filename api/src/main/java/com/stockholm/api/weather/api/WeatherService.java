@@ -1,4 +1,4 @@
-package com.stockholm.api.weather;
+package com.stockholm.api.weather.api;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;

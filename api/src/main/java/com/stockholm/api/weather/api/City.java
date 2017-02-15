@@ -1,4 +1,4 @@
-package com.stockholm.api.weather;
+package com.stockholm.api.weather.api;
 
 
 import java.util.List;
