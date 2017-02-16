@@ -32,6 +32,24 @@ public class WeatherConfig {
         return cityBeanList.remove(bean);
     }
 
+    public CityBean getLocationCity() {
+        for (CityBean cityBean:cityBeanList) {
+            if (cityBean.isLocation()) return cityBean;
+        }
+
+        return null;
+    }
+
+    public boolean setLocationCityVisible(boolean visible) {
+        CityBean cityBean = getLocationCity();
+        if (cityBean != null) {
+            cityBean.setVisible(visible);
+            return true;
+        }
+
+        return false;
+    }
+
     @Override
     public String toString() {
         return new Gson().toJson(this);
