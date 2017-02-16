@@ -38,6 +38,7 @@ public class GetAllEventResp {
         private int eventId;
         private String name;
         private String time;
+        private boolean isSolar;
         private String repeatValue;
         private int repeatType;
 
@@ -63,6 +64,14 @@ public class GetAllEventResp {
 
         public void setTime(String time) {
             this.time = time;
+        }
+
+        public boolean isSolar() {
+            return isSolar;
+        }
+
+        public void setSolar(boolean solar) {
+            isSolar = solar;
         }
 
         public String getRepeatValue() {
