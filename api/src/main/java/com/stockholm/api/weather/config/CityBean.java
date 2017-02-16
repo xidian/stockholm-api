@@ -8,6 +8,7 @@ public class CityBean {
     private String cityId;
     private boolean select;
     private boolean location;
+    private boolean visible;
 
     public CityBean(String name, String province, String cityId, boolean select, boolean location) {
         this.name = name;
@@ -15,6 +16,7 @@ public class CityBean {
         this.cityId = cityId;
         this.select = select;
         this.location = location;
+        this.visible = true;
     }
 
     public String getName() {
@@ -57,10 +59,19 @@ public class CityBean {
         this.location = location;
     }
 
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof CityBean)) return false;
         CityBean bean = (CityBean) obj;
-        return bean.cityId.equals(cityId) && bean.location == location;
+        return bean.cityId.equals(cityId) && bean.location == location
+                && bean.visible == visible;
     }
 }
