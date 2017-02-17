@@ -1,6 +1,7 @@
 package com.stockholm.api.setting;
 
 
+import com.stockholm.api.setting.calendar.GetAllEventResp;
 import com.stockholm.api.setting.clock.alarm.GetClockAlarmResp;
 
 import java.util.Map;
@@ -33,6 +34,9 @@ public interface SettingService {
 
     @GET("/device/app/get_clock_alarms")
     Observable<GetClockAlarmResp> deviceGetAlarm(@HeaderMap Map<String, String> headerMap);
+
+    @GET("/device/apps_configs/calendar_events")
+    Observable<GetAllEventResp> deviceGetEvents(@HeaderMap Map<String, String> headerMap);
 
     @POST("/clocks/unbind")
     Observable<UnbindDeviceResp> unbindDevice(@HeaderMap Map<String, String> headerMap);
