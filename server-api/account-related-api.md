@@ -163,3 +163,34 @@ requestBody
 	}
 
 使用极光推送的Android设备无需使用这个借口
+
+## 更新手机号
+
+* PUT /user/phone_number
+
+requestHeader
+```
+Access-Token: <your-access-token>
+```
+
+requestBody
+```json
+{
+	"code": "123123",
+	"phoneNumber": "A NEW PHONE NUMBER"
+}
+```
+
+## 更新用户名
+
+* PUT /user/username
+
+requestHeader
+```
+Access-Token: <your-access-token>
+```
+
+requestBody
+```json
+{"username": "A NEW NAME"}
+```
