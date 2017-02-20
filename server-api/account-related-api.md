@@ -84,7 +84,7 @@ requestHeaders
 
 	Access-Token: <your-access-token>
 
-## 更新密码
+## 忘记密码
 
 * PUT /users/update-password
 
@@ -193,4 +193,21 @@ Access-Token: <your-access-token>
 requestBody
 ```json
 {"username": "A NEW NAME"}
+```
+
+## 更新密码
+
+* PUT /user/password
+
+requestHeader
+```
+Access-Token: <your-access-token>
+```
+
+requestBody
+```json
+{
+	"oldPwd": "YOUR OLD PASSWORD",
+	"newPwd": "NEW PASSWORD"
+}
 ```
