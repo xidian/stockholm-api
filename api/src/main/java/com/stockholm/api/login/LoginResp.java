@@ -62,15 +62,33 @@ public class LoginResp {
 
         public static class UserBean {
 
-            private int id;
+            private int accountId;
             private String phoneNumber;
+            private String username;
+            private String avatar;
 
-            public int getId() {
-                return id;
+            public int getAccountId() {
+                return accountId;
             }
 
-            public void setId(int id) {
-                this.id = id;
+            public void setAccountId(int accountId) {
+                this.accountId = accountId;
+            }
+
+            public String getUsername() {
+                return username;
+            }
+
+            public void setUsername(String username) {
+                this.username = username;
+            }
+
+            public String getAvatar() {
+                return avatar;
+            }
+
+            public void setAvatar(String avatar) {
+                this.avatar = avatar;
             }
 
             public String getPhoneNumber() {
