@@ -62,19 +62,19 @@ requestBody:
 		}
 	}
 
-responseExample:
-
-	{
-	  "success": true,
-	  "msg": "ok",
-	  "data": {
-	    "user": {
-	      "id": 12,
-	      "phoneNumber": "18514760073"
-	    },
-	    "isFresh": true,
-	    "accessToken": "XAllpqfc5Mt7WZu8YBoWsw1482486131"
-	  }
+responseBody["data"]:
+```json
+{
+  "user": {
+    "accountId": 10002,
+    "username": "小喵用户",
+    "phoneNumber": "18514760073",
+    "avatar": null
+  },
+  "isFresh": false,
+  "accessToken": "23LkjCKFKs"
+}
+```
 
 ## 登出
 
