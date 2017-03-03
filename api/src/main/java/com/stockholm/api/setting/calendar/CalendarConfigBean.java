@@ -1,52 +1,39 @@
 package com.stockholm.api.setting.calendar;
 
+import com.google.gson.Gson;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GetAllEventResp {
-    private boolean success;
-    private String msg;
-    private List<EventBean> data = new ArrayList<>();
+public class CalendarConfigBean {
+    private List<EventBean> eventList = new ArrayList<>();
 
-    public boolean isSuccess() {
-        return success;
+    public CalendarConfigBean(List<EventBean> eventList) {
+        setEventList(eventList);
     }
 
-    public void setSuccess(boolean success) {
-        this.success = success;
+    public List<EventBean> getEventList() {
+        return eventList;
     }
 
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public List<EventBean> getData() {
-        return data;
-    }
-
-    public void setData(List<EventBean> data) {
-        this.data = data;
+    public void setEventList(List<EventBean> eventList) {
+        this.eventList = eventList;
     }
 
     public static class EventBean implements Serializable {
-        private int eventId;
+        private long eventId;
         private String name;
         private String time;
         private boolean isSolar;
         private String repeatValue;
         private int repeatType;
 
-        public int getEventId() {
+        public long getEventId() {
             return eventId;
         }
 
-        public void setEventId(int eventId) {
+        public void setEventId(long eventId) {
             this.eventId = eventId;
         }
 
@@ -90,4 +77,14 @@ public class GetAllEventResp {
             this.repeatType = repeatType;
         }
     }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
+
+    public static CalendarConfigBean get(String config) {
+        return new Gson().fromJson(config, CalendarConfigBean.class);
+    }
+
 }
