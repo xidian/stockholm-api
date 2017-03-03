@@ -16,3 +16,19 @@ responseBody
 ```json
 {"data": "url"}
 ```
+
+## 手机端发送安装请求
+创建绑定，并推送设备端进行下载
+
+* POST /mobile/app/install
+
+requestHeaders
+```
+Access-Token: <your-access-token>
+UUID: <your-device-uuid>
+```
+
+requestBody
+```json
+{"packageName":"<your-package-name>"}
+```
