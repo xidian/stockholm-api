@@ -11,7 +11,7 @@ import rx.Observable;
 public interface FmPlayControlService {
 
     @PUT("/mobile/apps_configs/fm_play")
-    Observable<FmPlayControlResp> getBindClocks(@HeaderMap Map<String, String> headerMap,
+    Observable<FmPlayControlResp> controlPlay(@HeaderMap Map<String, String> headerMap,
                                                 @Body FmPlayControlReq fmPlayControlReq);
 
 }
