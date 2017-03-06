@@ -17,3 +17,19 @@ requestBody
   "play": {"<some parameters>"}
 }
 ```
+
+##更新播放（设备端）
+
+* PUT /device/mobile/apps_configs/fm_play
+
+requestHeader
+```
+UUID: <your-device-uuid>
+```
+
+requestBody
+```json
+{
+  "play": {"<some parameters>"}
+}
+```
