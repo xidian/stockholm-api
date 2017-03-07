@@ -20,7 +20,7 @@ requestBody
 
 ##更新播放（设备端）
 
-* PUT /device/mobile/apps_configs/fm_play
+* PUT /device/apps_configs/fm_play
 
 requestHeader
 ```
