@@ -21,4 +21,8 @@ public interface AlbumService {
     @GET("/mobile/apps_configs/album_images")
     Observable<AlbumUserPathresp> getUserImagePath(@HeaderMap Map<String, String> headerMap);
 
+    @POST("/mobile/apps_configs/album_images/delete")
+    Observable<AlbumUserDeleteResp> getUserImagePath(@HeaderMap Map<String, String> headerMap,
+                                                     @Body AlbumUserDeleteReq albumUserDeleteReq);
+
 }

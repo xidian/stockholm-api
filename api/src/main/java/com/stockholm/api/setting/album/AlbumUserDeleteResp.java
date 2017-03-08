@@ -1,14 +1,12 @@
 package com.stockholm.api.setting.album;
 
-
 import java.util.List;
 
-public class AlbumUserPathresp {
-
+public class AlbumUserDeleteResp {
 
     private boolean success;
     private String msg;
-    private DataBean data;
+    private List<String> data;
 
     public boolean isSuccess() {
         return success;
@@ -26,23 +24,11 @@ public class AlbumUserPathresp {
         this.msg = msg;
     }
 
-    public DataBean getData() {
+    public List<String> getData() {
         return data;
     }
 
-    public void setData(DataBean data) {
+    public void setData(List<String> data) {
         this.data = data;
-    }
-
-    public static class DataBean {
-        private List<String> downloadUrls;
-
-        public List<String> getDownloadUrls() {
-            return downloadUrls;
-        }
-
-        public void setDownloadUrls(List<String> downloadUrls) {
-            this.downloadUrls = downloadUrls;
-        }
     }
 }
