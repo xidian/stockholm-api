@@ -8,7 +8,7 @@ import retrofit2.http.HeaderMap;
 import retrofit2.http.POST;
 import rx.Observable;
 
-public interface AlbumTokenService {
+public interface AlbumService {
 
     @POST("/mobile/apps_configs/album_images")
     Observable<AlbumTokenResp> getQiniuToken(@HeaderMap Map<String, String> headerMap,
@@ -16,4 +16,9 @@ public interface AlbumTokenService {
 
     @GET("device/apps_configs/album_images")
     Observable<AlbumPathResp> getImagePath(@HeaderMap Map<String, String> headerMap);
+
+
+    @GET("/mobile/apps_configs/album_images")
+    Observable<AlbumUserPathresp> getUserImagePath(@HeaderMap Map<String, String> headerMap);
+
 }
