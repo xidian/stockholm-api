@@ -77,7 +77,7 @@ UUID: <your-device-uuid>
 
 requestBody
 ```json
-{"key": ["201703081512520800AhmSFnRd", "201103081512520800AhmSFwer"]}
+{"keys": ["201703081512520800AhmSFnRd", "201103081512520800AhmSFwer"]}
 ```
 如果只有一张图片，也可以不放在数组里
 
