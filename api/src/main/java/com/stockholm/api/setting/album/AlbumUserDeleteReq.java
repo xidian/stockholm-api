@@ -4,13 +4,13 @@ import java.util.List;
 
 public class AlbumUserDeleteReq {
 
-    private List<String> key;
+    private List<String> keys;
 
-    public List<String> getKey() {
-        return key;
+    public List<String> getKeys() {
+        return keys;
     }
 
-    public void setKey(List<String> key) {
-        this.key = key;
+    public void setKeys(List<String> keys) {
+        this.keys = keys;
     }
 }
