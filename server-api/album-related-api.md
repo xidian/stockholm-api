@@ -23,7 +23,7 @@ responseBody["data"]
   "key": "test-1.jpg"
 }
 ```
-##下载图片
+##设备端下载图片
 设备端获得下载url
 
 * GET /device/apps_configs/album_images
@@ -42,4 +42,40 @@ responseBody["data"]
     "..."
   ]
 }
+```
+
+##手机端下载
+
+* GET /mobile/apps_configs/album_images
+
+requestHeader
+```
+Access-Token: <your-access-token>
+UUID: <your-device-uuid>
+```
+
+responseBody['data']
+```json
+{
+  "downloadUrls":[
+    "<url1>",
+    "<url2>",
+    "..."
+  ]
+}
+```
+
+##删除图片
+
+* POST /mobile/apps_configs/album_images/delete
+
+requestHeader
+```
+Access-Token: <your-access-token>
+UUID: <your-device-uuid>
+```
+
+requestBody
+```json
+{"key": "albumimagea02c36019efb/201703081512520800AhmSFnRd"}
 ```
