@@ -1,6 +1,8 @@
 package com.stockholm.api.store;
 
 
+import com.google.gson.Gson;
+
 public class AppCommentBean {
     private String username;
     private String avatarUrl;
@@ -46,6 +48,15 @@ public class AppCommentBean {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
+
+    public static AppCommentBean get(String json) {
+        return new Gson().fromJson(json, AppCommentBean.class);
     }
 
 }

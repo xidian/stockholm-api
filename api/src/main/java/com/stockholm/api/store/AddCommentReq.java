@@ -19,11 +19,11 @@ public class AddCommentReq {
 
     public static class UserCommentBean {
         private float star;
-        private String comment;
+        private String content;
 
-        public UserCommentBean(float star, String comment) {
+        public UserCommentBean(float star, String content) {
             setStar(star);
-            setComment(comment);
+            setContent(content);
         }
 
         public float getStar() {
@@ -34,12 +34,12 @@ public class AddCommentReq {
             this.star = star;
         }
 
-        public String getComment() {
-            return comment;
+        public String getContent() {
+            return content;
         }
 
-        public void setComment(String comment) {
-            this.comment = comment;
+        public void setContent(String content) {
+            this.content = content;
         }
     }
 

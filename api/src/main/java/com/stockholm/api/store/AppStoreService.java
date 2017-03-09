@@ -24,4 +24,7 @@ public interface AppStoreService {
     @POST("/mobile/apps/comments")
     Observable<StoreCommonResp> editAppComment(@HeaderMap Map<String, String> headerMap, @Body AddCommentReq req);
 
+    @GET("/mobile/apps/comments/new")
+    Observable<GetUserCommentResp> getUserComment(@HeaderMap Map<String, String> headerMap);
+
 }
