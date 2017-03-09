@@ -15,6 +15,7 @@ public class AppBean implements Serializable {
     private float star;
     private int versionCode;
     private long downloads;
+    private long commentCount;
     private int type;
 
     public String getAppName() {
@@ -87,6 +88,14 @@ public class AppBean implements Serializable {
 
     public void setDownloads(long downloads) {
         this.downloads = downloads;
+    }
+
+    public long getCommentCount() {
+        return commentCount;
+    }
+
+    public void setCommentCount(long commentCount) {
+        this.commentCount = commentCount;
     }
 
     public int getType() {

@@ -2,18 +2,18 @@ package com.stockholm.api.store;
 
 
 public class AppCommentBean {
-    private String userName;
+    private String username;
     private String avatarUrl;
     private String date;
     private float star;
-    private String comment;
+    private String content;
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getAvatarUrl() {
@@ -40,12 +40,12 @@ public class AppCommentBean {
         this.star = star;
     }
 
-    public String getComment() {
-        return comment;
+    public String getContent() {
+        return content;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setContent(String content) {
+        this.content = content;
     }
 
 }
