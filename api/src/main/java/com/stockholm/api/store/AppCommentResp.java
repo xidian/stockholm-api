@@ -8,7 +8,8 @@ import java.util.List;
 public class AppCommentResp {
     private boolean success;
     private String msg;
-    private DataBean data;
+    private List<AppCommentBean> data;
+    private PageBean page;
 
     public boolean isSuccess() {
         return success;
@@ -26,23 +27,49 @@ public class AppCommentResp {
         this.msg = msg;
     }
 
-    public DataBean getData() {
+    public List<AppCommentBean> getData() {
         return data;
     }
 
-    public void setData(DataBean data) {
+    public void setData(List<AppCommentBean> data) {
         this.data = data;
     }
 
-    public static class DataBean {
-        private List<AppCommentBean> comments;
+    public PageBean getPage() {
+        return page;
+    }
 
-        public List<AppCommentBean> getComments() {
-            return comments;
+    public void setPage(PageBean page) {
+        this.page = page;
+    }
+
+    public static class PageBean {
+        private int currentPage;
+        private int totalPage;
+        private int nextPage;
+
+        public int getCurrentPage() {
+            return currentPage;
         }
 
-        public void setComments(List<AppCommentBean> comments) {
-            this.comments = comments;
+        public void setCurrentPage(int currentPage) {
+            this.currentPage = currentPage;
+        }
+
+        public int getTotalPage() {
+            return totalPage;
+        }
+
+        public void setTotalPage(int totalPage) {
+            this.totalPage = totalPage;
+        }
+
+        public int getNextPage() {
+            return nextPage;
+        }
+
+        public void setNextPage(int nextPage) {
+            this.nextPage = nextPage;
         }
 
         @Override
@@ -50,9 +77,18 @@ public class AppCommentResp {
             return new Gson().toJson(this);
         }
 
-        public static DataBean get(String json) {
-            return new Gson().fromJson(json, DataBean.class);
+        public static PageBean get(String json) {
+            return new Gson().fromJson(json, PageBean.class);
         }
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
+
+    public static AppCommentResp get(String json) {
+        return new Gson().fromJson(json, AppCommentResp.class);
     }
 
 }
