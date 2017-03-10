@@ -14,9 +14,11 @@ requestBody
 ```json
 {
 	"whisper": "your-content",
-	"extras": "your-extras"
+	"extras": {"order": "..."}
 }
 ```
+extras里面的json写任何字段都行
+
 
 ##设备端发往手机端
 发往所有家庭成员
@@ -32,6 +34,7 @@ requestBody
 ```json
 {
 	"whisper": "your-content",
-	"extras": "your-extras"
+	"extras": {"order": "..."}
 }
 ```
+extras里面的json写任何字段都行
