@@ -27,11 +27,11 @@ public interface SettingService {
     @PUT("/mobile/clock/app")
     Observable<AppUpdateConfigResp> appUpdateConfig(@Body AppUpdateConfigReq config);
 
-    @PUT("/device/app")
+    @PUT("/device/apps_config")
     Observable<DeviceUpdateConfigResp> deviceUpdateConfig(@HeaderMap Map<String, String> headerMap,
                                                           @Body DeviceUpdateConfigReq config);
 
-    @GET("device/app")
+    @GET("/device/apps_config")
     Observable<DeviceGetConfigResp> deviceGetConfig(@HeaderMap Map<String, String> headerMap);
 
     @GET("/device/app/get_clock_alarms")
