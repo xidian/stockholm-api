@@ -32,3 +32,8 @@ requestBody
 ```json
 {"packageName":"<your-package-name>"}
 ```
+
+responseBody['data']
+```json
+{"data": "<Plugin Url>"}
+```
