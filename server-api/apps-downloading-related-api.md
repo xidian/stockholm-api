@@ -33,7 +33,22 @@ requestBody
 {"packageName":"<your-package-name>"}
 ```
 
-responseBody['data']
-```json
-{"data": "<Plugin Url>"}
+order = 14
+
+
+## 卸载app
+
+* POST /mobile/app/uninstall
+
+requestHeader
 ```
+Access-Token: <your-access-token>
+UUID: <your-device-uuid>
+```
+
+requestBody
+```json
+{"packageName":"<your-package-name>"}
+```
+
+order = 15
