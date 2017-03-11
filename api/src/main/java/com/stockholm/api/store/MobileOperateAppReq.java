@@ -1,10 +1,10 @@
 package com.stockholm.api.store;
 
 
-public class MobileInstallAppReq {
+public class MobileOperateAppReq {
     private String packageName;
 
-    public MobileInstallAppReq(String packageName) {
+    public MobileOperateAppReq(String packageName) {
         setPackageName(packageName);
     }
 

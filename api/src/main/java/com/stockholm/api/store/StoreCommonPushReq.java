@@ -1,17 +1,14 @@
 package com.stockholm.api.store;
 
 
+import com.stockholm.api.PushMessage;
+
 public class StoreCommonPushReq {
     private String whisper;
-    private String extras;
+    private PushMessage extras;
 
-    public StoreCommonPushReq(String extras) {
-        this.extras = extras;
-    }
-
-    public StoreCommonPushReq(String whisper, String extras) {
-        this.whisper = whisper;
-        this.extras = extras;
+    public StoreCommonPushReq(PushMessage extras) {
+        setExtras(extras);
     }
 
     public String getWhisper() {
@@ -22,12 +19,11 @@ public class StoreCommonPushReq {
         this.whisper = whisper;
     }
 
-    public String getExtras() {
+    public PushMessage getExtras() {
         return extras;
     }
 
-    public void setExtras(String extras) {
+    public void setExtras(PushMessage extras) {
         this.extras = extras;
     }
-
 }
