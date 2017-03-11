@@ -46,4 +46,7 @@ public interface SettingService {
 
     @GET("/mobile/clock/app")
     Observable<DeviceAppConfigResp> getAppConfig(@HeaderMap Map<String, String> headerMap);
+
+    @GET("/mobile/clock/app")
+    Observable<DeviceAppConfigResp> getAppConfig();
 }

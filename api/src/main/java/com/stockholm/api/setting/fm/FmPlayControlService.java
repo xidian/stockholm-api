@@ -14,6 +14,9 @@ public interface FmPlayControlService {
     Observable<FmPlayControlResp> controlPlay(@HeaderMap Map<String, String> headerMap,
                                               @Body FmPlayControlReq fmPlayControlReq);
 
+    @PUT("/mobile/apps_configs/fm_play")
+    Observable<FmPlayControlResp> controlPlay(@Body FmPlayControlReq fmPlayControlReq);
+
     @PUT("/device/apps_configs/fm_play")
     Observable<FmPlayControlResp> deviceControlPlay(@HeaderMap Map<String, String> headerMap,
                                                     @Body FmPlayControlReq fmPlayControlReq);
