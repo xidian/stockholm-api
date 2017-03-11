@@ -23,6 +23,14 @@ public interface AlbumService {
 
     @POST("/mobile/apps_configs/album_images/delete")
     Observable<AlbumUserDeleteResp> deleteUserImagePath(@HeaderMap Map<String, String> headerMap,
-                                                     @Body AlbumUserDeleteReq albumUserDeleteReq);
+                                                        @Body AlbumUserDeleteReq albumUserDeleteReq);
 
+    @POST("/mobile/apps_configs/album_images/delete")
+    Observable<AlbumUserDeleteResp> deleteUserImagePath(@Body AlbumUserDeleteReq albumUserDeleteReq);
+
+    @GET("/mobile/apps_configs/album_images")
+    Observable<AlbumUserPathresp> getUserImagePath();
+
+    @POST("/mobile/apps_configs/album_images")
+    Observable<AlbumTokenResp> getQiniuToken(@Body AlbumTokenReq albumTokenReq);
 }
