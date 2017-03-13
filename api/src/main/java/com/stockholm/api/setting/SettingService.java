@@ -49,4 +49,7 @@ public interface SettingService {
 
     @GET("/mobile/clock/app")
     Observable<DeviceAppConfigResp> getAppConfig();
+
+    @GET("/clients/check_for_updates")
+    Observable<UpdateCheckResp> mobileCheckUpdate();
 }
