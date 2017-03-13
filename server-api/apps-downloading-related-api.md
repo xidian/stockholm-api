@@ -52,3 +52,19 @@ requestBody
 ```
 
 order = 15
+
+## 绑定app
+
+* POST /device/app/bind
+
+requestHeaders
+
+```
+UUID: <your-device-uuid>
+PackageName: <your-package-name>
+```
+
+requestBody
+```json
+{"versionCode": "1.2.3"}
+```
