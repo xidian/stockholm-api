@@ -1,5 +1,7 @@
 package com.stockholm.api.setting;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +41,8 @@ public class GetClockAppsResp {
         private String icon;
         private String uuid;
         private String config;
+        private int versionCode;
+        private boolean removable;
 
         public String getPackageName() {
             return packageName;
@@ -87,5 +91,31 @@ public class GetClockAppsResp {
         public void setConfig(String config) {
             this.config = config;
         }
+
+        public int getVersionCode() {
+            return versionCode;
+        }
+
+        public void setVersionCode(int versionCode) {
+            this.versionCode = versionCode;
+        }
+
+        public boolean isRemovable() {
+            return removable;
+        }
+
+        public void setRemovable(boolean removable) {
+            this.removable = removable;
+        }
+
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
+        }
+
+        public static DataBean get(String json) {
+            return new Gson().fromJson(json, DataBean.class);
+        }
     }
+
 }

@@ -5,7 +5,6 @@ public final class StorePushOrder {
 
     public static final int STORE_PUSH_ORDER_START = 100;
 
-    public static final int STORE_ACTION_FAIL = 101;
     public static final int DOWNLOAD_FAIL = 102;
     public static final int DEVICE_INSTALL_SUCCESS = 103;
     public static final int DEVICE_INSTALL_FAIL = 104;

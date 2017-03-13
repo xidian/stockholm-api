@@ -32,7 +32,18 @@ public class DeviceAppConfigResp {
 
     public static class DataBean {
 
+        private String icon;
         private String config;
+        private int versionCode;
+        private boolean removable;
+
+        public String getIcon() {
+            return icon;
+        }
+
+        public void setIcon(String icon) {
+            this.icon = icon;
+        }
 
         public String getConfig() {
             return config;
@@ -41,5 +52,22 @@ public class DeviceAppConfigResp {
         public void setConfig(String config) {
             this.config = config;
         }
+
+        public int getVersionCode() {
+            return versionCode;
+        }
+
+        public void setVersionCode(int versionCode) {
+            this.versionCode = versionCode;
+        }
+
+        public boolean isRemovable() {
+            return removable;
+        }
+
+        public void setRemovable(boolean removable) {
+            this.removable = removable;
+        }
     }
+
 }
