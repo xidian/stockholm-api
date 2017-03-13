@@ -37,12 +37,26 @@ public class GetClockAppsResp {
     public static class DataBean {
         private String packageName;
         private String phoneNumber;
-        private String name;
+        private String appName;
         private String icon;
         private String uuid;
         private String config;
         private int versionCode;
         private boolean removable;
+        private String mobileDownloadUrl;
+
+        public DataBean(String packageName, String phoneNumber, String appName, String icon,
+                        String uuid, String config, int versionCode, boolean removable, String mobileDownloadUrl) {
+            setPackageName(packageName);
+            setPhoneNumber(phoneNumber);
+            setAppName(appName);
+            setIcon(icon);
+            setUuid(uuid);
+            setConfig(config);
+            setVersionCode(versionCode);
+            setRemovable(removable);
+            setMobileDownloadUrl(mobileDownloadUrl);
+        }
 
         public String getPackageName() {
             return packageName;
@@ -60,12 +74,12 @@ public class GetClockAppsResp {
             this.phoneNumber = phoneNumber;
         }
 
-        public String getName() {
-            return name;
+        public String getAppName() {
+            return appName;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setAppName(String appName) {
+            this.appName = appName;
         }
 
         public String getIcon() {
@@ -106,6 +120,14 @@ public class GetClockAppsResp {
 
         public void setRemovable(boolean removable) {
             this.removable = removable;
+        }
+
+        public String getMobileDownloadUrl() {
+            return mobileDownloadUrl;
+        }
+
+        public void setMobileDownloadUrl(String mobileDownloadUrl) {
+            this.mobileDownloadUrl = mobileDownloadUrl;
         }
 
         @Override

@@ -33,9 +33,27 @@ public class DeviceAppConfigResp {
     public static class DataBean {
 
         private String icon;
+        private String appName;
         private String config;
         private int versionCode;
         private boolean removable;
+        private String mobileDownloadUrl;
+
+        public String getAppName() {
+            return appName;
+        }
+
+        public void setAppName(String appName) {
+            this.appName = appName;
+        }
+
+        public String getMobileDownloadUrl() {
+            return mobileDownloadUrl;
+        }
+
+        public void setMobileDownloadUrl(String mobileDownloadUrl) {
+            this.mobileDownloadUrl = mobileDownloadUrl;
+        }
 
         public String getIcon() {
             return icon;

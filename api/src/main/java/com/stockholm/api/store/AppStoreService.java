@@ -44,6 +44,6 @@ public interface AppStoreService {
     Observable<StoreCommonResp> pushToMobile(@Header("UUID") String uuid, @Body StoreCommonPushReq req);
 
     @POST("/device/app/bind")
-    Observable<DeviceInstallCompleteResp> deviceInstallComplete(@HeaderMap  Map<String, String> headerMap);
+    Observable<DeviceInstallCompleteResp> deviceInstallComplete(@HeaderMap  Map<String, String> headerMap, @Body DeviceInstallCompleteReq req);
 
 }
