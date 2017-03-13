@@ -32,16 +32,16 @@ public class UpdateCheckResp {
 
     public static class DataBean {
 
-        private String versionCode;
+        private int versionCode;
         private boolean forced;
         private String url;
         private String description;
 
-        public String getVersionCode() {
+        public int getVersionCode() {
             return versionCode;
         }
 
-        public void setVersionCode(String versionCode) {
+        public void setVersionCode(int versionCode) {
             this.versionCode = versionCode;
         }
 
