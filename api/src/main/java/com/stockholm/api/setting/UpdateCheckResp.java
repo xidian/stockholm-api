@@ -36,6 +36,15 @@ public class UpdateCheckResp {
         private boolean forced;
         private String url;
         private String description;
+        private String versionName;
+
+        public String getVersionName() {
+            return versionName;
+        }
+
+        public void setVersionName(String versionName) {
+            this.versionName = versionName;
+        }
 
         public int getVersionCode() {
             return versionCode;
