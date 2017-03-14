@@ -2,9 +2,10 @@ package com.stockholm.api.setting;
 
 public class UpdateCheckResp {
 
+
     private boolean success;
     private String msg;
-    private DataBean data;
+    private DateBean date;
 
     public boolean isSuccess() {
         return success;
@@ -22,29 +23,21 @@ public class UpdateCheckResp {
         this.msg = msg;
     }
 
-    public DataBean getData() {
-        return data;
+    public DateBean getDate() {
+        return date;
     }
 
-    public void setData(DataBean data) {
-        this.data = data;
+    public void setDate(DateBean date) {
+        this.date = date;
     }
 
-    public static class DataBean {
+    public static class DateBean {
 
         private int versionCode;
+        private String versionName;
         private boolean forced;
         private String url;
         private String description;
-        private String versionName;
-
-        public String getVersionName() {
-            return versionName;
-        }
-
-        public void setVersionName(String versionName) {
-            this.versionName = versionName;
-        }
 
         public int getVersionCode() {
             return versionCode;
@@ -52,6 +45,14 @@ public class UpdateCheckResp {
 
         public void setVersionCode(int versionCode) {
             this.versionCode = versionCode;
+        }
+
+        public String getVersionName() {
+            return versionName;
+        }
+
+        public void setVersionName(String versionName) {
+            this.versionName = versionName;
         }
 
         public boolean isForced() {
