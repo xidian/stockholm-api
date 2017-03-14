@@ -58,7 +58,6 @@ order = 15
 * POST /device/app/bind
 
 requestHeaders
-
 ```
 UUID: <your-device-uuid>
 PackageName: <your-package-name>
@@ -67,4 +66,14 @@ PackageName: <your-package-name>
 requestBody
 ```json
 {"versionCode": "1.2.3"}
+```
+
+## 解绑app
+
+* POST /device/app/unbind
+
+requestHeaders
+```
+UUID: <your-device-uuid>
+PackageName: <your-package-name>
 ```
