@@ -2,10 +2,9 @@ package com.stockholm.api.setting;
 
 public class UpdateCheckResp {
 
-
     private boolean success;
     private String msg;
-    private DateBean date;
+    private DataBean data;
 
     public boolean isSuccess() {
         return success;
@@ -23,15 +22,15 @@ public class UpdateCheckResp {
         this.msg = msg;
     }
 
-    public DateBean getDate() {
-        return date;
+    public DataBean getData() {
+        return data;
     }
 
-    public void setDate(DateBean date) {
-        this.date = date;
+    public void setData(DataBean data) {
+        this.data = data;
     }
 
-    public static class DateBean {
+    public static class DataBean {
 
         private int versionCode;
         private String versionName;
