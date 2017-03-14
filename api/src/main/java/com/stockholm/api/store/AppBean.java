@@ -16,7 +16,7 @@ public class AppBean implements Serializable {
     private int versionCode;
     private long downloads;
     private long commentCount;
-    private int type;
+    private int category;
 
     public String getAppName() {
         return appName;
@@ -98,12 +98,12 @@ public class AppBean implements Serializable {
         this.commentCount = commentCount;
     }
 
-    public int getType() {
-        return type;
+    public int getCategory() {
+        return category;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setCategory(int category) {
+        this.category = category;
     }
 
     @Override

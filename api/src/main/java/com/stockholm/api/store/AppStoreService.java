@@ -46,4 +46,7 @@ public interface AppStoreService {
     @POST("/device/app/bind")
     Observable<DeviceInstallCompleteResp> deviceInstallComplete(@HeaderMap  Map<String, String> headerMap, @Body DeviceInstallCompleteReq req);
 
+    @POST("/device/app/unbind")
+    Observable<StoreCommonResp> deviceUninstallComplete(@HeaderMap  Map<String, String> headerMap);
+
 }
