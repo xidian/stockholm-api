@@ -14,7 +14,7 @@ import rx.Observable;
 public interface AppStoreService {
 
     @GET("/apps")
-    Observable<AppListResp> getAllApps();
+    Observable<AppListResp> getAllApps(@Header("UUID") String uuid);
 
     @GET("/app")
     Observable<AppDetailResp> getAppDetail(@Header("PackageName") String packageName);

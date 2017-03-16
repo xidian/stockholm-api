@@ -17,6 +17,7 @@ public class AppBean implements Serializable {
     private long downloads;
     private long commentCount;
     private int category;
+    private boolean isInstalled;
 
     public String getAppName() {
         return appName;
@@ -104,6 +105,14 @@ public class AppBean implements Serializable {
 
     public void setCategory(int category) {
         this.category = category;
+    }
+
+    public boolean isInstalled() {
+        return isInstalled;
+    }
+
+    public void setInstalled(boolean installed) {
+        isInstalled = installed;
     }
 
     @Override
