@@ -77,3 +77,21 @@ requestHeaders
 UUID: <your-device-uuid>
 PackageName: <your-package-name>
 ```
+
+## 群发更新
+
+* POST /device/app/check_for_updates
+
+requestHeader
+```
+UUID: <your-device-uuid>
+```
+
+requestBody
+```json
+{
+	"apps": [
+		{"packageName": "com.stockholm.album", "versionCode": 1}
+	]
+}
+```
