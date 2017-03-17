@@ -6,6 +6,10 @@ import java.util.List;
 public class CheckUpdateReq {
     public List<AppInfoBean> apps;
 
+    public CheckUpdateReq(List<AppInfoBean> apps) {
+        setApps(apps);
+    }
+
     public List<AppInfoBean> getApps() {
         return apps;
     }

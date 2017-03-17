@@ -33,8 +33,17 @@ public class CheckUpdateResp {
     }
 
     public static class UpdateAppBean {
+        private int versionCode;
         private String packageName;
         private String deviceDownloadUrl;
+
+        public int getVersionCode() {
+            return versionCode;
+        }
+
+        public void setVersionCode(int versionCode) {
+            this.versionCode = versionCode;
+        }
 
         public String getPackageName() {
             return packageName;
