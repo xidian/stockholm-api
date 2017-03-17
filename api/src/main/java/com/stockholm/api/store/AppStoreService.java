@@ -49,4 +49,7 @@ public interface AppStoreService {
     @POST("/device/app/unbind")
     Observable<StoreCommonResp> deviceUninstallComplete(@HeaderMap  Map<String, String> headerMap);
 
+    @POST("/device/app/check_for_updates")
+    Observable<CheckUpdateResp> forceUpdate(@Header("UUID") String uuid, @Body CheckUpdateReq req);
+
 }
