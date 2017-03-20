@@ -10,12 +10,10 @@ public class AppBean implements Serializable {
     private String packageName;
     private String priImageUrl;
     private String subImageUrl;
-    private String mobileDownloadUrl;
     private String developer;
     private float star;
     private int versionCode;
     private long downloads;
-    private long commentCount;
     private int category;
     private boolean isInstalled;
 
@@ -51,14 +49,6 @@ public class AppBean implements Serializable {
         this.subImageUrl = subImageUrl;
     }
 
-    public String getMobileDownloadUrl() {
-        return mobileDownloadUrl;
-    }
-
-    public void setMobileDownloadUrl(String mobileDownloadUrl) {
-        this.mobileDownloadUrl = mobileDownloadUrl;
-    }
-
     public String getDeveloper() {
         return developer;
     }
@@ -89,14 +79,6 @@ public class AppBean implements Serializable {
 
     public void setDownloads(long downloads) {
         this.downloads = downloads;
-    }
-
-    public long getCommentCount() {
-        return commentCount;
-    }
-
-    public void setCommentCount(long commentCount) {
-        this.commentCount = commentCount;
     }
 
     public int getCategory() {
