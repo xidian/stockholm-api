@@ -29,7 +29,7 @@ public interface AppStoreService {
     Observable<GetUserCommentResp> getUserComment(@HeaderMap Map<String, String> headerMap);
 
     @POST("/mobile/app/install")
-    Observable<StoreCommonResp> mobileInstallApp(@HeaderMap Map<String, String> headerMap, @Body MobileOperateAppReq req);
+    Observable<MobileInstallAppResp> mobileInstallApp(@HeaderMap Map<String, String> headerMap, @Body MobileOperateAppReq req);
 
     @GET("/device/app/download")
     Observable<DeviceDownloadAppResp> deviceDownloadApp(@HeaderMap Map<String, String> headerMap);
