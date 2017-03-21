@@ -95,3 +95,46 @@ responseBody:
   }
 }
 ```
+
+## 排序
+
+* PUT /mobile/apps/order_numbers
+
+requestHeaders:
+```
+	Access-Token: <your-access-token>
+	UUID: <your-device-uuid>
+```
+
+requestBody:
+```json
+{
+	"apps": [
+		{"packageName": "com.stockholm.clock", "orderNumber": 1},
+		{"packageName": "com.stockholm.news", "orderNumber": 2},
+		{"packageName": "com.stockholm.album", "orderNumber": 0}
+		]
+}
+```
+
+responseBody:
+```json
+{
+  "success": true,
+  "msg": "Reorder",
+  "data": [
+    {
+      "packageName": "com.stockholm.news",
+      "orderNumber": 2
+    },
+    {
+      "packageName": "com.stockholm.clock",
+      "orderNumber": 1
+    },
+    {
+      "packageName": "l",
+      "orderNumber": 0
+    }
+  ]
+}
+```
