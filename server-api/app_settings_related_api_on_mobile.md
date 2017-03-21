@@ -56,7 +56,6 @@ requestBody: (备注，config只需要保证使用合法的JSON格式即可，ar
 * GET /mobile/clock/app
 
 requestHeader：
-
 ```
 	Access-Token： <your-access-token>
 	UUID: <the clock uuid>
@@ -66,4 +65,33 @@ requestHeader：
 responseBody["data"]
 ```json
 {"config": "{}"}
+```
+
+## 设置隐藏
+
+* PUT /mobile/apps/hide
+
+requestHeaders:
+```
+	Access-Token: <your-access-token>
+	UUID: <your-device-uuid>
+```
+
+requestBody:
+```json
+{
+	"packageName": "your-package-name",
+	"isHidden": true
+}
+```
+
+responseBody:
+```json
+{
+  "success": true,
+  "msg": "hide/expose",
+  "data": {
+    "isHidden": false
+  }
+}
 ```
