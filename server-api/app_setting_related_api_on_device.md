@@ -31,7 +31,7 @@ requestBody
 {"config": "config"}
 ```
 
-## 查询某设备的所有apps
+## 查询所有apps和排序
 
 * GET /device/apps
 
@@ -40,3 +40,17 @@ requestHeaders:
 ```
 	UUID: <your-device-uuid>
 ```
+
+responseBody:
+```json
+{
+  "success": true,
+  "msg": "Apps and their orders",
+  "data": [
+    {
+      "packageName": "com.stockholm.news",
+      "isHidden": false,
+      "orderNumber": 0
+    }
+  ]
+}
