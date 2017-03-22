@@ -44,9 +44,12 @@ public class GetClockAppsResp {
         private int versionCode;
         private boolean removable;
         private String mobileDownloadUrl;
+        private boolean isHidden;
+        private int orderNumber;
 
         public DataBean(String packageName, String phoneNumber, String appName, String icon,
-                        String uuid, String config, int versionCode, boolean removable, String mobileDownloadUrl) {
+                        String uuid, String config, int versionCode, boolean removable,
+                        String mobileDownloadUrl, boolean isHidden, int orderNumber) {
             setPackageName(packageName);
             setPhoneNumber(phoneNumber);
             setAppName(appName);
@@ -56,6 +59,8 @@ public class GetClockAppsResp {
             setVersionCode(versionCode);
             setRemovable(removable);
             setMobileDownloadUrl(mobileDownloadUrl);
+            setHidden(isHidden);
+            setOrderNumber(orderNumber);
         }
 
         public String getPackageName() {
@@ -128,6 +133,22 @@ public class GetClockAppsResp {
 
         public void setMobileDownloadUrl(String mobileDownloadUrl) {
             this.mobileDownloadUrl = mobileDownloadUrl;
+        }
+
+        public boolean isHidden() {
+            return isHidden;
+        }
+
+        public void setHidden(boolean hidden) {
+            isHidden = hidden;
+        }
+
+        public int getOrderNumber() {
+            return orderNumber;
+        }
+
+        public void setOrderNumber(int orderNumber) {
+            this.orderNumber = orderNumber;
         }
 
         @Override

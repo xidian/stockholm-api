@@ -7,6 +7,7 @@ import java.util.Map;
 
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.HeaderMap;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -52,4 +53,16 @@ public interface SettingService {
 
     @POST("/clients/check_for_updates")
     Observable<UpdateCheckResp> mobileCheckUpdate(@Body UpdateCheckReq updateCheckReq);
+
+    @PUT("/mobile/apps/hide")
+    Observable<UpdateAppStateResp> updateAppState(@HeaderMap Map<String, String> headerMap,
+                                                  @Body UpdateAppStateReq req);
+
+    @PUT("/mobile/apps/order_numbers")
+    Observable<SortAppListResp> sortAppList(@HeaderMap Map<String, String> headerMap,
+                                            @Body SortAppListReq req);
+
+    @GET("/device/apps")
+    Observable<DeviceAppStateResp> deviceGetAppState(@Header("UUID") String uuid);
+
 }
