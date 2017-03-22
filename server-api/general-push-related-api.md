@@ -1,6 +1,6 @@
-#通用推送接口
+# 通用推送接口
 
-##手机端发往设备端
+## 手机端发往设备端
 
 * POST /mobile/push
 
@@ -20,7 +20,7 @@ requestBody
 extras里面的json写任何字段都行
 
 
-##设备端发往手机端
+## 设备端发往手机端
 发往所有家庭成员
 
 * POST /device/push
