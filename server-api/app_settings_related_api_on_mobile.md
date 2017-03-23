@@ -50,12 +50,12 @@ requestBody: (备注，config只需要保证使用合法的JSON格式即可，ar
 }
 ```
 
-## 获取某已安装app配置信息
+## 1个app的配置信息
 获取当前配置信息(config)
 
 * GET /mobile/clock/app
 
-requestHeader：
+requestHeaders：
 ```
 	Access-Token： <your-access-token>
 	UUID: <the clock uuid>
@@ -66,6 +66,50 @@ responseBody["data"]
 ```json
 {"config": "{}"}
 ```
+
+## 1个app的配置（含分页）
+* POST /mobile/clock/app
+
+requestHeaders:
+```
+Access-Token： <your-access-token>
+UUID: <the-clock-uuid>
+PackageName: <your-package-name>
+```
+
+requestBody:
+```json
+{
+	"paginate": {
+		"key": "<your-key>",
+		"page": 1,
+		"per_page": 5
+	}
+}
+```
+
+responseBody:
+```json
+{
+  "success": true,
+  "msg": "分页的apps_configs",
+  "data": {
+    "config": "{\"channels\":[{\"categoryId\":10,\"categoryName\":\"社会\",\"checked\":false},{\"categoryId\":14,\"categoryName\":\"时政\",\"checked\":false},{\"categoryId\":15,\"categoryName\":\"段子\",\"checked\":true},{\"categoryId\":16,\"categoryName\":\"情感\",\"checked\":false},{\"categoryId\":18,\"categoryName\":\"干货\",\"checked\":false}],\"songs\":null}",
+    "icon": "123123",
+    "versionCode": 1,
+    "appName": "新闻",
+    "removable": false,
+    "mobileDownloadUrl": "http://dev.app.meowtechnology.com/app_plugin/com.stockholm.news/1/news-plugin-debug.apk?e=1490268013&token=TajwQ-MmKUh07sH9pM6_47p6s81VgI8F9NuW2t_g:cuCnJkBHPusbn06dmVhjo4KcTBE=",
+    "isHidden": false
+  },
+  "page": {
+    "currentPage": 2,
+    "nextPage": -1,
+    "totalPages": 2
+  }
+}
+```
+
 
 ## 设置隐藏
 
