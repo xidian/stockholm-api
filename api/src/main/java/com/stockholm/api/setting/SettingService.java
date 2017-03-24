@@ -48,6 +48,10 @@ public interface SettingService {
     @GET("/mobile/clock/app")
     Observable<DeviceAppConfigResp> getAppConfig(@HeaderMap Map<String, String> headerMap);
 
+    @POST("/mobile/clock/app")
+    Observable<DeviceAppConfigPagerResp> getAppConfigWithPager(@HeaderMap Map<String, String> headerMap,
+                                                               @Body DeviceAppConfigPagerReq deviceAppConfigPagerReq);
+
     @GET("/mobile/clock/app")
     Observable<DeviceAppConfigResp> getAppConfig();
 
