@@ -35,7 +35,7 @@ public interface SettingService {
     @GET("/device/apps_config")
     Observable<DeviceGetConfigResp> deviceGetConfig(@HeaderMap Map<String, String> headerMap);
 
-    @GET("/device/app/get_clock_alarms")
+    @GET("/device/apps_configs/get_clock_alarms")
     Observable<GetClockAlarmResp> deviceGetAlarm(@HeaderMap Map<String, String> headerMap);
 
     @POST("/clocks/unbind")
