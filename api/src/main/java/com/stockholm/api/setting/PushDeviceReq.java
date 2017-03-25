@@ -8,7 +8,7 @@ public class PushDeviceReq {
 
     /**
      * whisper : your-content
-     * extras : {"order":"..."}
+     * extras : {"order":1,"name":"package name"}
      */
 
     private String whisper;
@@ -32,17 +32,27 @@ public class PushDeviceReq {
 
     public static class ExtrasBean {
         /**
-         * order : ...
+         * order : 1
+         * name : package name
          */
 
-        private String order;
+        private int order;
+        private String name;
 
-        public String getOrder() {
+        public int getOrder() {
             return order;
         }
 
-        public void setOrder(String order) {
+        public void setOrder(int order) {
             this.order = order;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
         }
     }
 }
