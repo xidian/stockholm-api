@@ -1,5 +1,7 @@
 package com.stockholm.api.setting;
 
+import com.stockholm.api.PushMessage;
+
 /**
  * Created by caorh on 17-3-25.
  */
@@ -12,7 +14,7 @@ public class PushDeviceReq {
      */
 
     private String whisper;
-    private ExtrasBean extras;
+    private PushMessage extras;
 
     public String getWhisper() {
         return whisper;
@@ -22,37 +24,11 @@ public class PushDeviceReq {
         this.whisper = whisper;
     }
 
-    public ExtrasBean getExtras() {
+    public PushMessage getExtras() {
         return extras;
     }
 
-    public void setExtras(ExtrasBean extras) {
+    public void setExtras(PushMessage extras) {
         this.extras = extras;
-    }
-
-    public static class ExtrasBean {
-        /**
-         * order : 1
-         * name : package name
-         */
-
-        private int order;
-        private String name;
-
-        public int getOrder() {
-            return order;
-        }
-
-        public void setOrder(int order) {
-            this.order = order;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
     }
 }
