@@ -12,7 +12,6 @@ public interface MusicService {
     @POST("/mobile/push")
     Observable<CommonControlResp> mobileContorlDevice(@Body MobileControlReq mobileControlReq);
 
-
     @POST("/device/apps_config/play")
     Observable<CommonControlResp> deviceContorlMobile(@HeaderMap Map<String, String> headerMap,
                                                       @Body DeviceControlReq deviceControlReq);
