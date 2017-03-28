@@ -54,3 +54,24 @@ responseBody:
     }
   ]
 }
+```
+
+## 播放控制（设备端）
+
+* POST /device/apps_config/play
+
+requestHeaders
+```
+Access-Token: <your-access-token>
+UUID: <your-device-uuid>
+PackageName: <your-package-name>
+```
+
+requestBody
+```json
+{
+	"key": "currentSong",
+	"value": "1",
+	"order": 201
+}
+```

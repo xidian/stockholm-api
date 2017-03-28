@@ -182,3 +182,23 @@ responseBody:
   ]
 }
 ```
+
+## 播放控制
+
+* POST /mobile/clock/app/play
+
+requestHeaders
+```
+Access-Token: <your-access-token>
+UUID: <your-device-uuid>
+PackageName: <your-package-name>
+```
+
+requestBody
+```json
+{
+	"key": "currentSong",
+	"value": "1",
+	"order": 201
+}
+```
