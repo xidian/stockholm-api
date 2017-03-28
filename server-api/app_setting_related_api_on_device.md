@@ -62,7 +62,6 @@ responseBody:
 
 requestHeaders
 ```
-Access-Token: <your-access-token>
 UUID: <your-device-uuid>
 PackageName: <your-package-name>
 ```
