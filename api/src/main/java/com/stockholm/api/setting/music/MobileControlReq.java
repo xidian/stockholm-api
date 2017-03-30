@@ -23,14 +23,14 @@ public class MobileControlReq {
 
     public static class ExtrasBean {
 
-        private String order;
+        private int order;
         private String play;
 
-        public String getOrder() {
+        public int getOrder() {
             return order;
         }
 
-        public void setOrder(String order) {
+        public void setOrder(int order) {
             this.order = order;
         }
 
@@ -42,4 +42,5 @@ public class MobileControlReq {
             this.play = play;
         }
     }
+
 }
