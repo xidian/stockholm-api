@@ -6,14 +6,24 @@ import com.google.gson.Gson;
 public class PushMessage {
     private int order;
     private String packageName;
+    private String addition;
+
+    public PushMessage() {
+    }
 
     public PushMessage(int order) {
         setOrder(order);
     }
 
     public PushMessage(int order, String packageName) {
-        this.order = order;
-        this.packageName = packageName;
+        setOrder(order);
+        setPackageName(packageName);
+    }
+
+    public PushMessage(int order, String packageName, String addition) {
+        setOrder(order);
+        setPackageName(packageName);
+        setAddition(addition);
     }
 
     public int getOrder() {
@@ -30,6 +40,14 @@ public class PushMessage {
 
     public void setPackageName(String packageName) {
         this.packageName = packageName;
+    }
+
+    public String getAddition() {
+        return addition;
+    }
+
+    public void setAddition(String addition) {
+        this.addition = addition;
     }
 
     @Override

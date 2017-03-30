@@ -1,5 +1,7 @@
 package com.stockholm.api.setting.music;
 
+import com.stockholm.api.CommonPushReq;
+
 import java.util.Map;
 
 import retrofit2.http.Body;
@@ -10,7 +12,7 @@ import rx.Observable;
 public interface MusicService {
 
     @POST("/mobile/push")
-    Observable<CommonControlResp> mobileContorlDevice(@Body MobileControlReq mobileControlReq);
+    Observable<CommonControlResp> mobileContorlDevice(@Body CommonPushReq req);
 
     @POST("/device/apps_config/play")
     Observable<CommonControlResp> deviceContorlMobile(@HeaderMap Map<String, String> headerMap,
