@@ -23,4 +23,8 @@ public interface LoginService {
 
     @PUT("users/update-password")
     Observable<ResetPwdResp> resetPwd(@Body ResetPwdReq resetPwdReq);
+
+    @POST("/users/check_serial_number")
+    Observable<CheckSerialNumberResp> checkSerialNumber(@Body CheckSerialNumberReq req);
+
 }
