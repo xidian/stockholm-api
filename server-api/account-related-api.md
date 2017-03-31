@@ -43,14 +43,19 @@ responseExample:
 	  }
 	}
 
-## 登陆API
+## 登陆
 
 * POST /users/login
 
 每次login都更新user.device_token
 
-requestBody:
+requestHeader
+```
+SerialNumber: <your-serial-number>
+```
 
+requestBody:
+```json
 	{
 		"user": {
 			"phoneNumber": "18514760073",
@@ -58,9 +63,11 @@ requestBody:
 		},
 		"device": {
 			"pushToken": "baidu_push_channel_id",
-			"platform": 1 (备注：这一项是整数，0代表android，1代表ios)
+			"platform": 1
 		}
 	}
+```
+(备注：platform是整数，0代表android，1代表ios)
 
 responseBody["data"]:
 ```json
@@ -210,4 +217,13 @@ requestBody
 	"oldPwd": "YOUR OLD PASSWORD",
 	"newPwd": "NEW PASSWORD"
 }
+```
+
+## 检查序列号
+
+* POST /users/check_serial_number
+
+requestBody
+```json
+{"phoneNumber": "<your-phone-number"}
 ```
