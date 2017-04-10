@@ -2,6 +2,8 @@ package com.stockholm.api.socket;
 
 
 import org.apache.mina.core.future.ConnectFuture;
+import org.apache.mina.core.future.IoFuture;
+import org.apache.mina.core.future.IoFutureListener;
 import org.apache.mina.core.service.IoHandler;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
@@ -135,15 +137,14 @@ public class MinaSocketHelper {
             }
         });
 
-        // 建立连接
         connectFuture = clientConnect.connect(new InetSocketAddress(address, port));
-        // 等待连接创建完成
         connectFuture.awaitUninterruptibly();
     }
 
     public void closeDeviceSocket() {
-        if (socketAcceptor != null && socketAcceptor.isActive()) {
+        if (socketAcceptor != null) {
             socketAcceptor.unbind();
+            socketAcceptor.dispose();
         }
     }
 
@@ -151,8 +152,12 @@ public class MinaSocketHelper {
         if (connectFuture != null && connectFuture.isConnected()) {
             // 等待连接断开
             connectFuture.getSession().getCloseFuture().awaitUninterruptibly();
-            // 释放连接
-            clientConnect.dispose();
+            connectFuture.getSession().getCloseFuture().addListener(new IoFutureListener<IoFuture>() {
+                @Override
+                public void operationComplete(IoFuture ioFuture) {
+                    clientConnect.dispose();
+                }
+            });
         }
     }
 
