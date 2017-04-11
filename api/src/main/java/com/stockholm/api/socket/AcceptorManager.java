@@ -28,6 +28,7 @@ public class AcceptorManager {
     private void init() {
         address = new InetSocketAddress(acceptorConfig.getPort());
         socketAcceptor = new NioSocketAcceptor();
+        socketAcceptor.setReuseAddress(true);
         socketAcceptor.getSessionConfig().setReadBufferSize(acceptorConfig.getReadBufferSize());
         socketAcceptor.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 60 * 5);
         socketAcceptor.getFilterChain().addLast("codec",
@@ -50,7 +51,9 @@ public class AcceptorManager {
     public void disConnect() {
         address = null;
         socketAcceptor.unbind();
-        socketAcceptor.dispose();
+        if (!socketAcceptor.isDisposed() && !socketAcceptor.isDisposing()) {
+            socketAcceptor.dispose(true);
+        }
     }
 
     private class BindThread extends Thread {
@@ -61,12 +64,12 @@ public class AcceptorManager {
             for (; ; ) {
                 isBind = bind();
                 if (isBind) {
-                    Log.d(TAG, "绑定成功");
+                    Log.d(TAG, "设备端Socket绑定成功");
                     break;
                 }
                 try {
-                    Log.d(TAG, "10秒后尝试重新绑定");
-                    Thread.sleep(10000);
+                    Log.d(TAG, "15秒后尝试重新绑定");
+                    Thread.sleep(15000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

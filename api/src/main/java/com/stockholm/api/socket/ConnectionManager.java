@@ -30,6 +30,7 @@ public class ConnectionManager {
     private void init() {
         address = new InetSocketAddress(connectionConfig.getIp(), connectionConfig.getPort());
         connector = new NioSocketConnector();
+        connector.getSessionConfig().setReuseAddress(true);
         connector.getSessionConfig().setReadBufferSize(connectionConfig.getReadBufferSize());
         connector.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 60 * 5);
         connector.setConnectTimeoutCheckInterval(connectionConfig.getConnectionTimeout());
@@ -58,7 +59,9 @@ public class ConnectionManager {
     }
 
     public void disConnect() {
-        connector.dispose();
+        if (!connector.isDisposing() && !connector.isDisposed()) {
+            connector.dispose(true);
+        }
         connector = null;
         session = null;
         address = null;
@@ -67,7 +70,7 @@ public class ConnectionManager {
     private class MyIoFilterAdapter extends IoFilterAdapter {
         @Override
         public void sessionClosed(NextFilter nextFilter, IoSession session) throws Exception {
-            Log.d(TAG, "连接关闭，每隔10秒进行重新连接");
+            Log.d(TAG, "连接关闭,每隔15秒进行重新连接");
             for (; ; ) {
                 if (connector == null) {
                     break;
@@ -76,7 +79,7 @@ public class ConnectionManager {
                     Log.d(TAG, "断线重连[" + connector.getDefaultRemoteAddress().getHostName() + "]成功");
                     break;
                 }
-                Thread.sleep(10000);
+                Thread.sleep(15000);
             }
         }
     }
