@@ -40,6 +40,12 @@ requestHeader：
 	PackageName: <your-package-name>
 ```
 
+可选Header:
+```
+LocalNetwork: <any-value>
+```
+带此header则不发push给设备端
+
 requestBody: (备注，config只需要保证使用合法的JSON格式即可，array/object都可以)
 
 ```json
