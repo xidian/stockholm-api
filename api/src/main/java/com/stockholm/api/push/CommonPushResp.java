@@ -1,17 +1,15 @@
-package com.stockholm.api.setting;
+package com.stockholm.api.push;
+
 
 import com.google.gson.Gson;
 
-public class AppUpdateConfigResp {
-
+public class CommonPushResp {
     private boolean success;
     private String msg;
-    private String data;
 
-    public AppUpdateConfigResp(String msg, String data) {
+    public CommonPushResp(String msg) {
         setSuccess(true);
         setMsg(msg);
-        setData(data);
     }
 
     public boolean isSuccess() {
@@ -30,16 +28,13 @@ public class AppUpdateConfigResp {
         this.msg = msg;
     }
 
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
-    }
-
     @Override
     public String toString() {
         return new Gson().toJson(this);
     }
+
+    public static CommonPushResp get(String json) {
+        return new Gson().fromJson(json, CommonPushResp.class);
+    }
+
 }
