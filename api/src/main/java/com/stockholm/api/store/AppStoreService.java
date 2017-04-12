@@ -37,12 +37,6 @@ public interface AppStoreService {
     @POST("/mobile/app/uninstall")
     Observable<StoreCommonResp> mobileUninstallApp(@HeaderMap Map<String, String> headerMap, @Body MobileOperateAppReq req);
 
-    @POST("/mobile/push")
-    Observable<StoreCommonResp> pushToDevice(@HeaderMap Map<String, String> headerMap, @Body StoreCommonPushReq req);
-
-    @POST("/device/push")
-    Observable<StoreCommonResp> pushToMobile(@Header("UUID") String uuid, @Body StoreCommonPushReq req);
-
     @POST("/device/app/bind")
     Observable<DeviceInstallCompleteResp> deviceInstallComplete(@HeaderMap  Map<String, String> headerMap, @Body DeviceInstallCompleteReq req);
 

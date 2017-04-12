@@ -2,7 +2,7 @@ package com.stockholm.api.socket;
 
 
 import com.google.gson.Gson;
-import com.stockholm.api.PushMessage;
+import com.stockholm.api.push.PushMessage;
 
 public class SocketReq {
     private String accessToken;

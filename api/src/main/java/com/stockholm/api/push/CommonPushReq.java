@@ -1,5 +1,7 @@
-package com.stockholm.api;
+package com.stockholm.api.push;
 
+
+import com.google.gson.Gson;
 
 public class CommonPushReq {
     private String whisper;
@@ -9,7 +11,12 @@ public class CommonPushReq {
     }
 
     public CommonPushReq(PushMessage extras) {
-        this.extras = extras;
+        setExtras(extras);
+    }
+
+    public CommonPushReq(String whisper, PushMessage extras) {
+        setWhisper(whisper);
+        setExtras(extras);
     }
 
     public String getWhisper() {
@@ -27,4 +34,14 @@ public class CommonPushReq {
     public void setExtras(PushMessage extras) {
         this.extras = extras;
     }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
+
+    public static CommonPushReq get(String json) {
+        return new Gson().fromJson(json, CommonPushReq.class);
+    }
+
 }

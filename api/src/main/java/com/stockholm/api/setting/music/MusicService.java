@@ -1,6 +1,6 @@
 package com.stockholm.api.setting.music;
 
-import com.stockholm.api.CommonPushReq;
+import com.stockholm.api.push.CommonPushReq;
 
 import java.util.Map;
 

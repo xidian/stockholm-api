@@ -1,4 +1,4 @@
-package com.stockholm.api;
+package com.stockholm.api.push;
 
 
 import com.google.gson.Gson;

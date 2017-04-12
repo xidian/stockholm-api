@@ -67,7 +67,4 @@ public interface SettingService {
     @GET("/device/apps")
     Observable<DeviceAppStateResp> deviceGetAppState(@Header("UUID") String uuid);
 
-
-    @POST("/mobile/push")
-    Observable<CommonResp> devicePush(@Header("UUID") String uuid, @Body PushDeviceReq pushDeviceReq);
 }
