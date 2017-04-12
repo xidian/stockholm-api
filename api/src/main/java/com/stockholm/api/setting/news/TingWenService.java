@@ -8,8 +8,8 @@ import rx.Observable;
 public interface TingWenService {
 
     @POST("api/interfaceXykj/touList")
-    Observable<DeviceChannelResp> getHeadLineNews();
+    Observable<ChannelNewsResp> getHeadLineNews();
 
     @POST("api/interfaceXykj/postList")
-    Observable<DeviceChannelResp> getChannelNews(@Body ChannelNewsReq channelNewsReq);
+    Observable<ChannelNewsResp> getChannelNews(@Body ChannelNewsReq channelNewsReq);
 }
