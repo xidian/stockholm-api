@@ -9,7 +9,8 @@ import rx.Observable;
 public interface TingWenService {
 
     @POST("api/interfaceXykj/touList")
-    Observable<ChannelNewsResp> getHeadLineNews();
+    Observable<ChannelNewsResp> getHeadLineNews(@Field("limit") String limit,
+                                                @Field("page") String pager);
 
     @FormUrlEncoded
     @POST("api/interfaceXykj/postList")
