@@ -1,10 +1,18 @@
 package com.stockholm.api.setting;
 
 
+import com.google.gson.Gson;
+
 public class UpdateAppStateResp {
     private boolean success;
     private String msg;
     private DataBean data;
+
+    public UpdateAppStateResp(boolean success, String msg, DataBean data) {
+        this.success = success;
+        this.msg = msg;
+        this.data = data;
+    }
 
     public boolean isSuccess() {
         return success;
@@ -31,6 +39,10 @@ public class UpdateAppStateResp {
     }
 
     public static class DataBean {
+        public DataBean(boolean isHidden) {
+            this.isHidden = isHidden;
+        }
+
         private boolean isHidden;
 
         public boolean isHidden() {
@@ -40,6 +52,15 @@ public class UpdateAppStateResp {
         public void setHidden(boolean hidden) {
             isHidden = hidden;
         }
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
+
+    public static UpdateAppStateResp get(String json) {
+        return new Gson().fromJson(json, UpdateAppStateResp.class);
     }
 
 }

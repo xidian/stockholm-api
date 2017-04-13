@@ -1,6 +1,8 @@
 package com.stockholm.api.setting;
 
 
+import com.google.gson.Gson;
+
 public class UpdateAppStateReq {
     private String packageName;
     private boolean isHidden;
@@ -24,6 +26,15 @@ public class UpdateAppStateReq {
 
     public void setHidden(boolean hidden) {
         isHidden = hidden;
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
+
+    public static UpdateAppStateReq get(String json) {
+        return new Gson().fromJson(json, UpdateAppStateReq.class);
     }
 
 }

@@ -5,12 +5,22 @@ import com.google.gson.Gson;
 import com.stockholm.api.push.PushMessage;
 
 public class SocketReq {
+    private int action;
     private String accessToken;
     private PushMessage pushMessage;
 
-    public SocketReq(String accessToken, PushMessage pushMessage) {
+    public SocketReq(int action, String accessToken, PushMessage pushMessage) {
+        this.action = action;
         this.accessToken = accessToken;
         this.pushMessage = pushMessage;
+    }
+
+    public int getAction() {
+        return action;
+    }
+
+    public void setAction(int action) {
+        this.action = action;
     }
 
     public String getAccessToken() {

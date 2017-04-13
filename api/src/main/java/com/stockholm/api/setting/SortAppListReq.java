@@ -1,47 +1,32 @@
 package com.stockholm.api.setting;
 
 
+import com.google.gson.Gson;
+
 import java.util.List;
 
 public class SortAppListReq {
-    private List<DataBean> apps;
+    private List<SortAppDataBean> apps;
 
-    public SortAppListReq(List<DataBean> apps) {
+    public SortAppListReq(List<SortAppDataBean> apps) {
         setApps(apps);
     }
 
-    public List<DataBean> getApps() {
+    public List<SortAppDataBean> getApps() {
         return apps;
     }
 
-    public void setApps(List<DataBean> apps) {
+    public void setApps(List<SortAppDataBean> apps) {
         this.apps = apps;
     }
 
-    public static class DataBean {
-        private String packageName;
-        private int orderNumber;
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
 
-        public DataBean(String packageName, int orderNumber) {
-            setPackageName(packageName);
-            setOrderNumber(orderNumber);
-        }
-
-        public String getPackageName() {
-            return packageName;
-        }
-
-        public void setPackageName(String packageName) {
-            this.packageName = packageName;
-        }
-
-        public int getOrderNumber() {
-            return orderNumber;
-        }
-
-        public void setOrderNumber(int orderNumber) {
-            this.orderNumber = orderNumber;
-        }
+    public static SortAppListReq get(String json) {
+        return new Gson().fromJson(json, SortAppListReq.class);
     }
 
 }

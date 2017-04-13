@@ -1,12 +1,21 @@
 package com.stockholm.api.setting;
 
 
+import com.google.gson.Gson;
+
 import java.util.List;
 
 public class SortAppListResp {
+
     private boolean success;
     private String msg;
-    private List<DataBean> data;
+    private List<SortAppDataBean> data;
+
+    public SortAppListResp(boolean success, String msg, List<SortAppDataBean> data) {
+        setSuccess(success);
+        setMsg(msg);
+        setData(data);
+    }
 
     public boolean isSuccess() {
         return success;
@@ -24,33 +33,21 @@ public class SortAppListResp {
         this.msg = msg;
     }
 
-    public List<DataBean> getData() {
+    public List<SortAppDataBean> getData() {
         return data;
     }
 
-    public void setData(List<DataBean> data) {
+    public void setData(List<SortAppDataBean> data) {
         this.data = data;
     }
 
-    public static class DataBean {
-        private String packageName;
-        private int orderNumber;
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
 
-        public String getPackageName() {
-            return packageName;
-        }
-
-        public void setPackageName(String packageName) {
-            this.packageName = packageName;
-        }
-
-        public int getOrderNumber() {
-            return orderNumber;
-        }
-
-        public void setOrderNumber(int orderNumber) {
-            this.orderNumber = orderNumber;
-        }
+    public static SortAppListResp get(String json) {
+        return new Gson().fromJson(json, SortAppListResp.class);
     }
 
 }
