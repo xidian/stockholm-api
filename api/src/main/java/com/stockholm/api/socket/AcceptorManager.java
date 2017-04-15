@@ -38,6 +38,7 @@ public class AcceptorManager {
     }
 
     private boolean bind() {
+        if (address == null) return false;
         try {
             socketAcceptor.unbind();
             socketAcceptor.bind(address);
