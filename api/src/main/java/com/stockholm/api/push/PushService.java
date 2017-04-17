@@ -12,6 +12,9 @@ import rx.Observable;
 public interface PushService {
 
     @POST("/mobile/push")
+    Observable<CommonPushResp> pushToDevice(@Body CommonPushReq req);
+
+    @POST("/mobile/push")
     Observable<CommonPushResp> pushToDevice(@HeaderMap Map<String, String> headerMap, @Body CommonPushReq req);
 
     @POST("/device/push")
