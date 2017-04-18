@@ -1,6 +1,8 @@
 package com.stockholm.api.setting.system;
 
 
+import com.google.gson.Gson;
+
 import java.io.Serializable;
 
 public class SystemSettingBean implements Serializable {
@@ -93,6 +95,15 @@ public class SystemSettingBean implements Serializable {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
+
+    public static SystemSettingBean get(String json) {
+        return new Gson().fromJson(json, SystemSettingBean.class);
     }
 
 }
