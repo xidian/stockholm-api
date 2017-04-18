@@ -31,18 +31,19 @@ requestBody:
 platform默认是0
 
 responseExample:
-
-	{
-	  "success": true,
-	  "msg": "ok",
-	  "data": {
-	    "user": {
-	      "id": 13,
-	      "phoneNumber": "18514760074",
-	    }
-	  }
-	}
-
+```json
+{
+  "success": true,
+  "msg": "ok",
+  "data": {
+    "user": {
+      "id": 13,
+      "phoneNumber": "18514760074",
+    }
+  },
+	"accessToken": "9CB4piE8b6"
+}
+```
 ## 登陆
 
 * POST /users/login
