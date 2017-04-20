@@ -1,6 +1,6 @@
 # 设置相册
 
-##上传图片（获得上传token）
+## 上传图片（获得上传token）
 
 * POST /mobile/apps_configs/album_images
 requestHeader
@@ -23,7 +23,7 @@ responseBody["data"]
   "key": "test-1.jpg"
 }
 ```
-##设备端下载图片
+## 设备端下载图片
 设备端获得下载url
 
 * GET /device/apps_configs/album_images
@@ -49,7 +49,7 @@ responseBody["data"]
 }
 ```
 
-##手机端下载
+## 手机端下载
 
 * GET /mobile/apps_configs/album_images
 
@@ -75,7 +75,7 @@ responseBody['data']
 }
 ```
 
-##删除图片
+## 删除图片
 
 * POST /mobile/apps_configs/album_images/delete
 
