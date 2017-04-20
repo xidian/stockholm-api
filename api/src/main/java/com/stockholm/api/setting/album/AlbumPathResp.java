@@ -34,23 +34,48 @@ public class AlbumPathResp {
 
     public static class DataBean {
 
-        private String config;
-        private List<String> downloadUrls;
+        private ConfigBean config;
+        private List<DownloadUrlsBean> downloadUrls;
 
-        public String getConfig() {
+        public ConfigBean getConfig() {
             return config;
         }
 
-        public void setConfig(String config) {
+        public void setConfig(ConfigBean config) {
             this.config = config;
         }
 
-        public List<String> getDownloadUrls() {
+        public List<DownloadUrlsBean> getDownloadUrls() {
             return downloadUrls;
         }
 
-        public void setDownloadUrls(List<String> downloadUrls) {
+        public void setDownloadUrls(List<DownloadUrlsBean> downloadUrls) {
             this.downloadUrls = downloadUrls;
+        }
+
+        public static class ConfigBean {
+        }
+
+        public static class DownloadUrlsBean {
+
+            private String url;
+            private String timestamp;
+
+            public String getUrl() {
+                return url;
+            }
+
+            public void setUrl(String url) {
+                this.url = url;
+            }
+
+            public String getTimestamp() {
+                return timestamp;
+            }
+
+            public void setTimestamp(String timestamp) {
+                this.timestamp = timestamp;
+            }
         }
     }
 }
