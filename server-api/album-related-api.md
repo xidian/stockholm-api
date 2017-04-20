@@ -37,9 +37,14 @@ responseBody["data"]
 {
   "config":{},
   "downloadUrls":[
-    "<url1>",
-    "<url2>",
-    "..."
+    {
+      "url": "<url1>",
+      "timestamp": "140000000"
+    },
+    {
+      "url": "<url2>",
+      "timestamp": "140000000"
+    }
   ]
 }
 ```
