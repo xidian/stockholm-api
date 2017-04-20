@@ -32,7 +32,7 @@ public class ConnectionManager {
         connector = new NioSocketConnector();
         connector.getSessionConfig().setReuseAddress(true);
         connector.getSessionConfig().setReadBufferSize(connectionConfig.getReadBufferSize());
-        connector.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 60 * 5);
+        connector.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, connectionConfig.getIdleTime());
         connector.setConnectTimeoutCheckInterval(connectionConfig.getConnectionTimeout());
         connector.getFilterChain().addFirst("reconnection", new MyIoFilterAdapter());
         connector.getFilterChain().addLast("codec",
@@ -52,25 +52,29 @@ public class ConnectionManager {
                 return false;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e(TAG, "connect error: " + e.toString());
             return false;
         }
         return true;
     }
 
     public void disConnect() {
-        if (!connector.isDisposing() && !connector.isDisposed()) {
-            connector.dispose(true);
+        try {
+            if (!connector.isDisposing() && !connector.isDisposed()) {
+                connector.dispose(true);
+            }
+            connector = null;
+            session = null;
+            address = null;
+        } catch (Exception e) {
+            Log.e(TAG, "disConnect error: " + e.toString());
         }
-        connector = null;
-        session = null;
-        address = null;
     }
 
     private class MyIoFilterAdapter extends IoFilterAdapter {
         @Override
         public void sessionClosed(NextFilter nextFilter, IoSession session) throws Exception {
-            Log.d(TAG, "连接关闭,每隔15秒进行重新连接");
+            Log.d(TAG, session.getId() + "连接关闭,每隔15秒进行重新连接");
             for (; ; ) {
                 if (connector == null) {
                     break;

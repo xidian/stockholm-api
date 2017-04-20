@@ -8,7 +8,6 @@ import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.textline.TextLineCodecFactory;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 
-import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
 
@@ -30,7 +29,7 @@ public class AcceptorManager {
         socketAcceptor = new NioSocketAcceptor();
         socketAcceptor.setReuseAddress(true);
         socketAcceptor.getSessionConfig().setReadBufferSize(acceptorConfig.getReadBufferSize());
-        socketAcceptor.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 60 * 5);
+        socketAcceptor.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, acceptorConfig.getIdleTime());
         socketAcceptor.getFilterChain().addLast("codec",
                 new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));
         socketAcceptor.setHandler(acceptorConfig.getIoHandler());
@@ -42,7 +41,7 @@ public class AcceptorManager {
         try {
             socketAcceptor.unbind();
             socketAcceptor.bind(address);
-        } catch (IOException e) {
+        } catch (Exception e) {
             Log.e(TAG, "bind error: " + e.toString());
             return false;
         }
@@ -50,10 +49,14 @@ public class AcceptorManager {
     }
 
     public void disConnect() {
-        address = null;
-        socketAcceptor.unbind();
-        if (!socketAcceptor.isDisposed() && !socketAcceptor.isDisposing()) {
-            socketAcceptor.dispose(true);
+        try {
+            address = null;
+            socketAcceptor.unbind();
+            if (!socketAcceptor.isDisposed() && !socketAcceptor.isDisposing()) {
+                socketAcceptor.dispose(true);
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "disConnect error: " +  e.toString());
         }
     }
 
@@ -72,7 +75,7 @@ public class AcceptorManager {
                     Log.d(TAG, "15秒后尝试重新绑定");
                     Thread.sleep(15000);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    Log.e(TAG, "bind retry thread: " + e.toString());
                 }
             }
         }
