@@ -25,7 +25,11 @@ public class AcceptorManager {
     }
 
     private void init() {
-        address = new InetSocketAddress(acceptorConfig.getPort());
+        try {
+            address = new InetSocketAddress(acceptorConfig.getPort());
+        } catch (Exception e) {
+            Log.e(TAG, "init address error: " + e.toString());
+        }
         socketAcceptor = new NioSocketAcceptor();
         socketAcceptor.setReuseAddress(true);
         socketAcceptor.getSessionConfig().setReadBufferSize(acceptorConfig.getReadBufferSize());
@@ -37,7 +41,14 @@ public class AcceptorManager {
     }
 
     private boolean bind() {
-        if (address == null) return false;
+        if (address == null) {
+            try {
+                address = new InetSocketAddress(acceptorConfig.getPort());
+            } catch (Exception e) {
+                Log.e(TAG, "bind init address error: " + e.toString());
+                return false;
+            }
+        }
         try {
             socketAcceptor.unbind();
             socketAcceptor.bind(address);
@@ -56,7 +67,7 @@ public class AcceptorManager {
                 socketAcceptor.dispose(true);
             }
         } catch (Exception e) {
-            Log.e(TAG, "disConnect error: " +  e.toString());
+            Log.e(TAG, "disConnect error: " + e.toString());
         }
     }
 
