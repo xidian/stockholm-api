@@ -2,13 +2,14 @@ package com.stockholm.api.setting.music;
 
 import com.google.gson.Gson;
 
-public class DeviceControlBean {
+public class MusicControlBean {
 
     private int action;
     private int playType;
     private int playState;
-    private String playId;
     private int playMode;
+    private String songId;
+    private String radioId;
 
     public int getAction() {
         return action;
@@ -34,12 +35,12 @@ public class DeviceControlBean {
         this.playState = playState;
     }
 
-    public String getPlayId() {
-        return playId;
+    public String getSongId() {
+        return songId;
     }
 
-    public void setPlayId(String playId) {
-        this.playId = playId;
+    public void setSongId(String songId) {
+        this.songId = songId;
     }
 
     public int getPlayMode() {
@@ -50,13 +51,21 @@ public class DeviceControlBean {
         this.playMode = playMode;
     }
 
+    public void setRadioId(String radioId) {
+        this.radioId = radioId;
+    }
+
+    public String getRadioId() {
+        return radioId;
+    }
+
     @Override
     public String toString() {
         return new Gson().toJson(this);
     }
 
-    public static DeviceControlBean get(String json) {
-        return new Gson().fromJson(json, DeviceControlBean.class);
+    public static MusicControlBean get(String json) {
+        return new Gson().fromJson(json, MusicControlBean.class);
     }
 
 }
