@@ -10,6 +10,7 @@ public class MusicControlBean {
     private int playMode;
     private String songId;
     private String radioId;
+    private String singerId;
 
     public int getAction() {
         return action;
@@ -57,6 +58,14 @@ public class MusicControlBean {
 
     public String getRadioId() {
         return radioId;
+    }
+
+    public void setSingerId(String singerId) {
+        this.singerId = singerId;
+    }
+
+    public String getSingerId() {
+        return singerId;
     }
 
     @Override
