@@ -11,5 +11,10 @@ Access-Token: <your-access-token>
 
 requestBody
 ```json
-{"content": "your feedback"}
+{
+	"feedback": {
+		"content": "your feedback",
+		"contact": "your contact info"
+	}
+}
 ```
