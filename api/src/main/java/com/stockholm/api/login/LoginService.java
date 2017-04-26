@@ -1,6 +1,11 @@
 package com.stockholm.api.login;
 
 
+import com.stockholm.api.login.wx.BindWeChatResp;
+import com.stockholm.api.login.wx.CommonWeChatReq;
+import com.stockholm.api.login.wx.UnbindWeChatResp;
+import com.stockholm.api.login.wx.WeChatLoginResp;
+
 import retrofit2.http.Body;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
@@ -26,5 +31,14 @@ public interface LoginService {
 
     @POST("/users/check_serial_number")
     Observable<CheckSerialNumberResp> checkSerialNumber(@Body CheckSerialNumberReq req);
+
+    @POST("/user/wechat")
+    Observable<BindWeChatResp> bindWeChat(@Body CommonWeChatReq req);
+
+    @POST("/user/wechat/unbind")
+    Observable<UnbindWeChatResp> unbindWeChat();
+
+    @POST("/user/wechat/login")
+    Observable<WeChatLoginResp> weChatLogin(@Body CommonWeChatReq req);
 
 }

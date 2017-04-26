@@ -1,9 +1,12 @@
 package com.stockholm.api.login;
 
+import com.stockholm.api.login.wx.WeChatBean;
+
 public class SignReq {
 
     private UserBean user;
     private DeviceBean device;
+    private WeChatBean wechat;
     private String code;
 
     public SignReq(String phone, String pwd,
@@ -12,6 +15,15 @@ public class SignReq {
         setDevice(new DeviceBean(pushToken, platfrom));
         setUser(new UserBean(phone, pwd));
         setCode(code);
+    }
+
+    public SignReq(String phone, String pwd,
+                   String pushToken, int platfrom,
+                   String code, WeChatBean wechat) {
+        setDevice(new DeviceBean(pushToken, platfrom));
+        setUser(new UserBean(phone, pwd));
+        setCode(code);
+        setWechat(wechat);
     }
 
     public UserBean getUser() {
@@ -28,6 +40,14 @@ public class SignReq {
 
     public void setDevice(DeviceBean device) {
         this.device = device;
+    }
+
+    public WeChatBean getWechat() {
+        return wechat;
+    }
+
+    public void setWechat(WeChatBean wechat) {
+        this.wechat = wechat;
     }
 
     public String getCode() {
@@ -87,4 +107,5 @@ public class SignReq {
             this.platform = platform;
         }
     }
+
 }
