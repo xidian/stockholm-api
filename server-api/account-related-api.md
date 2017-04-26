@@ -16,21 +16,42 @@
 
 requestBody:
 
-	{
-		"code": "123456",
-		"user":{
-	 		"phoneNumber": "18514760074",
-			"password": "test-password-11"
-		},
-		"device":{
-			"pushToken": "baidu_push_channel_id",
-			"platform": 0 (备注：这一项是整数，0代表android，1代表ios)
-		}
+```json
+{
+	"code": "123456",
+	"user":{
+ 		"phoneNumber": "18514760074",
+		"password": "test-password-11"
+	},
+	"device":{
+		"pushToken": "baidu_push_channel_id",
+		"platform": 0
+	},
+	""
+}
+```
+备注：platform是整数，0代表android，1代表ios, 默认是0
+
+如果是微信授权后登录，requestBody请写为：
+
+```json
+{
+	"code": "...",
+	"user":{
+ 		"...": "..."
+	},
+	"device":{
+		"...": "..."
+	},
+	"wechat":{
+		"nickname": "your wechat nickname",
+		"headimgurl": "your avatar url",
+		"unionid": "your wechat unionid"
 	}
+}
+```
 
-platform默认是0
-
-responseExample:
+responseBody:
 ```json
 {
   "success": true,
@@ -57,18 +78,36 @@ SerialNumber: <your-serial-number>
 
 requestBody:
 ```json
-	{
-		"user": {
-			"phoneNumber": "18514760073",
-			"password": "testpassword"
-		},
-		"device": {
-			"pushToken": "baidu_push_channel_id",
-			"platform": 1
-		}
+{
+	"user": {
+		"phoneNumber": "18514760073",
+		"password": "testpassword"
+	},
+	"device": {
+		"pushToken": "baidu_push_channel_id",
+		"platform": 1
 	}
+}
 ```
-(备注：platform是整数，0代表android，1代表ios)
+备注：platform是整数，0代表android，1代表ios, 默认是0
+
+如果是微信授权后登录，requestBody请写为：
+
+```json
+{
+	"user": {
+		"...": "..."
+	},
+	"device": {
+		"...": "..."
+	},
+	"wechat":{
+		"nickname": "your wechat nickname",
+		"headimgurl": "your avatar url",
+		"unionid": "your wechat unionid"
+	}
+}
+```
 
 responseBody["data"]:
 ```json
@@ -79,10 +118,12 @@ responseBody["data"]:
     "phoneNumber": "18514760073",
     "avatar": null
   },
-  "isFresh": false,
-  "accessToken": "23LkjCKFKs"
+  "accessToken": "23LkjCKFKs",
+	"wechat": "your wechat nickname"
 }
 ```
+
+如果wechat的值为null，则代表没有绑定微信.
 
 ## 登出
 
