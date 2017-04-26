@@ -72,3 +72,11 @@ requestHeader
 ```
 UUID: <your-device-uuid>
 ```
+
+responseBody
+```json
+{
+  "success": true,
+  "msg": "绑定状态"
+}
+```
