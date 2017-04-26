@@ -80,3 +80,5 @@ responseBody
   "msg": "绑定状态"
 }
 ```
+
+如果没有任何绑定，则为false
