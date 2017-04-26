@@ -15,6 +15,19 @@ requestBody
 {"code": "your wechat authorization code"}
 ```
 
+responseBody
+```json
+{
+  "success": true,
+  "msg": "登录成功",
+  "data": {
+    "wechatNickname": "your wechat nickname",
+    "username": "your username",
+    "avatar": "your avatar url"
+  }
+}
+```
+
 ## 微信登录
 
 * POST /user/wechat/login
@@ -50,4 +63,13 @@ requestBody
     "unionid": "your unionid"
   }
 }
+```
+
+## 解绑
+
+* POST /user/wechat/unbind
+
+requestHeader
+```
+Access-Token: <your-access-token>
 ```
