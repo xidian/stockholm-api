@@ -247,3 +247,32 @@ requestBody
 	"order": 201
 }
 ```
+
+## 检查订阅
+
+* POST /mobile/clock/app/check_subscription
+
+requestHeader
+```
+Access-Token: <your-access-token>
+UUID: <your-device-uuid>
+PackageName: <your-package-name>
+```
+
+requestBody
+```json
+{
+	"key": "like",
+	"item": "{\"songId\":\"773403104\"}"
+}
+```
+
+responseBody
+```json
+{
+  "success": false,
+  "msg": "订阅状态"
+}
+```
+
+如果订阅，则success为true。
