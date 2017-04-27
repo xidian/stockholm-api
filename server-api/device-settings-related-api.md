@@ -36,15 +36,45 @@ requestHeader
 Access-Token: <your-access-token>
 ```
 
-responseBody["data"]
+responseBody
 ```json
-[
-	{
-		"uuid": "<first-uuid>",
-		"name": "<your clock's name>"
-	}
-]
+{
+  "success": true,
+  "msg": "该用户绑定的所有设备",
+  "data": {
+    "active": {
+      "uuid": "the uuid of your current clock",
+      "name": "时光机"
+    },
+    "list": [
+      {
+        "uuid": "the uuid(s) of your other clock(s)",
+        "name": "时光机"
+      }
+    ]
+  }
+}
 ```
+
+## 切换当前设备
+
+* PUT /user/devices/switch_current_clock
+
+requestHeader
+```
+Access-Token: <your-access-token>
+UUID: <your-device-uuid>
+```
+
+responseBody
+
+```json
+{
+  "success": true,
+  "msg": "切换成功"
+}
+```
+
 
 ## 重命名
 给设备命名
