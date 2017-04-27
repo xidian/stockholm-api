@@ -1,7 +1,7 @@
-package com.stockholm.api.setting;
+package com.stockholm.api.setting.system;
 
-public class UnbindDeviceResp {
 
+public class SwitchDeviceResp {
     private boolean success;
     private String msg;
 
@@ -20,4 +20,5 @@ public class UnbindDeviceResp {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
 }

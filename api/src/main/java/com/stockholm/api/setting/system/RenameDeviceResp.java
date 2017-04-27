@@ -1,4 +1,4 @@
-package com.stockholm.api.setting;
+package com.stockholm.api.setting.system;
 
 public class RenameDeviceResp {
 
