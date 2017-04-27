@@ -4,62 +4,53 @@ import java.util.List;
 
 public class AlbumPathResp {
 
-    private ConfigBean config;
-    private List<String> downloadUrls;
+    private boolean success;
+    private String msg;
+    private DataBean data;
 
-    public ConfigBean getConfig() {
-        return config;
+    public boolean isSuccess() {
+        return success;
     }
 
-    public void setConfig(ConfigBean config) {
-        this.config = config;
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 
-    public List<String> getDownloadUrls() {
-        return downloadUrls;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setDownloadUrls(List<String> downloadUrls) {
-        this.downloadUrls = downloadUrls;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
-    public static class ConfigBean {
+    public DataBean getData() {
+        return data;
+    }
 
-        private boolean showTime;
-        private boolean translation;
-        private boolean autoPlay;
-        private int playInterval;
+    public void setData(DataBean data) {
+        this.data = data;
+    }
 
-        public boolean isShowTime() {
-            return showTime;
+    public static class DataBean {
+
+        private String config;
+        private List<String> downloadUrls;
+
+        public String getConfig() {
+            return config;
         }
 
-        public void setShowTime(boolean showTime) {
-            this.showTime = showTime;
+        public void setConfig(String config) {
+            this.config = config;
         }
 
-        public boolean isTranslation() {
-            return translation;
+        public List<String> getDownloadUrls() {
+            return downloadUrls;
         }
 
-        public void setTranslation(boolean translation) {
-            this.translation = translation;
-        }
-
-        public boolean isAutoPlay() {
-            return autoPlay;
-        }
-
-        public void setAutoPlay(boolean autoPlay) {
-            this.autoPlay = autoPlay;
-        }
-
-        public int getPlayInterval() {
-            return playInterval;
-        }
-
-        public void setPlayInterval(int playInterval) {
-            this.playInterval = playInterval;
+        public void setDownloadUrls(List<String> downloadUrls) {
+            this.downloadUrls = downloadUrls;
         }
     }
 }
