@@ -4,78 +4,62 @@ import java.util.List;
 
 public class AlbumPathResp {
 
-    private boolean success;
-    private String msg;
-    private DataBean data;
+    private ConfigBean config;
+    private List<String> downloadUrls;
 
-    public boolean isSuccess() {
-        return success;
+    public ConfigBean getConfig() {
+        return config;
     }
 
-    public void setSuccess(boolean success) {
-        this.success = success;
+    public void setConfig(ConfigBean config) {
+        this.config = config;
     }
 
-    public String getMsg() {
-        return msg;
+    public List<String> getDownloadUrls() {
+        return downloadUrls;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setDownloadUrls(List<String> downloadUrls) {
+        this.downloadUrls = downloadUrls;
     }
 
-    public DataBean getData() {
-        return data;
-    }
+    public static class ConfigBean {
 
-    public void setData(DataBean data) {
-        this.data = data;
-    }
+        private boolean showTime;
+        private boolean translation;
+        private boolean autoPlay;
+        private int playInterval;
 
-    public static class DataBean {
-
-        private ConfigBean config;
-        private List<DownloadUrlsBean> downloadUrls;
-
-        public ConfigBean getConfig() {
-            return config;
+        public boolean isShowTime() {
+            return showTime;
         }
 
-        public void setConfig(ConfigBean config) {
-            this.config = config;
+        public void setShowTime(boolean showTime) {
+            this.showTime = showTime;
         }
 
-        public List<DownloadUrlsBean> getDownloadUrls() {
-            return downloadUrls;
+        public boolean isTranslation() {
+            return translation;
         }
 
-        public void setDownloadUrls(List<DownloadUrlsBean> downloadUrls) {
-            this.downloadUrls = downloadUrls;
+        public void setTranslation(boolean translation) {
+            this.translation = translation;
         }
 
-        public static class ConfigBean {
+        public boolean isAutoPlay() {
+            return autoPlay;
         }
 
-        public static class DownloadUrlsBean {
+        public void setAutoPlay(boolean autoPlay) {
+            this.autoPlay = autoPlay;
+        }
 
-            private String url;
-            private String timestamp;
+        public int getPlayInterval() {
+            return playInterval;
+        }
 
-            public String getUrl() {
-                return url;
-            }
-
-            public void setUrl(String url) {
-                this.url = url;
-            }
-
-            public String getTimestamp() {
-                return timestamp;
-            }
-
-            public void setTimestamp(String timestamp) {
-                this.timestamp = timestamp;
-            }
+        public void setPlayInterval(int playInterval) {
+            this.playInterval = playInterval;
         }
     }
 }
