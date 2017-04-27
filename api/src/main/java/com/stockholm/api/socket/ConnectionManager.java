@@ -75,16 +75,21 @@ public class ConnectionManager {
         @Override
         public void sessionClosed(NextFilter nextFilter, IoSession session) throws Exception {
             Log.d(TAG, session.getId() + "连接关闭,每隔15秒进行重新连接");
-            for (; ; ) {
+            int retry = 5;
+            do {
                 if (connector == null) {
+                    break;
+                }
+                if (retry == 0) {
                     break;
                 }
                 if (ConnectionManager.this.connect()) {
                     Log.d(TAG, "断线重连[" + connector.getDefaultRemoteAddress().getHostName() + "]成功");
                     break;
                 }
+                retry--;
                 Thread.sleep(15000);
-            }
+            } while (true);
         }
     }
 
