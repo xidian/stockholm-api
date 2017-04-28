@@ -270,8 +270,11 @@ requestBody
 responseBody
 ```json
 {
-  "success": false,
-  "msg": "订阅状态"
+  "success": true,
+  "msg": "订阅状态",
+	"data": {
+		"subscribed": true
+	}
 }
 ```
 
