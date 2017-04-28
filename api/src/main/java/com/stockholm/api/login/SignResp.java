@@ -5,6 +5,7 @@ public class SignResp {
     private boolean success;
     private String msg;
     private DataBean data;
+    private String accessToken;
 
     public boolean isSuccess() {
         return success;
@@ -30,10 +31,17 @@ public class SignResp {
         this.data = data;
     }
 
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
+
     public static class DataBean {
 
         private UserBean user;
-        private String accessToken;
 
         public UserBean getUser() {
             return user;
@@ -43,26 +51,35 @@ public class SignResp {
             this.user = user;
         }
 
-        public String getAccessToken() {
-            return accessToken;
-        }
-
-        public void setAccessToken(String accessToken) {
-            this.accessToken = accessToken;
-        }
-
         public static class UserBean {
 
-            private int id;
+            private int accountId;
+            private String username;
             private String phoneNumber;
-            private Object username;
+            private String avatar;
 
-            public int getId() {
-                return id;
+            public int getAccountId() {
+                return accountId;
             }
 
-            public void setId(int id) {
-                this.id = id;
+            public void setAccountId(int accountId) {
+                this.accountId = accountId;
+            }
+
+            public String getUsername() {
+                return username;
+            }
+
+            public void setUsername(String username) {
+                this.username = username;
+            }
+
+            public String getAvatar() {
+                return avatar;
+            }
+
+            public void setAvatar(String avatar) {
+                this.avatar = avatar;
             }
 
             public String getPhoneNumber() {
@@ -73,13 +90,7 @@ public class SignResp {
                 this.phoneNumber = phoneNumber;
             }
 
-            public Object getUsername() {
-                return username;
-            }
-
-            public void setUsername(Object username) {
-                this.username = username;
-            }
         }
     }
+
 }

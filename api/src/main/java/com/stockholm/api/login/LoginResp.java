@@ -1,5 +1,7 @@
 package com.stockholm.api.login;
 
+import com.google.gson.Gson;
+
 public class LoginResp {
 
     private boolean success;
@@ -31,10 +33,10 @@ public class LoginResp {
     }
 
     public static class DataBean {
-
         private UserBean user;
         private String accessToken;
         private boolean isFresh;
+        private String wechat;
 
         public UserBean getUser() {
             return user;
@@ -58,6 +60,23 @@ public class LoginResp {
 
         public void setIsFresh(boolean fresh) {
             isFresh = fresh;
+        }
+
+        public String getWechat() {
+            return wechat;
+        }
+
+        public void setWechat(String wechat) {
+            this.wechat = wechat;
+        }
+
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
+        }
+
+        public static DataBean get(String json) {
+            return new Gson().fromJson(json, DataBean.class);
         }
 
         public static class UserBean {
@@ -101,4 +120,5 @@ public class LoginResp {
 
         }
     }
+
 }
