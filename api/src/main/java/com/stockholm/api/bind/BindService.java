@@ -13,9 +13,9 @@ public interface BindService {
     Observable<BindResp> bind(@Header("Access-Token") String accessToken, @Body BindReq bindReq);
 
     @POST("/clocks/report_wifi_connection")
-    Observable<ReportWifiConnectResp> reportWifiConnect(@Header("Access-Token") String accessToken, @Header("UUID") String uuid);
+    Observable<ReportWifiConnectResp> reportWifiConnect(@Header("Access-Token") String accessToken);
 
     @GET("/clock/bindings")
-    Observable<BindResp> isDeviceBind(@Header("UUID") String uuid);
+    Observable<BindResp> isDeviceBind();
 
 }

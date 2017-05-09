@@ -15,7 +15,7 @@ public interface AlbumService {
                                              @Body AlbumTokenReq albumTokenReq);
 
     @GET("device/apps_configs/album_images")
-    Observable<AlbumPathResp> getImagePath(@HeaderMap Map<String, String> headerMap);
+    Observable<AlbumPathResp> getImagePath();
 
 
     @GET("/mobile/apps_configs/album_images")

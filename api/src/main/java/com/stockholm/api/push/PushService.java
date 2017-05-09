@@ -18,6 +18,6 @@ public interface PushService {
     Observable<CommonPushResp> pushToDevice(@HeaderMap Map<String, String> headerMap, @Body CommonPushReq req);
 
     @POST("/device/push")
-    Observable<CommonPushResp> pushToMobile(@Header("UUID") String uuid, @Body CommonPushReq req);
+    Observable<CommonPushResp> pushToMobile(@Body CommonPushReq req);
 
 }

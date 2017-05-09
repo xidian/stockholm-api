@@ -33,15 +33,13 @@ public interface SettingService {
     Observable<AppUpdateConfigResp> appUpdateConfig(@Body AppUpdateConfigReq config);
 
     @PUT("/device/apps_config")
-    Observable<DeviceUpdateConfigResp> deviceUpdateConfig(@HeaderMap Map<String, String> headerMap,
-                                                          @Body DeviceUpdateConfigReq config);
+    Observable<DeviceUpdateConfigResp> deviceUpdateConfig(@Body DeviceUpdateConfigReq config);
 
     @GET("/device/apps_config")
-    Observable<DeviceGetConfigResp> deviceGetConfig(@HeaderMap Map<String, String> headerMap);
+    Observable<DeviceGetConfigResp> deviceGetConfig();
 
     @POST("/device/apps_config")
-    Observable<DeviceAppConfigPagerResp> getDeviceConfigWithPager(@HeaderMap Map<String, String> headerMap,
-                                                                  @Body DeviceAppConfigPagerReq deviceAppConfigPagerReq);
+    Observable<DeviceAppConfigPagerResp> getDeviceConfigWithPager(@Body DeviceAppConfigPagerReq deviceAppConfigPagerReq);
 
     @POST("/clocks/unbind")
     Observable<UnbindDeviceResp> unbindDevice(@HeaderMap Map<String, String> headerMap);
@@ -71,7 +69,7 @@ public interface SettingService {
                                             @Body SortAppListReq req);
 
     @GET("/device/apps")
-    Observable<DeviceAppStateResp> deviceGetAppState(@Header("UUID") String uuid);
+    Observable<DeviceAppStateResp> deviceGetAppState();
 
     @PUT("/user/devices/switch_current_clock")
     Observable<SwitchDeviceResp> switchDevice(@Header("UUID") String uuid);
