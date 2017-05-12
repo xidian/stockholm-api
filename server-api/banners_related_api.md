@@ -1,6 +1,6 @@
 # Banner接口
 
-##获取banner
+## 获取banner
 
 * GET /app_store/banners
 
