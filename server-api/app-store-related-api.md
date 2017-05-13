@@ -1,6 +1,6 @@
-#应用商店
+# 应用商店
 
-##获取列表
+## 获取列表
 
 * GET /apps
 
@@ -14,7 +14,7 @@ UUID: <your-device-uuid>
 按下载量排序/apps?order_method=downloads
 （以上2个排序方法均返回4个结果）
 
-##获取详情
+## 获取详情
 
 * GET /app
 
