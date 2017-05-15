@@ -10,12 +10,12 @@ public interface TingWenService {
 
     @FormUrlEncoded
     @POST("api/interfaceXykj/touList")
-    Observable<ChannelNewsResp> getHeadLineNews(@Field("limit") String limit,
-                                                @Field("page") String pager);
+    Observable<ChannelNewsResp> getToulistNews(@Field("limit") int limit,
+                                                @Field("page") int page);
 
     @FormUrlEncoded
     @POST("api/interfaceXykj/postList")
-    Observable<ChannelNewsResp> getChannelNews(@Field("term_id") String channelId,
-                                               @Field("limit") String limit,
-                                               @Field("page") String pager);
+    Observable<ChannelNewsResp> getNews(@Field("term_id") int categoryId,
+                                        @Field("limit") int limit,
+                                        @Field("page") int page);
 }
