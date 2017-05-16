@@ -39,6 +39,7 @@ public class GetClockAppsResp {
         private String phoneNumber;
         private String appName;
         private String icon;
+        private String grayedIcon;
         private String uuid;
         private String config;
         private int versionCode;
@@ -48,12 +49,13 @@ public class GetClockAppsResp {
         private int orderNumber;
 
         public DataBean(String packageName, String phoneNumber, String appName, String icon,
-                        String uuid, String config, int versionCode, boolean removable,
+                        String grayedIcon, String uuid, String config, int versionCode, boolean removable,
                         String mobileDownloadUrl, boolean isHidden, int orderNumber) {
             setPackageName(packageName);
             setPhoneNumber(phoneNumber);
             setAppName(appName);
             setIcon(icon);
+            setGrayedIcon(grayedIcon);
             setUuid(uuid);
             setConfig(config);
             setVersionCode(versionCode);
@@ -93,6 +95,14 @@ public class GetClockAppsResp {
 
         public void setIcon(String icon) {
             this.icon = icon;
+        }
+
+        public String getGrayedIcon() {
+            return grayedIcon;
+        }
+
+        public void setGrayedIcon(String grayedIcon) {
+            this.grayedIcon = grayedIcon;
         }
 
         public String getUuid() {
