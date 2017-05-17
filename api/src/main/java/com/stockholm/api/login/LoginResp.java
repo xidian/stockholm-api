@@ -35,7 +35,6 @@ public class LoginResp {
     public static class DataBean {
         private UserBean user;
         private String accessToken;
-        private boolean isFresh;
         private String wechat;
 
         public UserBean getUser() {
@@ -52,14 +51,6 @@ public class LoginResp {
 
         public void setAccessToken(String accessToken) {
             this.accessToken = accessToken;
-        }
-
-        public boolean isIsFresh() {
-            return isFresh;
-        }
-
-        public void setIsFresh(boolean fresh) {
-            isFresh = fresh;
         }
 
         public String getWechat() {
