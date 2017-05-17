@@ -10,7 +10,7 @@ public class AppBean implements Serializable {
     private String icon;
     private String appName;
     private String packageName;
-    private List<String> screenshots;
+    private List<String> screenshotsUrl;
     private String developer;
     private float star;
     private int versionCode;
@@ -42,12 +42,12 @@ public class AppBean implements Serializable {
         this.packageName = packageName;
     }
 
-    public List<String> getScreenshots() {
-        return screenshots;
+    public List<String> getScreenshotsUrl() {
+        return screenshotsUrl;
     }
 
-    public void setScreenshots(List<String> screenshots) {
-        this.screenshots = screenshots;
+    public void setScreenshotsUrl(List<String> screenshotsUrl) {
+        this.screenshotsUrl = screenshotsUrl;
     }
 
     public String getDeveloper() {
