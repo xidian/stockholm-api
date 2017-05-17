@@ -74,4 +74,7 @@ public interface SettingService {
     @PUT("/user/devices/switch_current_clock")
     Observable<SwitchDeviceResp> switchDevice(@Header("UUID") String uuid);
 
+    @POST("/clocks/ask_for_reset")
+    Observable<ResetDeviceResp> resetDevice();
+
 }
