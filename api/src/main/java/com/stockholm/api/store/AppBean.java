@@ -4,18 +4,27 @@ package com.stockholm.api.store;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class AppBean implements Serializable {
+    private String icon;
     private String appName;
     private String packageName;
-    private String priImageUrl;
-    private String subImageUrl;
+    private List<String> screenshotsUrl;
     private String developer;
     private float star;
     private int versionCode;
     private long downloads;
     private int category;
     private boolean isInstalled;
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
     public String getAppName() {
         return appName;
@@ -33,20 +42,12 @@ public class AppBean implements Serializable {
         this.packageName = packageName;
     }
 
-    public String getPriImageUrl() {
-        return priImageUrl;
+    public List<String> getScreenshotsUrl() {
+        return screenshotsUrl;
     }
 
-    public void setPriImageUrl(String priImageUrl) {
-        this.priImageUrl = priImageUrl;
-    }
-
-    public String getSubImageUrl() {
-        return subImageUrl;
-    }
-
-    public void setSubImageUrl(String subImageUrl) {
-        this.subImageUrl = subImageUrl;
+    public void setScreenshotsUrl(List<String> screenshotsUrl) {
+        this.screenshotsUrl = screenshotsUrl;
     }
 
     public String getDeveloper() {
