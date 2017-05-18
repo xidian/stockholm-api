@@ -17,10 +17,10 @@ public interface AppStoreService {
     Observable<AppListResp> getAllApps(@Header("UUID") String uuid);
 
     @GET("/app_store/banners")
-    Observable<StoreBannerResp> getBanners();
+    Observable<StoreBannerResp> getBanners(@Header("UUID") String uuid);
 
     @GET("/apps")
-    Observable<StoreTopAppsResp> getTopApps(@Query("order_method") String orderMethod);
+    Observable<StoreTopAppsResp> getTopApps(@Header("UUID") String uuid, @Query("order_method") String orderMethod);
 
     @GET("/app")
     Observable<AppDetailResp> getAppDetail(@Header("PackageName") String packageName);
