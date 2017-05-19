@@ -20,3 +20,16 @@ requestHeaders
 ```
 UUID: <your-device-uuid>
 ```
+
+## 核对时间
+
+* GET /clocks/time
+
+responseBody
+```json
+{
+  "success": true,
+  "msg": "时间",
+  "data": "2017-05-19T11:38:50.472+08:00"
+}
+```
