@@ -7,23 +7,14 @@ import java.io.Serializable;
 
 public class SystemSettingBean implements Serializable {
 
-    private int alarmVolume;
-
-    private int mediaVolume;
-
+    private int alarmVolume = 50;
+    private int mediaVolume = 50;
     private boolean autoBrightness;
-
-    private int brightness;
-
+    private int brightness = 50;
     private boolean enableNightMode;
-
     private int nightModeType;
-
-    private String nightModeStartTime;
-
-    private String nightModeEndTime;
-
-    private String language;
+    private String nightModeStartTime = "23:00";
+    private String nightModeEndTime = "07:00";
 
     public int getAlarmVolume() {
         return alarmVolume;
@@ -87,14 +78,6 @@ public class SystemSettingBean implements Serializable {
 
     public void setNightModeEndTime(String nightModeEndTime) {
         this.nightModeEndTime = nightModeEndTime;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
     }
 
     @Override
