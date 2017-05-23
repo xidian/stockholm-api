@@ -12,5 +12,5 @@ public interface AudioService {
     Observable<UpdateContentResp> updateAudioContent(@Body UpdateContentReq updateContentReq);
 
     @GET("/app/medium")
-    Observable<GetContentResp> getAudioContent(@Header("UUID") String accessToken);
+    Observable<GetContentResp> getAudioContent(@Header("UUID") String uuid);
 }
