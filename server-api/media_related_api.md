@@ -50,3 +50,13 @@ requestBody
   }
 }
 ```
+
+推送内容为：
+```json
+{
+  "extras": {
+    "order": "your order",
+    "packageName: "your package name",
+    "timestamp": "UNIX timestamp in sec"
+  }
+}
