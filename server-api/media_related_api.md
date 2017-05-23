@@ -2,7 +2,7 @@
 
 ## 更新播放
 
-* PUT /app/medium?packageName=YOUR_PACKAGE_NAMW&uuid=YOUR_DEVICE_UUID
+* PUT /app/medium?packageName=YOUR_PACKAGE_NAME&uuid=YOUR_DEVICE_UUID
 
 requestBody
 ```json
