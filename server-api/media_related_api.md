@@ -56,7 +56,7 @@ requestBody
 {
   "extras": {
     "order": "your order",
-    "packageName: "your package name",
+    "packageName": "your package name",
     "timestamp": "UNIX timestamp in sec"
   }
 }
