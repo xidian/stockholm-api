@@ -14,7 +14,11 @@ requestBody
 ```json
 {
 	"whisper": "your-content",
-	"extras": {"order": "..."}
+	"extras": {
+		"order": "...",
+		"packageName": "your package name",
+		"timestamp": "true (optional)"
+	}
 }
 ```
 extras里面的json写任何字段都行
@@ -34,7 +38,11 @@ requestBody
 ```json
 {
 	"whisper": "your-content",
-	"extras": {"order": "..."}
+	"extras": {
+		"order": "...",
+		"packageName": "your package name",
+		"timestamp": "true (optional)"
+	}
 }
 ```
 extras里面的json写任何字段都行

@@ -37,26 +37,3 @@ responseBody
   }
 }
 ```
-
-## 推送播放请求
-
-* POST /app/medium/push?packageName=<your-package-name>&uuid=<your-device-uuid>
-
-requestBody
-```json
-{
-  "extras": {
-    "order": "your order"
-  }
-}
-```
-
-推送内容为：
-```json
-{
-  "extras": {
-    "order": "your order",
-    "packageName": "your package name",
-    "timestamp": "UNIX timestamp in sec"
-  }
-}
