@@ -17,15 +17,14 @@ requestBody
 ```json
 {
   "extras": {
-    "order": 19,
-    "packageName": "<your-package-name>"
+    "order": 19
   }
 }
 ```
 
 ## 获取播放信息
 
-* GET /app/medium?packageName=<your-package-name>&uuid=<your-device-uuid>
+* GET /app/medium?uuid=<your-device-uuid>
 
 responseBody
 ```json
@@ -33,7 +32,8 @@ responseBody
   "success": true,
   "msg": "媒体信息",
   "data": {
-    "info": "test"
+    "info": "test",
+    "packageName": "com.stockholm.news"
   }
 }
 ```
