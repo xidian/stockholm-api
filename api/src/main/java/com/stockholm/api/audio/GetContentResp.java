@@ -34,6 +34,16 @@ public class GetContentResp {
 
         private String info;
 
+        private String packageName;
+
+        public void setPackageName(String packageName) {
+            this.packageName = packageName;
+        }
+
+        public String getPackageName() {
+            return packageName;
+        }
+
         public String getInfo() {
             return info;
         }
