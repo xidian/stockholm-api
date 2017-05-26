@@ -2,7 +2,9 @@
 
 ## 或许频道资源
 
-* GET /tingwen?categoryId=ID
+* GET /tingwen?tingwen[termId]=ID&tingwen[page]=PAGE&tingwen[limit]=LIMIT
+
+如果没有termId，则默认为头条
 
 responseBody
 ```json
