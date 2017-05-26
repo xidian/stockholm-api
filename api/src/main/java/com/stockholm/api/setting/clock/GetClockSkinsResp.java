@@ -1,13 +1,12 @@
 package com.stockholm.api.setting.clock;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GetClockSkinsResp {
     private boolean success;
     private String msg;
-    private List<ClockSkinBean> data = new ArrayList();
+    private List<ClockThemeBean> data;
 
     public boolean isSuccess() {
         return success;
@@ -25,26 +24,27 @@ public class GetClockSkinsResp {
         this.msg = msg;
     }
 
-    public List<ClockSkinBean> getData() {
+    public List<ClockThemeBean> getData() {
         return data;
     }
 
-    public void setData(List<ClockSkinBean> data) {
+    public void setData(List<ClockThemeBean> data) {
         this.data = data;
     }
 
-    public static class ClockSkinBean {
-        private int id;
+    public static class ClockThemeBean {
+        private long themeId;
         private String name;
         private String packageName;
         private String url;
+        private String gifUrl;
 
-        public int getId() {
-            return id;
+        public long getThemeId() {
+            return themeId;
         }
 
-        public void setId(int id) {
-            this.id = id;
+        public void setThemeId(long id) {
+            this.themeId = id;
         }
 
         public String getName() {
@@ -71,14 +71,23 @@ public class GetClockSkinsResp {
             this.url = url;
         }
 
+        public String getGifUrl() {
+            return gifUrl;
+        }
+
+        public void setGifUrl(String gifUrl) {
+            this.gifUrl = gifUrl;
+        }
+
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ClockSkinBean) {
-                if (((ClockSkinBean) obj).getId() == id) {
+            if (obj != null && obj instanceof ClockThemeBean) {
+                if (((ClockThemeBean) obj).getThemeId() == themeId) {
                     return true;
                 }
             }
             return false;
         }
     }
+
 }

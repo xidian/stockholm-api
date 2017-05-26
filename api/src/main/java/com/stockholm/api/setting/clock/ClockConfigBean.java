@@ -9,11 +9,11 @@ import java.util.List;
 public class ClockConfigBean {
     private boolean skinAutoChange;
     private boolean openSecondSound;
-    private GetClockSkinsResp.ClockSkinBean clockSkin;
+    private GetClockSkinsResp.ClockThemeBean clockSkin;
     private List<AlarmBean> alarmList = new ArrayList<>();
 
     public ClockConfigBean(boolean skinAutoChange, boolean openSecondSound,
-                           GetClockSkinsResp.ClockSkinBean clockSkin, List<AlarmBean> alarmList) {
+                           GetClockSkinsResp.ClockThemeBean clockSkin, List<AlarmBean> alarmList) {
         setSkinAutoChange(skinAutoChange);
         setOpenSecondSound(openSecondSound);
         setClockSkin(clockSkin);
@@ -36,11 +36,11 @@ public class ClockConfigBean {
         this.skinAutoChange = skinAutoChange;
     }
 
-    public GetClockSkinsResp.ClockSkinBean getClockSkin() {
+    public GetClockSkinsResp.ClockThemeBean getClockSkin() {
         return clockSkin;
     }
 
-    public void setClockSkin(GetClockSkinsResp.ClockSkinBean clockSkin) {
+    public void setClockSkin(GetClockSkinsResp.ClockThemeBean clockSkin) {
         this.clockSkin = clockSkin;
     }
 
