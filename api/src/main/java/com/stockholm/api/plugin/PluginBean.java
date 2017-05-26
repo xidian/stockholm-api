@@ -8,15 +8,23 @@ import java.io.Serializable;
 public class PluginBean implements Serializable {
 
     private UserBean userBean;
-    private MediaBean mediaBean;
     private ConfigBean configBean;
     private SocketBean socketBean;
+    private boolean isAudioControl;
 
-    public PluginBean(UserBean userBean, MediaBean mediaBean, ConfigBean configBean, SocketBean socketBean) {
+    public PluginBean(UserBean userBean, ConfigBean configBean, SocketBean socketBean, boolean isAudioControl) {
         setUserBean(userBean);
-        setMediaBean(mediaBean);
         setConfigBean(configBean);
         setSocketBean(socketBean);
+        setAudioControl(isAudioControl);
+    }
+
+    public void setAudioControl(boolean audioControl) {
+        isAudioControl = audioControl;
+    }
+
+    public boolean isAudioControl() {
+        return isAudioControl;
     }
 
     public UserBean getUserBean() {
@@ -25,14 +33,6 @@ public class PluginBean implements Serializable {
 
     public void setUserBean(UserBean userBean) {
         this.userBean = userBean;
-    }
-
-    public MediaBean getMediaBean() {
-        return mediaBean;
-    }
-
-    public void setMediaBean(MediaBean mediaBean) {
-        this.mediaBean = mediaBean;
     }
 
     public ConfigBean getConfigBean() {
@@ -69,7 +69,7 @@ public class PluginBean implements Serializable {
         public void setUserId(String userId) {
             this.userId = userId;
         }
-        
+
         public String getDeviceId() {
             return deviceId;
         }
@@ -110,47 +110,6 @@ public class PluginBean implements Serializable {
 
         public void setMediaVolume(int mediaVolume) {
             this.mediaVolume = mediaVolume;
-        }
-    }
-
-    public static class MediaBean implements Serializable {
-        private boolean media;
-        private String packageName;
-        private String content;
-
-        public MediaBean(String packageName, String content) {
-            setPackageName(packageName);
-            setContent(content);
-        }
-
-        public MediaBean(boolean media, String packageName, String content) {
-            setMedia(media);
-            setPackageName(packageName);
-            setContent(content);
-        }
-
-        public boolean isMedia() {
-            return media;
-        }
-
-        public void setMedia(boolean media) {
-            this.media = media;
-        }
-
-        public String getPackageName() {
-            return packageName;
-        }
-
-        public void setPackageName(String packageName) {
-            this.packageName = packageName;
-        }
-
-        public String getContent() {
-            return content;
-        }
-
-        public void setContent(String content) {
-            this.content = content;
         }
     }
 
