@@ -9,9 +9,18 @@ import java.util.List;
 public class WeatherConfig {
 
     private List<CityBean> cityBeanList = new ArrayList<>();
+    private AlertBean alertBean;
 
     public WeatherConfig() {
 
+    }
+
+    public AlertBean getAlertBean() {
+        return alertBean;
+    }
+
+    public void setAlertBean(AlertBean alertBean) {
+        this.alertBean = alertBean;
     }
 
     public List<CityBean> getCityBeanList() {
@@ -58,4 +67,5 @@ public class WeatherConfig {
     public static WeatherConfig get(String json) {
         return new Gson().fromJson(json, WeatherConfig.class);
     }
+
 }

@@ -14,7 +14,7 @@ public class SystemSettingBean implements Serializable {
     private boolean enableNightMode;
     private int nightModeType;
     private String nightModeStartTime = "23:00";
-    private String nightModeEndTime = "07:00";
+    private String nightModeEndTime = "08:00";
 
     public int getAlarmVolume() {
         return alarmVolume;
