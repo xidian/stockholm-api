@@ -7,7 +7,6 @@ public class MeowTaskListResp {
 
     private boolean success;
     private String msg;
-    private int taskConfigId;
     private List<MeowTaskListBean> data;
 
     public boolean isSuccess() {
@@ -26,13 +25,12 @@ public class MeowTaskListResp {
         this.msg = msg;
     }
 
-    public int getTaskConfigId() {
-        return taskConfigId;
+
+    public List<MeowTaskListBean> getData() {
+        return data;
     }
 
-    public void setTaskConfigId(int taskConfigId) {
-        this.taskConfigId = taskConfigId;
+    public void setData(List<MeowTaskListBean> data) {
+        this.data = data;
     }
-
-
 }

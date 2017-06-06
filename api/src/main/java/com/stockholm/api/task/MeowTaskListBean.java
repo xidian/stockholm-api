@@ -5,11 +5,20 @@ import java.util.List;
 
 public class MeowTaskListBean {
 
+    private int taskConfigId;
     private List<MeowTaskBean> task;
     private String startTime;
     private int repeatType;
     private String repeatValue;
     private String updateAt;
+
+    public int getTaskConfigId() {
+        return taskConfigId;
+    }
+
+    public void setTaskConfigId(int taskConfigId) {
+        this.taskConfigId = taskConfigId;
+    }
 
     public List<MeowTaskBean> getTask() {
         return task;
