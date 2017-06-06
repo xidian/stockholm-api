@@ -94,6 +94,42 @@ requestBody:
 |1|在对应数组中删除一个Hash（配合ConfigDataType为1使用）|
 |2|更新对应hash，且id（或任何作为标记的主键必须放在hash的第一位）|
 
+## 增量更新设置项和任务
+
+* PUT /mobile/clock/app_with_task
+
+requestHeaders
+```
+Access-Token: <your-access-token>
+UUID: <your-device-uuid>
+PackageName: <your-package-name>
+```
+
+requestBody
+```json
+{
+	"appsConfig": {
+		"key": "alarmList",
+		"value": {"clockAlarmId":1,"name":"闹钟","repeatType":0,"ring":"华尔兹","status":true,"time":"15:47"},
+		"cmd": 0
+	},
+	"taskConfig": {
+		"task": {},
+		"startTime": "2017-06-06T14:16:31",
+		"repeatType": 0,
+		"repeatValue": "1,2,3,4"
+	}
+}
+```
+
+responseBody
+```json
+{
+	"success": true,
+	"msg": "更新成功",
+	"data": "更新后的config"
+}
+```
 
 ## 1个app的配置信息
 获取当前配置信息(config)

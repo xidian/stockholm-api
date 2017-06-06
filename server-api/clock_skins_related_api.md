@@ -10,19 +10,3 @@ requestHeaders
   Access-Token: <your-access-token>
   UUID: <your-device-uuid>
 ```
-
-## 绑定用户和皮肤
-
-* POST /mobile/apps_configs/skins/bind
-
-requestHeaders
-
-```
-  Access-Token: <your-access-token>
-```
-
-requestBody
-
-```json
-{"clockSkinId": 1}
-```
