@@ -114,7 +114,7 @@ requestBody
 		"cmd": 0
 	},
 	"taskConfig": {
-		"task": {},
+		"task": [],
 		"startTime": "2017-06-06T14:16:31",
 		"repeatType": 0,
 		"repeatValue": "1,2,3,4"
@@ -126,8 +126,7 @@ responseBody
 ```json
 {
 	"success": true,
-	"msg": "更新成功",
-	"data": "更新后的config"
+	"msg": "更新成功"
 }
 ```
 
