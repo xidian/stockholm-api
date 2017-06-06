@@ -3,14 +3,14 @@ package com.stockholm.api.task;
 
 public class MeowTaskReq {
 
-    private AppsConfig appsConfig;
+    private AlarmAppsConfig appsConfig;
     private MeowTaskListBeanReq taskConfig;
 
-    public AppsConfig getAppsConfig() {
+    public AlarmAppsConfig getAppsConfig() {
         return appsConfig;
     }
 
-    public void setAppsConfig(AppsConfig appsConfig) {
+    public void setAppsConfig(AlarmAppsConfig appsConfig) {
         this.appsConfig = appsConfig;
     }
 

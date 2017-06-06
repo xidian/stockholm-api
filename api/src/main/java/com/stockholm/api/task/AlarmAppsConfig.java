@@ -3,7 +3,7 @@ package com.stockholm.api.task;
 
 import com.stockholm.api.setting.clock.AlarmBean;
 
-public class AppsConfig {
+public class AlarmAppsConfig {
 
     private String key;
     private AlarmBean value;
