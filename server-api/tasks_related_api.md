@@ -14,15 +14,21 @@ responseBody
 ```json
 {
   "success": true,
-  "msg": "任务列表",
+  "msg": "所有的tasks",
   "data": [
     {
-      "task": [],
-      "startTime": "13:24",
-      "repeatType": 0,
-      "repeatValue": "1,2,3,4",
-      "packageName": "com.stockholm.clock",
-      "updatedAt": "2017-08-09T21:23:24"
+      "taskConfigId": 1,
+      "startTime": null,
+      "repeatType": null,
+      "repeatValue": null,
+      "updatedAt": "2017-06-06T19:42:56.000+08:00",
+      "task": [
+        {
+          "taskId": 1,
+          "priority": null,
+          "packageName": "com.stockholm.news"
+        }
+      ]
     }
   ]
 }
