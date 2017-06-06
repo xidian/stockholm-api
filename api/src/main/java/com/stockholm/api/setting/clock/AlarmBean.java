@@ -12,11 +12,14 @@ public class AlarmBean implements Serializable {
     private boolean status;
     private String repeat;
 
+    private String taskKey;
+    private String taskName;
+
     public AlarmBean() {
     }
 
     public AlarmBean(int clockAlarmId, String name, int repeatType, String ring, String time,
-                     boolean status, String repeat) {
+                     boolean status, String repeat, String taskName) {
         setClockAlarmId(clockAlarmId);
         setName(name);
         setRepeatType(repeatType);
@@ -24,6 +27,7 @@ public class AlarmBean implements Serializable {
         setTime(time);
         setStatus(status);
         setRepeat(repeat);
+        setTaskName(taskName);
     }
 
     public int getClockAlarmId() {
@@ -82,4 +86,19 @@ public class AlarmBean implements Serializable {
         this.repeat = repeat;
     }
 
+    public String getTaskKey() {
+        return taskKey;
+    }
+
+    public void setTaskKey(String taskKey) {
+        this.taskKey = taskKey;
+    }
+
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
+    }
 }
