@@ -7,11 +7,11 @@ public class MeowTaskListResp {
 
     private boolean success;
     private String msg;
+    private int taskConfigId;
     private List<MeowTaskBean> data;
     private String startTime;
     private int repeatType;
     private String repeatValue;
-    private String packageName;
     private String updateAt;
 
     public boolean isSuccess() {
@@ -28,6 +28,14 @@ public class MeowTaskListResp {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public int getTaskConfigId() {
+        return taskConfigId;
+    }
+
+    public void setTaskConfigId(int taskConfigId) {
+        this.taskConfigId = taskConfigId;
     }
 
     public List<MeowTaskBean> getData() {
@@ -60,14 +68,6 @@ public class MeowTaskListResp {
 
     public void setRepeatValue(String repeatValue) {
         this.repeatValue = repeatValue;
-    }
-
-    public String getPackageName() {
-        return packageName;
-    }
-
-    public void setPackageName(String packageName) {
-        this.packageName = packageName;
     }
 
     public String getUpdateAt() {
