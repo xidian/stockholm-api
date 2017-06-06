@@ -1,9 +1,6 @@
 package com.stockholm.api.task;
 
 
-import org.joda.time.LocalDateTime;
-import org.joda.time.LocalTime;
-
 import java.util.List;
 
 public class MeowTaskListResp {
@@ -11,11 +8,11 @@ public class MeowTaskListResp {
     private boolean success;
     private String msg;
     private List<MeowTaskBean> data;
-    private LocalTime startTime;
+    private String startTime;
     private int repeatType;
     private String repeatValue;
     private String packageName;
-    private LocalDateTime updateAt;
+    private String updateAt;
 
     public boolean isSuccess() {
         return success;
@@ -41,11 +38,11 @@ public class MeowTaskListResp {
         this.data = data;
     }
 
-    public LocalTime getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalTime startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
@@ -73,11 +70,11 @@ public class MeowTaskListResp {
         this.packageName = packageName;
     }
 
-    public LocalDateTime getUpdateAt() {
+    public String getUpdateAt() {
         return updateAt;
     }
 
-    public void setUpdateAt(LocalDateTime updateAt) {
+    public void setUpdateAt(String updateAt) {
         this.updateAt = updateAt;
     }
 }

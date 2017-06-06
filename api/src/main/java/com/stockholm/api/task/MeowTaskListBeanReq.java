@@ -1,14 +1,12 @@
 package com.stockholm.api.task;
 
 
-import org.joda.time.LocalTime;
-
 import java.util.List;
 
 public class MeowTaskListBeanReq {
 
     private List<MeowTaskBean> task;
-    private LocalTime startTime;
+    private String startTime;
     private int repeatType;
     private String repeatValue;
 
@@ -20,11 +18,11 @@ public class MeowTaskListBeanReq {
         this.task = task;
     }
 
-    public LocalTime getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalTime startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
