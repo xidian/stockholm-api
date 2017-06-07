@@ -32,4 +32,7 @@ public interface TaskService {
     Observable<CommonResp> changeTaskStatus(@Header("UUID") String uuid,
                                             @Header("PackageName") String packageName,
                                             @Body ChangeTaskStatusReq changeTaskStatusReq);
+
+    @POST("/app/task_config/switch")
+    Observable<CommonResp> changeTaskStatusDevice(@Body ChangeTaskStatusReq changeTaskStatusReq);
 }
