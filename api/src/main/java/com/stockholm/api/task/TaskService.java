@@ -29,5 +29,7 @@ public interface TaskService {
                                                  @Query("value") String value);
 
     @POST("/app/task_config/switch")
-    Observable<CommonResp> changeTaskStatus(@Body ChangeTaskStatusReq changeTaskStatusReq);
+    Observable<CommonResp> changeTaskStatus(@Header("UUID") String uuid,
+                                            @Header("PackageName") String packageName,
+                                            @Body ChangeTaskStatusReq changeTaskStatusReq);
 }
