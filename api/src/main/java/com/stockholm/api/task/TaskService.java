@@ -20,8 +20,8 @@ public interface TaskService {
 
     @GET("/app/task_config")
     Observable<MobileTasksResp> mobileQueryTasks(@Header("UUID") String uuid,
-                                            @Header("PackageName") String packageName,
-                                            @Query("key") String key,
-                                            @Query("identifier") String identifier,
-                                            @Query("value") String value);
+                                                 @Header("PackageName") String packageName,
+                                                 @Query("key") String key,
+                                                 @Query("identifier") String identifier,
+                                                 @Query("value") String value);
 }
