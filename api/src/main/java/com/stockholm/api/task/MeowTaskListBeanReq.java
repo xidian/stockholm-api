@@ -41,5 +41,4 @@ public class MeowTaskListBeanReq {
     public void setRepeatValue(String repeatValue) {
         this.repeatValue = repeatValue;
     }
-
 }
