@@ -27,12 +27,6 @@ public interface TaskService {
                                                  @Query("key") String key,
                                                  @Query("identifier") String identifier,
                                                  @Query("value") String value);
-    @GET("/app/task_config?key=alarmList&identifier=clockAlarmId&value=6286")
-    Observable<MobileTasksResp> mobileTasks(@Header("UUID") String uuid,
-                                            @Header("PackageName") String packageName,
-                                            @Query("key") String key,
-                                            @Query("identifier") String identifier,
-                                            @Query("value") String value);
 
     @POST("/app/task_config/switch")
     Observable<CommonResp> changeTaskStatus(@Body String taskConfigId, @Body boolean status);
