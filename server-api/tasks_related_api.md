@@ -61,3 +61,21 @@ responseBody
   }
 }
 ```
+
+## 开关任务
+
+* POST /app/task_config/switch
+
+requestHeaders
+```
+UUID: <your-device-uuid>
+PackageName: <your-package-name>
+```
+
+requestBody
+```json
+{
+  "taskConfigId": 1,
+  "open": true
+}
+```
