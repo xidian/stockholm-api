@@ -10,7 +10,7 @@ public class MeowTaskListBean {
     private String startTime;
     private int repeatType;
     private String repeatValue;
-    private String updateAt;
+    private String updatedAt;
     private boolean open;
 
     public int getTaskConfigId() {
@@ -53,12 +53,12 @@ public class MeowTaskListBean {
         this.repeatValue = repeatValue;
     }
 
-    public String getUpdateAt() {
-        return updateAt;
+    public String getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdateAt(String updateAt) {
-        this.updateAt = updateAt;
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public void setOpen(boolean open) {
