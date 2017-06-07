@@ -18,8 +18,8 @@ public interface TaskService {
     @GET("/app/task_configs")
     Observable<MeowTaskListResp> tasks();
 
-    @GET("/app/task_config?key=alarmList&identifier=clockAlarmId&value=6286")
-    Observable<MobileTasksResp> mobileTasks(@Header("UUID") String uuid,
+    @GET("/app/task_config")
+    Observable<MobileTasksResp> mobileQueryTasks(@Header("UUID") String uuid,
                                             @Header("PackageName") String packageName,
                                             @Query("key") String key,
                                             @Query("identifier") String identifier,
