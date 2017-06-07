@@ -12,7 +12,7 @@ public class AlarmBean implements Serializable {
     private boolean status;
     private String repeat;
 
-    private String taskKey;
+    private int taskConfigId;
     private String taskName;
 
     public AlarmBean() {
@@ -86,19 +86,19 @@ public class AlarmBean implements Serializable {
         this.repeat = repeat;
     }
 
-    public String getTaskKey() {
-        return taskKey;
-    }
-
-    public void setTaskKey(String taskKey) {
-        this.taskKey = taskKey;
-    }
-
     public String getTaskName() {
         return taskName;
     }
 
     public void setTaskName(String taskName) {
         this.taskName = taskName;
+    }
+
+    public int getTaskConfigId() {
+        return taskConfigId;
+    }
+
+    public void setTaskConfigId(int taskConfigId) {
+        this.taskConfigId = taskConfigId;
     }
 }
