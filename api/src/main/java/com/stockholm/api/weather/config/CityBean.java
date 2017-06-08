@@ -71,7 +71,7 @@ public class CityBean {
     public boolean equals(Object obj) {
         if (!(obj instanceof CityBean)) return false;
         CityBean bean = (CityBean) obj;
-        return bean.cityId.equals(cityId) && bean.location == location
-                && bean.visible == visible;
+        return bean.cityId.equals(cityId);
     }
+
 }
