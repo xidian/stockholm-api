@@ -38,16 +38,16 @@ public interface AppStoreService {
     Observable<MobileInstallAppResp> mobileInstallApp(@HeaderMap Map<String, String> headerMap, @Body MobileOperateAppReq req);
 
     @GET("/device/app/download")
-    Observable<DeviceDownloadAppResp> deviceDownloadApp();
+    Observable<DeviceDownloadAppResp> deviceDownloadApp(String packageName);
 
     @POST("/mobile/app/uninstall")
-    Observable<StoreCommonResp> mobileUninstallApp(@HeaderMap Map<String, String> headerMap, @Body MobileOperateAppReq req);
+    Observable<StoreCommonResp> mobileUninstallApp(String packageName, @Body MobileOperateAppReq req);
 
     @POST("/device/app/bind")
-    Observable<DeviceInstallCompleteResp> deviceInstallComplete(@Body DeviceInstallCompleteReq req);
+    Observable<DeviceInstallCompleteResp> deviceInstallComplete(String packageName, @Body DeviceInstallCompleteReq req);
 
     @POST("/device/app/unbind")
-    Observable<StoreCommonResp> deviceUninstallComplete();
+    Observable<StoreCommonResp> deviceUninstallComplete(String packageName);
 
     @POST("/device/app/check_for_updates")
     Observable<CheckUpdateResp> forceUpdate(@Body CheckUpdateReq req);
