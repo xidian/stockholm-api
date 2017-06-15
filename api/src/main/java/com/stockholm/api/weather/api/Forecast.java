@@ -1,6 +1,8 @@
 
 package com.stockholm.api.weather.api;
 
+import com.google.gson.Gson;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -77,6 +79,15 @@ public class Forecast {
 
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
+
+    public static Forecast get(String json) {
+        return new Gson().fromJson(json, Forecast.class);
     }
 
 }
