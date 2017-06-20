@@ -5,9 +5,6 @@ public class UserChannelBean {
     private long categoryId;
     private String categoryName;
     private boolean available = true;
-    private long newsId;
-    private int progress;
-    private boolean finished;
 
     public UserChannelBean() {
     }
@@ -39,30 +36,6 @@ public class UserChannelBean {
 
     public void setAvailable(boolean available) {
         this.available = available;
-    }
-
-    public long getNewsId() {
-        return newsId;
-    }
-
-    public void setNewsId(long newsId) {
-        this.newsId = newsId;
-    }
-
-    public int getProgress() {
-        return progress;
-    }
-
-    public void setProgress(int progress) {
-        this.progress = progress;
-    }
-
-    public boolean isFinished() {
-        return finished;
-    }
-
-    public void setFinished(boolean finished) {
-        this.finished = finished;
     }
 
 }
