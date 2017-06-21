@@ -1,6 +1,8 @@
 package com.stockholm.api.setting.news;
 
 
+import com.google.gson.Gson;
+
 import java.util.List;
 
 public class NewsConfigResp {
@@ -31,6 +33,15 @@ public class NewsConfigResp {
 
     public void setData(List<UserChannelBean> data) {
         this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
+
+    public static NewsConfigResp get(String json) {
+        return new Gson().fromJson(json, NewsConfigResp.class);
     }
 
 }
