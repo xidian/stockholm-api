@@ -5,6 +5,7 @@ public class UserChannelBean {
     private long categoryId;
     private String categoryName;
     private boolean available = true;
+    private int order;
 
     public UserChannelBean() {
     }
@@ -36,6 +37,14 @@ public class UserChannelBean {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
     }
 
 }
