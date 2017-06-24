@@ -41,7 +41,7 @@ public interface AppStoreService {
     Observable<DeviceDownloadAppResp> deviceDownloadApp(@Header("PackageName") String packageName);
 
     @POST("/mobile/app/uninstall")
-    Observable<StoreCommonResp> mobileUninstallApp(@Header("PackageName") String packageName, @Body MobileOperateAppReq req);
+    Observable<StoreCommonResp> mobileUninstallApp(@HeaderMap Map<String, String> headerMap, @Body MobileOperateAppReq req);
 
     @POST("/device/app/bind")
     Observable<DeviceInstallCompleteResp> deviceInstallComplete(@Header("PackageName") String packageName, @Body DeviceInstallCompleteReq req);
