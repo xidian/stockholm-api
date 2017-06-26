@@ -4,10 +4,12 @@ public class UpdateTrackReq {
 
 
     /**
-     * track : {"albumTitle":"ghjh","trackId":78988,"trackTitle":"hjhhj","coverUrl":"hh.com","anchor":"liusining","progress":"20"}
+     * track : {"albumTitle":"ghjh","trackId":78988,"trackTitle":"hjhhj","coverUrl":"hh.com","anchor":"liusining","progress":"20","index":0}
+     * media : {"playState":0,"extra":"test"}
      */
 
     private TrackBean track;
+    private MediaBean media;
 
     public TrackBean getTrack() {
         return track;
@@ -15,6 +17,14 @@ public class UpdateTrackReq {
 
     public void setTrack(TrackBean track) {
         this.track = track;
+    }
+
+    public MediaBean getMedia() {
+        return media;
+    }
+
+    public void setMedia(MediaBean media) {
+        this.media = media;
     }
 
     public static class TrackBean {
@@ -25,6 +35,7 @@ public class UpdateTrackReq {
          * coverUrl : hh.com
          * anchor : liusining
          * progress : 20
+         * index : 0
          */
 
         private String albumTitle;
@@ -33,6 +44,7 @@ public class UpdateTrackReq {
         private String coverUrl;
         private String anchor;
         private String progress;
+        private int index;
 
         public String getAlbumTitle() {
             return albumTitle;
@@ -80,6 +92,40 @@ public class UpdateTrackReq {
 
         public void setProgress(String progress) {
             this.progress = progress;
+        }
+
+        public int getIndex() {
+            return index;
+        }
+
+        public void setIndex(int index) {
+            this.index = index;
+        }
+    }
+
+    public static class MediaBean {
+        /**
+         * playState : 0
+         * extra : test
+         */
+
+        private int playState;
+        private String extra;
+
+        public int getPlayState() {
+            return playState;
+        }
+
+        public void setPlayState(int playState) {
+            this.playState = playState;
+        }
+
+        public String getExtra() {
+            return extra;
+        }
+
+        public void setExtra(String extra) {
+            this.extra = extra;
         }
     }
 }
