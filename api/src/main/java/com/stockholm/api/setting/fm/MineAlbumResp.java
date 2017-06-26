@@ -50,6 +50,7 @@ public class MineAlbumResp {
         private int albumId;
         private String title;
         private String coverUrl;
+        private String anchor;
         private String subscribeDate;
 
         public int getAlbumId() {
@@ -82,6 +83,14 @@ public class MineAlbumResp {
 
         public void setSubscribeDate(String subscribeDate) {
             this.subscribeDate = subscribeDate;
+        }
+
+        public void setAnchor(String anchor) {
+            this.anchor = anchor;
+        }
+
+        public String getAnchor() {
+            return anchor;
         }
     }
 }

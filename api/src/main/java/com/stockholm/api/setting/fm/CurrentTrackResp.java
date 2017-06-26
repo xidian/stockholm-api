@@ -50,7 +50,7 @@ public class CurrentTrackResp {
         private String title;
         private String subTitle;
         private String coverImg;
-        private Object extra;
+        private String extra;
 
         public int getPlayState() {
             return playState;
@@ -84,11 +84,11 @@ public class CurrentTrackResp {
             this.coverImg = coverImg;
         }
 
-        public Object getExtra() {
+        public String getExtra() {
             return extra;
         }
 
-        public void setExtra(Object extra) {
+        public void setExtra(String extra) {
             this.extra = extra;
         }
     }

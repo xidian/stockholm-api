@@ -27,6 +27,7 @@ public class SubscribeAlbumReq {
         private int albumId;
         private String title;
         private String coverUrl;
+        private String anchor;
 
         public int getAlbumId() {
             return albumId;
@@ -50,6 +51,14 @@ public class SubscribeAlbumReq {
 
         public void setCoverUrl(String coverUrl) {
             this.coverUrl = coverUrl;
+        }
+
+        public void setAnchor(String anchor) {
+            this.anchor = anchor;
+        }
+
+        public String getAnchor() {
+            return anchor;
         }
     }
 }
