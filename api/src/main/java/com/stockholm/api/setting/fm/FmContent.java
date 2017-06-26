@@ -6,6 +6,8 @@ public class FmContent {
 
     private String albumId;
 
+    private String trackId;
+
     private String index;
 
     public String getIndex() {
@@ -22,6 +24,14 @@ public class FmContent {
 
     public void setAlbumId(String albumId) {
         this.albumId = albumId;
+    }
+
+    public void setTrackId(String trackId) {
+        this.trackId = trackId;
+    }
+
+    public String getTrackId() {
+        return trackId;
     }
 
     @Override
