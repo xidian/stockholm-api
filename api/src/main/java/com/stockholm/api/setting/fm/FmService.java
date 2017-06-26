@@ -32,5 +32,5 @@ public interface FmService {
     Observable<CommonResp> updateAlbumTrack(@Path("albumId") String albumId,@Body UpdateTrackReq updateTrackReq);
 
     @GET("app/fm/albums/{albumId}/track")
-    Observable<CurrentTrackResp> getAlbumTrack(@Body AlbumTrackResp albumTrackResp);
+    Observable<AlbumTrackResp> getAlbumTrack(@Path("albumId") String albumId);
 }

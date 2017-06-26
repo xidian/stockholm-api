@@ -9,10 +9,12 @@ public class MineAlbumResp {
      * success : true
      * msg : 您订阅的专辑
      * data : [{"albumId":123,"title":"title","coverUrl":"m.com","subscribeDate":"2017-06-22T14:30:20.000+08:00"}]
+     * page : {"page":1,"nextPage":2,"totalPages":3}
      */
 
     private boolean success;
     private String msg;
+    private PageBean page;
     private List<DataBean> data;
 
     public boolean isSuccess() {
@@ -31,12 +33,56 @@ public class MineAlbumResp {
         this.msg = msg;
     }
 
+    public PageBean getPage() {
+        return page;
+    }
+
+    public void setPage(PageBean page) {
+        this.page = page;
+    }
+
     public List<DataBean> getData() {
         return data;
     }
 
     public void setData(List<DataBean> data) {
         this.data = data;
+    }
+
+    public static class PageBean {
+        /**
+         * page : 1
+         * nextPage : 2
+         * totalPages : 3
+         */
+
+        private int page;
+        private int nextPage;
+        private int totalPages;
+
+        public int getPage() {
+            return page;
+        }
+
+        public void setPage(int page) {
+            this.page = page;
+        }
+
+        public int getNextPage() {
+            return nextPage;
+        }
+
+        public void setNextPage(int nextPage) {
+            this.nextPage = nextPage;
+        }
+
+        public int getTotalPages() {
+            return totalPages;
+        }
+
+        public void setTotalPages(int totalPages) {
+            this.totalPages = totalPages;
+        }
     }
 
     public static class DataBean {
@@ -50,8 +96,8 @@ public class MineAlbumResp {
         private int albumId;
         private String title;
         private String coverUrl;
-        private String anchor;
         private String subscribeDate;
+        private String anchor;
 
         public int getAlbumId() {
             return albumId;
@@ -85,12 +131,12 @@ public class MineAlbumResp {
             this.subscribeDate = subscribeDate;
         }
 
-        public void setAnchor(String anchor) {
-            this.anchor = anchor;
-        }
-
         public String getAnchor() {
             return anchor;
+        }
+
+        public void setAnchor(String anchor) {
+            this.anchor = anchor;
         }
     }
 }

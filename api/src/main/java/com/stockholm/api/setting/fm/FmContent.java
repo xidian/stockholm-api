@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 
 public class FmContent {
 
-    private String trackId;
+    private String albumId;
 
     private String index;
 
@@ -16,12 +16,12 @@ public class FmContent {
         this.index = index;
     }
 
-    public String getTrackId() {
-        return trackId;
+    public String getAlbumId() {
+        return albumId;
     }
 
-    public void setTrackId(String trackId) {
-        this.trackId = trackId;
+    public void setAlbumId(String albumId) {
+        this.albumId = albumId;
     }
 
     @Override
