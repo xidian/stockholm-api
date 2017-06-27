@@ -54,6 +54,15 @@ public class AlbumTrackResp {
         private String albumTitle;
         private String anchor;
         private int progress;
+        private int index;
+
+        public void setIndex(int index) {
+            this.index = index;
+        }
+
+        public int getIndex() {
+            return index;
+        }
 
         public int getTrackId() {
             return trackId;
