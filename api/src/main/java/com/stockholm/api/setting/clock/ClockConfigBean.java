@@ -3,21 +3,16 @@ package com.stockholm.api.setting.clock;
 
 import com.google.gson.Gson;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ClockConfigBean {
     private boolean skinAutoChange;
     private boolean openSecondSound;
     private GetClockSkinsResp.ClockThemeBean clockSkin;
-    private List<AlarmBean> alarmList = new ArrayList<>();
 
     public ClockConfigBean(boolean skinAutoChange, boolean openSecondSound,
-                           GetClockSkinsResp.ClockThemeBean clockSkin, List<AlarmBean> alarmList) {
+                           GetClockSkinsResp.ClockThemeBean clockSkin) {
         setSkinAutoChange(skinAutoChange);
         setOpenSecondSound(openSecondSound);
         setClockSkin(clockSkin);
-        setAlarmList(alarmList);
     }
 
     public boolean isOpenSecondSound() {
@@ -42,14 +37,6 @@ public class ClockConfigBean {
 
     public void setClockSkin(GetClockSkinsResp.ClockThemeBean clockSkin) {
         this.clockSkin = clockSkin;
-    }
-
-    public List<AlarmBean> getAlarmList() {
-        return alarmList;
-    }
-
-    public void setAlarmList(List<AlarmBean> alarmList) {
-        this.alarmList = alarmList;
     }
 
     @Override
