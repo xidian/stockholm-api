@@ -8,10 +8,12 @@ public class Observe {
 
     private String shidu;
     private Integer temp;
+    private String wthr;
+    private int type;
     private String wp;
     private String wd;
     private String tigan;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private String up_time;
 
     public String getShidu() {
         return shidu;
@@ -53,12 +55,27 @@ public class Observe {
         this.tigan = tigan;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
+    public String getWthr() {
+        return wthr;
     }
 
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
+    public void setWthr(String wthr) {
+        this.wthr = wthr;
     }
 
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public String getUp_time() {
+        return up_time;
+    }
+
+    public void setUp_time(String up_time) {
+        this.up_time = up_time;
+    }
 }
