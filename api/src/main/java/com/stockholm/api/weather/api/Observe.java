@@ -1,9 +1,6 @@
 
 package com.stockholm.api.weather.api;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Observe {
 
     private String shidu;
