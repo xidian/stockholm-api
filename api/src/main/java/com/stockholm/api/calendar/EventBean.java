@@ -1,7 +1,9 @@
 package com.stockholm.api.calendar;
 
 
-public class EventBean {
+import java.io.Serializable;
+
+public class EventBean implements Serializable {
     private long eventId;
     private String name;
     private String time;
