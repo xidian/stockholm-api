@@ -10,7 +10,7 @@ public class AlarmBean implements Serializable {
     private String ring;
     private String time;
     private boolean status;
-    private String repeat;
+    private String repeatValue;
 
     private String taskName;
 
@@ -78,11 +78,11 @@ public class AlarmBean implements Serializable {
     }
 
     public String getRepeat() {
-        return repeat;
+        return repeatValue;
     }
 
-    public void setRepeat(String repeat) {
-        this.repeat = repeat;
+    public void setRepeat(String repeatValue) {
+        this.repeatValue = repeatValue;
     }
 
     public String getTaskName() {

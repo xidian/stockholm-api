@@ -8,6 +8,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
 
@@ -35,4 +36,13 @@ public interface TaskService {
 
     @POST("/app/task_config/switch")
     Observable<CommonResp> changeTaskStatusDevice(@Body ChangeTaskStatusReq changeTaskStatusReq);
+
+    @GET("/v1/task-configs/{taskConfigId}")
+    Observable<TaskConfigResp> queryTaskConfig(@Path("taskConfigId") String taskConfigId);
+
+    @GET("/v1/task_configs")
+    Observable<AllTaskResp> listAllTask();
+
+    @PUT("/v1/task-configs/{taskConfigId}")
+    Observable<CommonResp> updateTask(@Path("taskConfigId") String taskConfigId, @Body UpdateTaskReq updateTaskReq);
 }
