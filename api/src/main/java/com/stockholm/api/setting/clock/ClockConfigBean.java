@@ -6,10 +6,10 @@ import com.google.gson.Gson;
 public class ClockConfigBean {
     private boolean skinAutoChange;
     private boolean openSecondSound;
-    private GetClockSkinsResp.ClockThemeBean clockSkin;
+    private ClockThemeBean clockSkin;
 
     public ClockConfigBean(boolean skinAutoChange, boolean openSecondSound,
-                           GetClockSkinsResp.ClockThemeBean clockSkin) {
+                           ClockThemeBean clockSkin) {
         setSkinAutoChange(skinAutoChange);
         setOpenSecondSound(openSecondSound);
         setClockSkin(clockSkin);
@@ -31,11 +31,11 @@ public class ClockConfigBean {
         this.skinAutoChange = skinAutoChange;
     }
 
-    public GetClockSkinsResp.ClockThemeBean getClockSkin() {
+    public ClockThemeBean getClockSkin() {
         return clockSkin;
     }
 
-    public void setClockSkin(GetClockSkinsResp.ClockThemeBean clockSkin) {
+    public void setClockSkin(ClockThemeBean clockSkin) {
         this.clockSkin = clockSkin;
     }
 

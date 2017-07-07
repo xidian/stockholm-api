@@ -26,8 +26,8 @@ public interface ClockService {
     @GET("/app/clock/alarms")
     Observable<Response<List<AlarmListResp>>> queryAlarms();
 
-    @GET("/mobile/apps_configs/skins")
-    Observable<GetClockSkinsResp> getClockSkins();
+    @GET("/app/clock/skins")
+    Observable<Response<List<ClockThemeBean>>> queryThemes();
 
     @POST("/app/clock/alarms")
     Observable<Response<AddAlarmResp>> addAlarm(@Body AddAlarmReq addAlarmReq);
