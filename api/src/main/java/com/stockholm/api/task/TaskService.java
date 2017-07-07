@@ -40,7 +40,7 @@ public interface TaskService {
     @GET("/v1/task-configs/{taskConfigId}")
     Observable<TaskConfigResp> queryTaskConfig(@Path("taskConfigId") String taskConfigId);
 
-    @GET("/v1/task_configs")
+    @GET("/v1/task-configs")
     Observable<AllTaskResp> listAllTask();
 
     @PUT("/v1/task-configs/{taskConfigId}")
