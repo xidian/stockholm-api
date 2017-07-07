@@ -10,16 +10,15 @@ public class AlarmBean implements Serializable {
     private String ring;
     private String time;
     private boolean status;
-    private String repeat;
+    private String repeatValue;
 
-    private int taskConfigId;
     private String taskName;
 
     public AlarmBean() {
     }
 
     public AlarmBean(int clockAlarmId, String name, int repeatType, String ring, String time,
-                     boolean status, String repeat, String taskName, int taskConfigId) {
+                     boolean status, String repeat, String taskName) {
         setClockAlarmId(clockAlarmId);
         setName(name);
         setRepeatType(repeatType);
@@ -28,7 +27,6 @@ public class AlarmBean implements Serializable {
         setStatus(status);
         setRepeat(repeat);
         setTaskName(taskName);
-        setTaskConfigId(taskConfigId);
     }
 
     public int getClockAlarmId() {
@@ -80,11 +78,11 @@ public class AlarmBean implements Serializable {
     }
 
     public String getRepeat() {
-        return repeat;
+        return repeatValue;
     }
 
-    public void setRepeat(String repeat) {
-        this.repeat = repeat;
+    public void setRepeat(String repeatValue) {
+        this.repeatValue = repeatValue;
     }
 
     public String getTaskName() {
@@ -95,11 +93,4 @@ public class AlarmBean implements Serializable {
         this.taskName = taskName;
     }
 
-    public int getTaskConfigId() {
-        return taskConfigId;
-    }
-
-    public void setTaskConfigId(int taskConfigId) {
-        this.taskConfigId = taskConfigId;
-    }
 }
