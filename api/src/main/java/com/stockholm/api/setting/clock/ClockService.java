@@ -1,7 +1,6 @@
 package com.stockholm.api.setting.clock;
 
 
-import com.stockholm.api.CommonResp;
 import com.stockholm.api.NoBodyResp;
 
 import java.util.List;
@@ -18,10 +17,10 @@ import rx.Observable;
 public interface ClockService {
 
     @GET("/app/clock")
-    Observable<ClockConfigResp> queryConfig();
+    Observable<Response<ClockConfigBean>> queryConfig();
 
     @PUT("/app/clock")
-    Observable<CommonResp> updateConfig(@Body ClockConfigUpdateReq req);
+    Observable<Response<NoBodyResp>> updateConfig(@Body ClockConfigUpdateReq req);
 
     @GET("/app/clock/alarms")
     Observable<Response<List<AlarmListResp>>> queryAlarms();
