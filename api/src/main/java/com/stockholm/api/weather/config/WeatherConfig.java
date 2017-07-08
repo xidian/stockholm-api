@@ -23,7 +23,7 @@ public class WeatherConfig {
         this.alertBean = alertBean;
     }
 
-    public List<CityBean> getCities() {
+    public List<CityBean> getCityBeanList() {
         return cities;
     }
 
@@ -42,7 +42,7 @@ public class WeatherConfig {
     }
 
     public CityBean getLocationCity() {
-        for (CityBean cityBean: cities) {
+        for (CityBean cityBean : cities) {
             if (cityBean.isLocation()) return cityBean;
         }
 
