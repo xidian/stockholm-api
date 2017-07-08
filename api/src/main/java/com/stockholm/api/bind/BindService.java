@@ -10,12 +10,12 @@ import rx.Observable;
 public interface BindService {
 
     @POST("clocks/bind")
-    Observable<BindResp> bind(@Header("Access-Token") String accessToken, @Body BindReq bindReq);
+    Observable<BindResp> bind(@Header("Access-Token") String accessToken, @Header("platform") int platform, @Body BindReq bindReq);
 
     @POST("/clocks/report_wifi_connection")
-    Observable<ReportWifiConnectResp> reportWifiConnect(@Header("Access-Token") String accessToken);
+    Observable<ReportWifiConnectResp> reportWifiConnect(@Header("Access-Token") String accessToken, @Header("platform") int platform);
 
     @GET("/clock/bindings")
-    Observable<BindResp> isDeviceBind();
+    Observable<BindResp> isDeviceBind(@Header("platform") int platform);
 
 }
