@@ -1,6 +1,8 @@
 package com.stockholm.api.weather.config;
 
 
+import com.google.gson.Gson;
+
 public class AlertBean {
     private boolean rainAlert;
     private boolean hazeAlert;
@@ -37,6 +39,15 @@ public class AlertBean {
 
     public void setCoolAlert(boolean coolAlert) {
         this.coolAlert = coolAlert;
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
+
+    public static AlertBean get(String json) {
+        return new Gson().fromJson(json, AlertBean.class);
     }
 
 }
