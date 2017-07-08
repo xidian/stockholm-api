@@ -8,7 +8,7 @@ import java.util.List;
 
 public class WeatherConfig {
 
-    private List<CityBean> cityBeanList = new ArrayList<>();
+    private List<CityBean> cities = new ArrayList<>();
     private AlertBean alertBean;
 
     public WeatherConfig() {
@@ -23,14 +23,14 @@ public class WeatherConfig {
         this.alertBean = alertBean;
     }
 
-    public List<CityBean> getCityBeanList() {
-        return cityBeanList;
+    public List<CityBean> getCities() {
+        return cities;
     }
 
     public boolean addCityBean(CityBean bean) {
         if (bean == null) return false;
-        if (!cityBeanList.contains(bean)) {
-            cityBeanList.add(bean);
+        if (!cities.contains(bean)) {
+            cities.add(bean);
             return true;
         }
 
@@ -38,11 +38,11 @@ public class WeatherConfig {
     }
 
     public boolean removeCityBean(CityBean bean) {
-        return cityBeanList.remove(bean);
+        return cities.remove(bean);
     }
 
     public CityBean getLocationCity() {
-        for (CityBean cityBean:cityBeanList) {
+        for (CityBean cityBean: cities) {
             if (cityBean.isLocation()) return cityBean;
         }
 
