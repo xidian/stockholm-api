@@ -1,14 +1,16 @@
 package com.stockholm.api.setting;
 
 
+import com.stockholm.api.NoBodyResp;
 import com.stockholm.api.setting.system.GetBindClocksResp;
 import com.stockholm.api.setting.system.RenameDeviceReq;
 import com.stockholm.api.setting.system.RenameDeviceResp;
-import com.stockholm.api.setting.system.SwitchDeviceResp;
+import com.stockholm.api.setting.system.SwitchDeviceReq;
 import com.stockholm.api.setting.system.UnbindDeviceResp;
 
 import java.util.Map;
 
+import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
@@ -71,8 +73,8 @@ public interface SettingService {
     @GET("/device/apps")
     Observable<DeviceAppStateResp> deviceGetAppState();
 
-    @PUT("/user/devices/switch_current_clock")
-    Observable<SwitchDeviceResp> switchDevice(@Header("UUID") String uuid);
+    @PUT("/v1/account/devices/switch")
+    Observable<Response<NoBodyResp>> switchDevice(@Body SwitchDeviceReq req);
 
     @POST("/clocks/ask_for_reset")
     Observable<ResetDeviceResp> resetDevice(@Header("UUID") String uuid);

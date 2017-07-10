@@ -4,7 +4,6 @@ package com.stockholm.api.push;
 import com.google.gson.Gson;
 
 public class CommonPushReq {
-    private String whisper;
     private PushMessage extras;
 
     public CommonPushReq() {
@@ -12,19 +11,6 @@ public class CommonPushReq {
 
     public CommonPushReq(PushMessage extras) {
         setExtras(extras);
-    }
-
-    public CommonPushReq(String whisper, PushMessage extras) {
-        setWhisper(whisper);
-        setExtras(extras);
-    }
-
-    public String getWhisper() {
-        return whisper;
-    }
-
-    public void setWhisper(String whisper) {
-        this.whisper = whisper;
     }
 
     public PushMessage getExtras() {
