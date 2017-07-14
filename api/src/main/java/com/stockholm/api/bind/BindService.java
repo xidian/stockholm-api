@@ -23,6 +23,6 @@ public interface BindService {
     Observable<BindResp> isDeviceBind();
 
     @PUT("/v1/device")
-    Observable<Response<NoBodyResp>> updateUSerGuideSatte(@Body UpdateGuideStateReq req);
+    Observable<Response<NoBodyResp>> updateUserGuideSatte(@Body UpdateGuideStateReq req);
 
 }
