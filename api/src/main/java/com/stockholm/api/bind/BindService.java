@@ -1,10 +1,14 @@
 package com.stockholm.api.bind;
 
 
+import com.stockholm.api.NoBodyResp;
+
+import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import rx.Observable;
 
 public interface BindService {
@@ -17,5 +21,8 @@ public interface BindService {
 
     @GET("/clock/bindings")
     Observable<BindResp> isDeviceBind();
+
+    @PUT("/v1/device")
+    Observable<Response<NoBodyResp>> updateUSerGuideSatte(@Body UpdateGuideStateReq req);
 
 }

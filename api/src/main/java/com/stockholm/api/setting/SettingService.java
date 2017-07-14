@@ -2,7 +2,7 @@ package com.stockholm.api.setting;
 
 
 import com.stockholm.api.NoBodyResp;
-import com.stockholm.api.setting.system.GetBindClocksResp;
+import com.stockholm.api.setting.system.DeviceListResp;
 import com.stockholm.api.setting.system.RenameDeviceReq;
 import com.stockholm.api.setting.system.RenameDeviceResp;
 import com.stockholm.api.setting.system.SwitchDeviceReq;
@@ -21,8 +21,8 @@ import rx.Observable;
 
 public interface SettingService {
 
-    @GET("/clocks")
-    Observable<GetBindClocksResp> getBindClocks();
+    @GET("/v1/account/devices")
+    Observable<Response<DeviceListResp>> queryDeviceList();
 
     @GET("/mobile/clock/apps_configs")
     Observable<GetClockAppsResp> getClockApps();
