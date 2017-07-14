@@ -19,8 +19,8 @@ public interface BindService {
     @POST("/clocks/report_wifi_connection")
     Observable<ReportWifiConnectResp> reportWifiConnect(@Header("Access-Token") String accessToken);
 
-    @GET("/clock/bindings")
-    Observable<BindResp> isDeviceBind();
+    @GET("/v1/device/binding")
+    Observable<Response<DeviceBindStateResp>> checkDeviceBindState();
 
     @PUT("/v1/device")
     Observable<Response<NoBodyResp>> updateUserGuideState(@Body UpdateGuideStateReq req);
