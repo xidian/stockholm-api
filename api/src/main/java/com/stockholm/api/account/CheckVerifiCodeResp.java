@@ -1,4 +1,4 @@
-package com.stockholm.api.login;
+package com.stockholm.api.account;
 
 public class CheckVerifiCodeResp {
 

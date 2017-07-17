@@ -1,4 +1,4 @@
-package com.stockholm.api.login.wx;
+package com.stockholm.api.account.wx;
 
 
 public class BindWeChatResp {

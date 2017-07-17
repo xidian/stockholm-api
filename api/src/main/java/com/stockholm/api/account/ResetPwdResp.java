@@ -1,7 +1,7 @@
-package com.stockholm.api.login.wx;
+package com.stockholm.api.account;
 
+public class ResetPwdResp {
 
-public class UnbindWeChatResp {
     private boolean success;
     private String msg;
 
@@ -20,5 +20,4 @@ public class UnbindWeChatResp {
     public void setMsg(String msg) {
         this.msg = msg;
     }
-
 }

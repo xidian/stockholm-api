@@ -1,6 +1,6 @@
-package com.stockholm.api.login;
+package com.stockholm.api.account;
 
-import com.stockholm.api.login.wx.WeChatBean;
+import com.stockholm.api.account.wx.WeChatBean;
 
 public class SignReq {
 

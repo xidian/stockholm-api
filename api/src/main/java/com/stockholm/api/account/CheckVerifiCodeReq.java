@@ -1,14 +1,22 @@
-package com.stockholm.api.login;
+package com.stockholm.api.account;
 
 public class CheckVerifiCodeReq {
 
-    private String phoneNumber;
-    private String code;
 
     public CheckVerifiCodeReq(String phoneNumber, String code) {
-        setPhoneNumber(phoneNumber);
-        setCode(code);
+        this.phoneNumber = phoneNumber;
+        this.code = code;
     }
+
+    /**
+     * phoneNumber : 433524234
+     * code : 1231
+     */
+
+
+
+    private String phoneNumber;
+    private String code;
 
     public String getPhoneNumber() {
         return phoneNumber;

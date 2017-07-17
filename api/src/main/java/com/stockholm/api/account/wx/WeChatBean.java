@@ -1,4 +1,4 @@
-package com.stockholm.api.login.wx;
+package com.stockholm.api.account.wx;
 
 
 import com.google.gson.Gson;

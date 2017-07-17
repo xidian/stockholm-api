@@ -1,10 +1,11 @@
-package com.stockholm.api.login.wx;
+package com.stockholm.api.account;
 
 
-public class WeChatLoginResp {
+public class CheckSerialNumberResp {
+
     private boolean success;
     private String msg;
-    private Object data;
+    private String data;
 
     public boolean isSuccess() {
         return success;
@@ -22,11 +23,11 @@ public class WeChatLoginResp {
         this.msg = msg;
     }
 
-    public Object getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(String data) {
         this.data = data;
     }
 

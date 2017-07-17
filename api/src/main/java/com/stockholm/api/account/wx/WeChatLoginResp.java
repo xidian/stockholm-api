@@ -1,9 +1,10 @@
-package com.stockholm.api.login;
+package com.stockholm.api.account.wx;
 
-public class ResetPwdResp {
 
+public class WeChatLoginResp {
     private boolean success;
     private String msg;
+    private Object data;
 
     public boolean isSuccess() {
         return success;
@@ -20,4 +21,13 @@ public class ResetPwdResp {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
+
 }

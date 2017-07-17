@@ -1,11 +1,9 @@
-package com.stockholm.api.login;
+package com.stockholm.api.account.wx;
 
 
-public class CheckSerialNumberResp {
-
+public class UnbindWeChatResp {
     private boolean success;
     private String msg;
-    private String data;
 
     public boolean isSuccess() {
         return success;
@@ -21,14 +19,6 @@ public class CheckSerialNumberResp {
 
     public void setMsg(String msg) {
         this.msg = msg;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
     }
 
 }
