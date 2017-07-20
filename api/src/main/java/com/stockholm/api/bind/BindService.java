@@ -2,9 +2,11 @@ package com.stockholm.api.bind;
 
 
 import com.stockholm.api.NoBodyResp;
+import com.stockholm.api.base.BaseResponse;
 
 import retrofit2.Response;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
@@ -13,11 +15,11 @@ import rx.Observable;
 
 public interface BindService {
 
-    @POST("clocks/bind")
-    Observable<BindResp> bind(@Header("Access-Token") String accessToken, @Body BindReq bindReq);
+    @POST("/v1/device/binding")
+    Observable<Response<BaseResponse>> bind(@Header("Access-Token") String accessToken, @Body BindReq bindReq);
 
-    @POST("/clocks/report_wifi_connection")
-    Observable<ReportWifiConnectResp> reportWifiConnect(@Header("Access-Token") String accessToken);
+    @DELETE("/v1/device/binding")
+    Observable<Response<BaseResponse>> unbind();
 
     @GET("/v1/device/binding")
     Observable<Response<DeviceBindStateResp>> checkDeviceBindState();

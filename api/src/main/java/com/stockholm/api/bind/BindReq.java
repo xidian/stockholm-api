@@ -1,28 +1,21 @@
 package com.stockholm.api.bind;
 
+import java.util.List;
+
 public class BindReq {
 
-    private String uuid;
-    private String installedApps;
+    private List<String> installedApps;
 
-    public BindReq(String uuid, String installedApps) {
-        setUuid(uuid);
-        setInstalledApps(installedApps);
+    public BindReq(List<String> installedApps) {
+        this.installedApps = installedApps;
     }
 
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public String getInstalledApps() {
+    public List<String> getInstalledApps() {
         return installedApps;
     }
 
-    public void setInstalledApps(String installedApps) {
+    public void setInstalledApps(List<String> installedApps) {
         this.installedApps = installedApps;
     }
+
 }

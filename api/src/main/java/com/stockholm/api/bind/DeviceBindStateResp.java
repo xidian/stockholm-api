@@ -1,29 +1,33 @@
 package com.stockholm.api.bind;
 
 
-public class DeviceBindStateResp {
+import com.stockholm.api.base.BaseResponse;
 
-    private int usersCount;
-    private boolean showGuide;
+public class DeviceBindStateResp extends BaseResponse<DeviceBindStateResp.DataBean> {
 
-    public int getUsersCount() {
-        return usersCount;
-    }
+    public static class DataBean {
+        private int usersCount;
+        private boolean showGuide;
 
-    public void setUsersCount(int usersCount) {
-        this.usersCount = usersCount;
-    }
+        public int getUsersCount() {
+            return usersCount;
+        }
 
-    public boolean isShowGuide() {
-        return showGuide;
-    }
+        public void setUsersCount(int usersCount) {
+            this.usersCount = usersCount;
+        }
 
-    public void setShowGuide(boolean showGuide) {
-        this.showGuide = showGuide;
-    }
+        public boolean isShowGuide() {
+            return showGuide;
+        }
 
-    public boolean isDeviceBinded() {
-        return usersCount > 0;
+        public void setShowGuide(boolean showGuide) {
+            this.showGuide = showGuide;
+        }
+
+        public boolean isDeviceBinded() {
+            return usersCount > 0;
+        }
     }
 
 }

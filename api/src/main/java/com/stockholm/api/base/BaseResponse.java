@@ -1,7 +1,7 @@
 package com.stockholm.api.base;
 
 
-public class BaseResponse<T extends BaseDataBean> {
+public class BaseResponse<T> {
 
     private int errorCode;
     private T data;

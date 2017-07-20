@@ -6,7 +6,6 @@ import com.stockholm.api.setting.system.DeviceListResp;
 import com.stockholm.api.setting.system.RenameDeviceReq;
 import com.stockholm.api.setting.system.RenameDeviceResp;
 import com.stockholm.api.setting.system.SwitchDeviceReq;
-import com.stockholm.api.setting.system.UnbindDeviceResp;
 
 import java.util.Map;
 
@@ -42,9 +41,6 @@ public interface SettingService {
 
     @POST("/device/apps_config")
     Observable<DeviceAppConfigPagerResp> getDeviceConfigWithPager(@Body DeviceAppConfigPagerReq deviceAppConfigPagerReq);
-
-    @POST("/clocks/unbind")
-    Observable<UnbindDeviceResp> unbindDevice(@HeaderMap Map<String, String> headerMap);
 
     @PUT("/clock/name")
     Observable<RenameDeviceResp> renameDevice(@HeaderMap Map<String, String> headerMap,
