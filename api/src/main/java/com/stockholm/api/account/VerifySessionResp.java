@@ -1,10 +1,11 @@
 package com.stockholm.api.account;
 
-public class UpdatePasswordResp {
+public class VerifySessionResp {
+
 
     /**
      * errorCode : 0
-     * data : {}
+     * data : {"session":true}
      */
 
     private int errorCode;
@@ -27,5 +28,18 @@ public class UpdatePasswordResp {
     }
 
     public static class DataBean {
+        /**
+         * session : true
+         */
+
+        private boolean session;
+
+        public boolean isSession() {
+            return session;
+        }
+
+        public void setSession(boolean session) {
+            this.session = session;
+        }
     }
 }

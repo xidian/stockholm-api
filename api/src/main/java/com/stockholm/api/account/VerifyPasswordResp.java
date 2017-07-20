@@ -1,10 +1,10 @@
 package com.stockholm.api.account;
 
-public class UpdatePasswordResp {
+public class VerifyPasswordResp {
 
     /**
      * errorCode : 0
-     * data : {}
+     * data : {"password":true}
      */
 
     private int errorCode;
@@ -27,5 +27,18 @@ public class UpdatePasswordResp {
     }
 
     public static class DataBean {
+        /**
+         * password : true
+         */
+
+        private boolean password;
+
+        public boolean isPassword() {
+            return password;
+        }
+
+        public void setPassword(boolean password) {
+            this.password = password;
+        }
     }
 }

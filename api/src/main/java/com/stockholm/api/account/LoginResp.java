@@ -2,83 +2,49 @@ package com.stockholm.api.account;
 
 public class LoginResp {
 
+    private int errorCode;
+    private DataBean data;
 
-    /**
-     * user : {"acountId":"12341","username":"adfasd","phoneNumber":"78987898789","avatarUrl":"http: //asdf.com/asdf.jpg"}
-     * accessToken : adfadfad
-     */
-
-    private UserBean user;
-    private String accessToken;
-
-    public UserBean getUser() {
-        return user;
+    public int getErrorCode() {
+        return errorCode;
     }
 
-    public void setUser(UserBean user) {
-        this.user = user;
+    public void setErrorCode(int errorCode) {
+        this.errorCode = errorCode;
     }
 
-    public String getAccessToken() {
-        return accessToken;
+    public DataBean getData() {
+        return data;
     }
 
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
+    public void setData(DataBean data) {
+        this.data = data;
     }
 
-    public static class UserBean {
+    public static class DataBean {
         /**
-         * acountId : 12341
-         * username : adfasd
-         * phoneNumber : 78987898789
-         * avatarUrl : http: //asdf.com/asdf.jpg
+         * accessToken : xzXdQL78EPXo1TSp7aDhqAT4
+         * user : {"username":"小喵用户5657848","phoneNumber":"13072978353","avatarUrl":null,"wechatNickname":null}
          */
 
-        private String acountId;
-        private String username;
-        private String phoneNumber;
-        private String avatarUrl;
-        private String wechatNickname;
+        private String accessToken;
+        private UserBean user;
 
-        public String getWechatNickname() {
-            return wechatNickname;
+        public String getAccessToken() {
+            return accessToken;
         }
 
-        public void setWechatNickname(String wechatNickname) {
-            this.wechatNickname = wechatNickname;
+        public void setAccessToken(String accessToken) {
+            this.accessToken = accessToken;
         }
 
-        public String getAcountId() {
-            return acountId;
+        public UserBean getUser() {
+            return user;
         }
 
-        public void setAcountId(String acountId) {
-            this.acountId = acountId;
+        public void setUser(UserBean user) {
+            this.user = user;
         }
 
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPhoneNumber() {
-            return phoneNumber;
-        }
-
-        public void setPhoneNumber(String phoneNumber) {
-            this.phoneNumber = phoneNumber;
-        }
-
-        public String getAvatarUrl() {
-            return avatarUrl;
-        }
-
-        public void setAvatarUrl(String avatarUrl) {
-            this.avatarUrl = avatarUrl;
-        }
     }
 }

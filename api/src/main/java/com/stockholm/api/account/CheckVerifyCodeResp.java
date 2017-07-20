@@ -1,6 +1,6 @@
 package com.stockholm.api.account;
 
-public class UpdatePasswordResp {
+public class CheckVerifyCodeResp {
 
     /**
      * errorCode : 0
@@ -8,7 +8,6 @@ public class UpdatePasswordResp {
      */
 
     private int errorCode;
-    private DataBean data;
 
     public int getErrorCode() {
         return errorCode;
@@ -18,14 +17,4 @@ public class UpdatePasswordResp {
         this.errorCode = errorCode;
     }
 
-    public DataBean getData() {
-        return data;
-    }
-
-    public void setData(DataBean data) {
-        this.data = data;
-    }
-
-    public static class DataBean {
-    }
 }

@@ -1,22 +1,19 @@
 package com.stockholm.api.account;
 
-public class LoginReq {
+public class WechatLoginReq {
 
-    public LoginReq(UserBean user, DeviceBean device, WechatBean wechat) {
+    public WechatLoginReq(UserBean user, DeviceBean device) {
         this.user = user;
         this.device = device;
-        this.wechat = wechat;
     }
 
     /**
-     * user : {"phoneNumber":"1828485744","password":"password"}
-     * device : {"serialNumber":"aasdfasdf","pushToken":"asdfasg"}
-     * wechat : {"nickname":"asdf","avatarUrl":"http://xxx/xxx.jpg","unionId":"asdfg234"}
+     * user : {"wechatCode":"wechatCode"}
+     * device : {"serialNumber":"asdfadf","pushToken":"push token"}
      */
 
     private UserBean user;
     private DeviceBean device;
-    private WechatBean wechat;
 
     public UserBean getUser() {
         return user;
@@ -34,43 +31,26 @@ public class LoginReq {
         this.device = device;
     }
 
-    public WechatBean getWechat() {
-        return wechat;
-    }
-
-    public void setWechat(WechatBean wechat) {
-        this.wechat = wechat;
-    }
-
     public static class UserBean {
 
-        public UserBean(String phoneNumber, String password) {
-            this.phoneNumber = phoneNumber;
-            this.password = password;
+        public UserBean(String wechatCode) {
+            this.wechatCode = wechatCode;
         }
 
         /**
-         * phoneNumber : 1828485744
-         * password : password
+         * wechatCode : wechatCode
          */
 
-        private String phoneNumber;
-        private String password;
 
-        public String getPhoneNumber() {
-            return phoneNumber;
+
+        private String wechatCode;
+
+        public String getWechatCode() {
+            return wechatCode;
         }
 
-        public void setPhoneNumber(String phoneNumber) {
-            this.phoneNumber = phoneNumber;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
+        public void setWechatCode(String wechatCode) {
+            this.wechatCode = wechatCode;
         }
     }
 
@@ -82,8 +62,8 @@ public class LoginReq {
         }
 
         /**
-         * serialNumber : aasdfasdf
-         * pushToken : asdfasg
+         * serialNumber : asdfadf
+         * pushToken : push token
          */
 
         private String serialNumber;
@@ -105,5 +85,4 @@ public class LoginReq {
             this.pushToken = pushToken;
         }
     }
-
 }

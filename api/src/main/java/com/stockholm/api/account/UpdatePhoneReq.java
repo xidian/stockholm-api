@@ -1,16 +1,16 @@
 package com.stockholm.api.account;
 
-public class ResetPwdReq {
+public class UpdatePhoneReq {
+
+    /**
+     * phoneNumber : 13576738637
+     * password : password
+     * verificationCode : 1234
+     */
 
     private String phoneNumber;
     private String password;
-    private String code;
-
-    public ResetPwdReq(String phoneNumber, String password, String code) {
-        setPhoneNumber(phoneNumber);
-        setPassword(password);
-        setCode(code);
-    }
+    private String verificationCode;
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -28,11 +28,11 @@ public class ResetPwdReq {
         this.password = password;
     }
 
-    public String getCode() {
-        return code;
+    public String getVerificationCode() {
+        return verificationCode;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
     }
 }

@@ -1,10 +1,10 @@
 package com.stockholm.api.account;
 
+public class UpdatePhoneResp {
 
-public class LogoutResp {
+
     /**
-     * errorCode : 0
-     * data : {}
+     * errorCode : 10001
      */
 
     private int errorCode;
@@ -16,5 +16,4 @@ public class LogoutResp {
     public void setErrorCode(int errorCode) {
         this.errorCode = errorCode;
     }
-
 }

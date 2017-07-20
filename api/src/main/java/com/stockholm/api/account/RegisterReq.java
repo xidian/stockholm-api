@@ -3,13 +3,13 @@ package com.stockholm.api.account;
 public class RegisterReq {
 
     private UserBean user;
-    private String code;
+    private String verificationCode;
     private DeviceBean device;
     private WechatBean wechat;
 
-    public RegisterReq( String code, UserBean user,DeviceBean device, WechatBean wechat) {
+    public RegisterReq( String verificationCode, UserBean user,DeviceBean device, WechatBean wechat) {
         this.user = user;
-        this.code = code;
+        this.verificationCode = verificationCode;
         this.device = device;
         this.wechat = wechat;
     }
@@ -23,11 +23,11 @@ public class RegisterReq {
     }
 
     public String getCode() {
-        return code;
+        return verificationCode;
     }
 
     public void setCode(String code) {
-        this.code = code;
+        this.verificationCode = code;
     }
 
     public DeviceBean getDevice() {
@@ -111,44 +111,4 @@ public class RegisterReq {
         }
     }
 
-    public static class WechatBean {
-
-        public WechatBean(String unionId) {
-            this.unionId = unionId;
-        }
-
-        /**
-         * unionId : 7899890
-         * avatar : http://asdf.com/asdf.jpg
-         * nickname : xxx
-         */
-
-        private String unionId;
-        private String avatar;
-        private String nickname;
-
-        public String getUnionId() {
-            return unionId;
-        }
-
-        public void setUnionId(String unionId) {
-            this.unionId = unionId;
-        }
-
-        public String getAvatar() {
-            return avatar;
-        }
-
-        public void setAvatar(String avatar) {
-            this.avatar = avatar;
-        }
-
-        public String getNickname() {
-            return nickname;
-        }
-
-        public void setNickname(String nickname) {
-            this.nickname = nickname;
-        }
-    }
 }

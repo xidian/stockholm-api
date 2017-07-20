@@ -1,11 +1,10 @@
 package com.stockholm.api.account;
 
-public class RegisterResp {
-
+public class WechatLoginResp {
 
     /**
      * errorCode : 0
-     * data : {"user":{"username":"adfasd","phoneNumber":"78987898789","avatarUrl":"http://asdf.com/asdf.jpg","wechatNickname":"asdasg"},"accessToken":"adfadfad"}
+     * data : {"wechat":{"nickname":"asdfassdf","unionId":"asdfassdf","avatarUrl":"http://xx/xx.jpg"}}
      */
 
     private int errorCode;
@@ -29,20 +28,11 @@ public class RegisterResp {
 
     public static class DataBean {
         /**
-         * user : {"username":"adfasd","phoneNumber":"78987898789","avatarUrl":"http://asdf.com/asdf.jpg","wechatNickname":"asdasg"}
-         * accessToken : adfadfad
+         * wechat : {"nickname":"asdfassdf","unionId":"asdfassdf","avatarUrl":"http://xx/xx.jpg"}
          */
-
-        private UserBean user;
+        private UserBean userBean;
+        private WechatBean wechat;
         private String accessToken;
-
-        public UserBean getUser() {
-            return user;
-        }
-
-        public void setUser(UserBean user) {
-            this.user = user;
-        }
 
         public String getAccessToken() {
             return accessToken;
@@ -52,5 +42,20 @@ public class RegisterResp {
             this.accessToken = accessToken;
         }
 
+        public WechatBean getWechat() {
+            return wechat;
+        }
+
+        public void setWechat(WechatBean wechat) {
+            this.wechat = wechat;
+        }
+
+        public UserBean getUserBean() {
+            return userBean;
+        }
+
+        public void setUserBean(UserBean userBean) {
+            this.userBean = userBean;
+        }
     }
 }
