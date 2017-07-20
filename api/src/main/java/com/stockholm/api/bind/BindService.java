@@ -1,7 +1,7 @@
 package com.stockholm.api.bind;
 
 
-import com.stockholm.api.NoBodyResp;
+import com.stockholm.api.base.BaseDataBean;
 import com.stockholm.api.base.BaseResponse;
 
 import retrofit2.Response;
@@ -25,6 +25,6 @@ public interface BindService {
     Observable<Response<DeviceBindStateResp>> checkDeviceBindState();
 
     @PUT("/v1/device")
-    Observable<Response<NoBodyResp>> updateUserGuideState(@Body UpdateGuideStateReq req);
+    Observable<Response<BaseDataBean>> updateUserGuideState(@Body UpdateGuideStateReq req);
 
 }
