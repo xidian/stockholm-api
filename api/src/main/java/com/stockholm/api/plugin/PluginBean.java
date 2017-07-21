@@ -88,20 +88,10 @@ public class PluginBean implements Serializable {
     }
 
     public static class ConfigBean implements Serializable {
-        private String appConfig;
         private int mediaVolume;
 
-        public ConfigBean(String appConfig, int mediaVolume) {
-            setAppConfig(appConfig);
+        public ConfigBean(int mediaVolume) {
             setMediaVolume(mediaVolume);
-        }
-
-        public String getAppConfig() {
-            return appConfig;
-        }
-
-        public void setAppConfig(String appConfig) {
-            this.appConfig = appConfig;
         }
 
         public int getMediaVolume() {

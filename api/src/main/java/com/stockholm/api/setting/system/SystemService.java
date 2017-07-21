@@ -6,6 +6,7 @@ import java.util.List;
 
 import retrofit2.Response;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.PUT;
 import rx.Observable;
@@ -32,4 +33,10 @@ public interface SystemService {
 
     @PUT("/v1/device/config")
     Observable<Response<BaseResponse>> updateSystemConfig(UpdateSystemConfigReq req);
+
+    @PUT("/v1/device")
+    Observable<Response<BaseResponse>> updateDevice(UpdateDeviceReq req);
+
+    @DELETE("/v1/device/reset")
+    Observable<Response<BaseResponse>> resetDevice();
 }

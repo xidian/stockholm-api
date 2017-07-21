@@ -3,7 +3,6 @@ package com.stockholm.api.setting;
 
 import com.stockholm.api.setting.system.RenameDeviceReq;
 import com.stockholm.api.setting.system.RenameDeviceResp;
-import com.stockholm.api.setting.system.UnbindDeviceResp;
 
 import java.util.Map;
 
