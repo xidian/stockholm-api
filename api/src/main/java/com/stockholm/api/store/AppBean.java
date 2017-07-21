@@ -7,8 +7,9 @@ import java.io.Serializable;
 import java.util.List;
 
 public class AppBean implements Serializable {
-    private String icon;
-    private String appName;
+    private long id;
+    private String iconUrl;
+    private String name;
     private String packageName;
     private List<String> screenshotsUrl;
     private String developer;
@@ -16,22 +17,30 @@ public class AppBean implements Serializable {
     private int versionCode;
     private long downloads;
     private int category;
-    private boolean isInstalled;
+    private boolean installed;
 
-    public String getIcon() {
-        return icon;
+    public long getId() {
+        return id;
     }
 
-    public void setIcon(String icon) {
-        this.icon = icon;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getAppName() {
-        return appName;
+    public String getIconUrl() {
+        return iconUrl;
     }
 
-    public void setAppName(String appName) {
-        this.appName = appName;
+    public void setIconUrl(String iconUrl) {
+        this.iconUrl = iconUrl;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPackageName() {
@@ -91,11 +100,11 @@ public class AppBean implements Serializable {
     }
 
     public boolean isInstalled() {
-        return isInstalled;
+        return installed;
     }
 
     public void setInstalled(boolean installed) {
-        isInstalled = installed;
+        this.installed = installed;
     }
 
     @Override

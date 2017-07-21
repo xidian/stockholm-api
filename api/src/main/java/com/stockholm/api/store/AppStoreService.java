@@ -1,55 +1,58 @@
 package com.stockholm.api.store;
 
 
-import java.util.Map;
+import com.stockholm.api.base.BaseResponse;
 
+import java.util.List;
+
+import retrofit2.Response;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
-import retrofit2.http.Header;
-import retrofit2.http.HeaderMap;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
 
 public interface AppStoreService {
 
-    @GET("/apps")
-    Observable<AppListResp> getAllApps(@Header("UUID") String uuid);
+    @GET("/v1/app-store/apps")
+    Observable<Response<BaseResponse<List<AppBean>>>> getAppList();
 
-    @GET("/app_store/banners")
-    Observable<StoreBannerResp> getBanners(@Header("UUID") String uuid);
+    @GET("/v1/app-store/banners")
+    Observable<Response<BaseResponse<List<BannerBean>>>> getBanners();
 
-    @GET("/apps")
-    Observable<StoreTopAppsResp> getTopApps(@Header("UUID") String uuid, @Query("order_method") String orderMethod);
+    @GET("/v1/app-store/recommendations")
+    Observable<Response<BaseResponse<List<AppBean>>>> getRecommendApps(@Query("method") String method);
 
-    @GET("/app")
-    Observable<AppDetailResp> getAppDetail(@Header("PackageName") String packageName);
+    @GET("/v1/app-store/apps/{id}")
+    Observable<Response<BaseResponse<AppDetailBean>>> getAppDetail(@Path("id") long id);
 
-    @GET("/mobile/apps/comments")
-    Observable<AppCommentResp> getAppComments(@Query("page") String page, @Header("PackageName") String packageName);
+    @GET("/v1/app-store/apps/{id}/comments")
+    Observable<Response<CommentListResp>> getCommentList(@Path("id") long id, @Query("page") int page);
 
-    @POST("/mobile/apps/comments")
-    Observable<StoreCommonResp> editAppComment(@HeaderMap Map<String, String> headerMap, @Body AddCommentReq req);
+    @POST("/v1/app-store/apps/{id}/comments")
+    Observable<Response<BaseResponse>> updateAppComment(@Path("id") long id, @Body AddCommentReq req);
 
-    @GET("/mobile/apps/comments/new")
-    Observable<GetUserCommentResp> getUserComment(@HeaderMap Map<String, String> headerMap);
+    @GET("/v1/app-store/apps/{id}/comments/new")
+    Observable<Response<BaseResponse<AppCommentBean>>> getUserComment(@Path("id") long id);
 
-    @POST("/mobile/app/install")
-    Observable<MobileInstallAppResp> mobileInstallApp(@HeaderMap Map<String, String> headerMap, @Body MobileOperateAppReq req);
+    @POST("/v1/app-store/installer/install")
+    Observable<Response<BaseResponse<MobileInstallDataBean>>> mobileInstallApp(@Body StoreOperateAppReq req);
 
-    @GET("/device/app/download")
-    Observable<DeviceDownloadAppResp> deviceDownloadApp(@Header("PackageName") String packageName);
+    @POST("/v1/app-store/installer/uninstall")
+    Observable<Response<BaseResponse>> mobileUninstallApp(@Body StoreOperateAppReq req);
 
-    @POST("/mobile/app/uninstall")
-    Observable<StoreCommonResp> mobileUninstallApp(@HeaderMap Map<String, String> headerMap, @Body MobileOperateAppReq req);
+    @GET("/v1/app/store/installer/url")
+    Observable<Response<BaseResponse<DeviceDownloadBean>>> deviceDownloadApp(@Query("packageName") String packageName);
 
-    @POST("/device/app/bind")
-    Observable<DeviceInstallCompleteResp> deviceInstallComplete(@Header("PackageName") String packageName, @Body DeviceInstallCompleteReq req);
+    @POST("/v1/app-store/installer")
+    Observable<Response<BaseResponse>> deviceInstallComplete(@Body DeviceInstallCompleteReq req);
 
-    @POST("/device/app/unbind")
-    Observable<StoreCommonResp> deviceUninstallComplete(@Header("PackageName") String packageName);
+    @DELETE("/v1/app-store/installer")
+    Observable<Response<BaseResponse>> deviceUninstallComplete(@Body StoreOperateAppReq req);
 
-    @POST("/device/app/check_for_updates")
-    Observable<CheckUpdateResp> forceUpdate(@Body CheckUpdateReq req);
+    @POST("/v1/app-store/installer/check")
+    Observable<Response<BaseResponse<List<CheckUpdateBean>>>> forceUpdate(@Body CheckUpdateReq req);
 
 }

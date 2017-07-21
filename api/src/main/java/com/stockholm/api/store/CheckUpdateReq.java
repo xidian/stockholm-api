@@ -4,18 +4,18 @@ package com.stockholm.api.store;
 import java.util.List;
 
 public class CheckUpdateReq {
-    public List<AppInfoBean> apps;
+    public List<AppInfoBean> installer;
 
     public CheckUpdateReq(List<AppInfoBean> apps) {
-        setApps(apps);
+        setInstaller(apps);
     }
 
-    public List<AppInfoBean> getApps() {
-        return apps;
+    public List<AppInfoBean> getInstaller() {
+        return installer;
     }
 
-    public void setApps(List<AppInfoBean> apps) {
-        this.apps = apps;
+    public void setInstaller(List<AppInfoBean> installer) {
+        this.installer = installer;
     }
 
     public static class AppInfoBean {
