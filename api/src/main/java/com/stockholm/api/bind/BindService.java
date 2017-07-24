@@ -22,9 +22,15 @@ public interface BindService {
     Observable<Response<BaseResponse>> unbind();
 
     @GET("/v1/device/binding")
-    Observable<Response<DeviceBindStateResp>> checkDeviceBindState();
+    Observable<Response<BaseResponse<DeviceBindStateBean>>> checkDeviceBindState();
 
     @PUT("/v1/device")
     Observable<Response<BaseDataBean>> updateUserGuideState(@Body UpdateGuideStateReq req);
+
+    @POST("/v1/device")
+    Observable<Response<BaseResponse<DeviceBindStateBean>>> registerDevice(@Body RegisterDeviceReq req);
+
+    @PUT("/v1/device")
+    Observable<Response<BaseDataBean>> updatePushToken(@Body UpdatePushTokenReq req);
 
 }

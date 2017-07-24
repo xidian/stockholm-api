@@ -33,7 +33,7 @@ public interface SystemService {
     Observable<Response<BaseResponse<SystemSettingBean>>> getSystemConfig();
 
     @PUT("/v1/device/config")
-    Observable<Response<BaseResponse>> updateSystemConfig(UpdateSystemConfigReq req);
+    Observable<Response<BaseResponse>> updateSystemConfig(@Body UpdateSystemConfigReq req);
 
     @DELETE("/v1/device/reset")
     Observable<Response<BaseResponse>> resetDevice();
@@ -42,7 +42,7 @@ public interface SystemService {
     Observable<Response<BaseResponse<MobileUpdateBean>>> checkUpdate(@Query("versionCode") int versionCode);
 
     @PUT("/v1/device")
-    Observable<Response<BaseResponse>> renameDevice(RenameDeviceReq req);
+    Observable<Response<BaseResponse>> renameDevice(@Body RenameDeviceReq req);
 
     @GET("/v1/device/apps-config")
     Observable<Response<BaseResponse<List<AppStateBean>>>> getAppState();
