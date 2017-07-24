@@ -1,15 +1,19 @@
 package com.stockholm.api.heartbeat;
 
 
+import com.stockholm.api.base.BaseResponse;
+
+import retrofit2.Response;
+import retrofit2.http.DELETE;
 import retrofit2.http.POST;
 import rx.Observable;
 
 public interface HeartbeatService {
 
-    @POST("/mobile/clock/check_device_alive")
-    Observable<HeartbeatResponse> checkDeviceAlive();
+    @POST("/v1/device/heartbeat")
+    Observable<Response<BaseResponse>> checkDeviceAlive();
 
-    @POST("/mobile/clock/end_device_connection")
-    Observable<HeartbeatResponse> closeDeviceConnection();
+    @DELETE("/v1/device/heartbeat")
+    Observable<Response<BaseResponse>> closeDeviceConnection();
 
 }
