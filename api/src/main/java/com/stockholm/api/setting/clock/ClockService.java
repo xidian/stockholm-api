@@ -23,7 +23,7 @@ public interface ClockService {
     Observable<Response<NoBodyResp>> updateConfig(@Body ClockConfigUpdateReq req);
 
     @GET("/app/clock/alarms")
-    Observable<Response<List<AlarmListResp>>> queryAlarms();
+    Observable<Response<List<AlarmBean>>> queryAlarms();
 
     @GET("/app/clock/skins")
     Observable<Response<List<ClockThemeBean>>> queryThemes();

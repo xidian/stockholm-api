@@ -44,4 +44,7 @@ public interface SystemService {
     @PUT("/v1/device")
     Observable<Response<BaseResponse>> renameDevice(RenameDeviceReq req);
 
+    @GET("/v1/device/apps-config")
+    Observable<Response<BaseResponse<List<AppStateBean>>>> getAppState();
+
 }

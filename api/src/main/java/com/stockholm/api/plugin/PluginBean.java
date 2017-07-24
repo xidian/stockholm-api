@@ -10,21 +10,11 @@ public class PluginBean implements Serializable {
     private UserBean userBean;
     private ConfigBean configBean;
     private SocketBean socketBean;
-    private boolean isAudioControl;
 
-    public PluginBean(UserBean userBean, ConfigBean configBean, SocketBean socketBean, boolean isAudioControl) {
+    public PluginBean(UserBean userBean, ConfigBean configBean, SocketBean socketBean) {
         setUserBean(userBean);
         setConfigBean(configBean);
         setSocketBean(socketBean);
-        setAudioControl(isAudioControl);
-    }
-
-    public void setAudioControl(boolean audioControl) {
-        isAudioControl = audioControl;
-    }
-
-    public boolean isAudioControl() {
-        return isAudioControl;
     }
 
     public UserBean getUserBean() {

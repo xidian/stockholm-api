@@ -4,7 +4,7 @@ package com.stockholm.api.setting.clock;
 import java.io.Serializable;
 
 public class AlarmBean implements Serializable {
-    private int clockAlarmId;
+    private int alarmId;
     private String name;
     private int repeatType;
     private String ring;
@@ -13,28 +13,30 @@ public class AlarmBean implements Serializable {
     private String repeatValue;
 
     private String taskName;
+    private int taskConfigId;
 
     public AlarmBean() {
     }
 
-    public AlarmBean(int clockAlarmId, String name, int repeatType, String ring, String time,
-                     boolean status, String repeat, String taskName) {
-        setClockAlarmId(clockAlarmId);
+    public AlarmBean(int alarmId, String name, int repeatType, String ring, String time,
+                     boolean status, String repeatValue, String taskName, int taskConfigId) {
+        setAlarmId(alarmId);
         setName(name);
         setRepeatType(repeatType);
         setRing(ring);
         setTime(time);
         setStatus(status);
-        setRepeat(repeat);
+        setRepeatValue(repeatValue);
         setTaskName(taskName);
+        setTaskConfigId(taskConfigId);
     }
 
-    public int getClockAlarmId() {
-        return clockAlarmId;
+    public int getAlarmId() {
+        return alarmId;
     }
 
-    public void setClockAlarmId(int clockAlarmId) {
-        this.clockAlarmId = clockAlarmId;
+    public void setAlarmId(int alarmId) {
+        this.alarmId = alarmId;
     }
 
     public String getName() {
@@ -69,7 +71,7 @@ public class AlarmBean implements Serializable {
         this.time = time;
     }
 
-    public boolean isStatus() {
+    public boolean getStatus() {
         return status;
     }
 
@@ -77,11 +79,11 @@ public class AlarmBean implements Serializable {
         this.status = status;
     }
 
-    public String getRepeat() {
+    public String getRepeatValue() {
         return repeatValue;
     }
 
-    public void setRepeat(String repeatValue) {
+    public void setRepeatValue(String repeatValue) {
         this.repeatValue = repeatValue;
     }
 
@@ -91,6 +93,14 @@ public class AlarmBean implements Serializable {
 
     public void setTaskName(String taskName) {
         this.taskName = taskName;
+    }
+
+    public int getTaskConfigId() {
+        return taskConfigId;
+    }
+
+    public void setTaskConfigId(int taskConfigId) {
+        this.taskConfigId = taskConfigId;
     }
 
 }
