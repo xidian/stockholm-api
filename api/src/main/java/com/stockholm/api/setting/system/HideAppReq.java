@@ -1,8 +1,8 @@
 package com.stockholm.api.setting.system;
 
-public class UpdateAppConfigReq {
+public class HideAppReq {
 
-    public UpdateAppConfigReq(AppsConfigBean appsConfig, AppBean app) {
+    public HideAppReq(AppsConfigBean appsConfig, AppBean app) {
         this.appsConfig = appsConfig;
         this.app = app;
     }
