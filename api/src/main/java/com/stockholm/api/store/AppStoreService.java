@@ -23,7 +23,7 @@ public interface AppStoreService {
     Observable<Response<BaseResponse<List<BannerBean>>>> getBanners();
 
     @GET("/v1/app-store/recommendations")
-    Observable<Response<BaseResponse<List<AppBean>>>> getRecommendApps(@Query("method") String method);
+    Observable<Response<BaseResponse<List<AppBean>>>> getRecommendApps(@Query("method") int method);
 
     @GET("/v1/app-store/apps/{id}")
     Observable<Response<BaseResponse<AppDetailBean>>> getAppDetail(@Path("id") long id);
