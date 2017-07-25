@@ -46,10 +46,10 @@ public interface AppStoreService {
     @GET("/v1/app/store/installer/url")
     Observable<Response<BaseResponse<DeviceDownloadBean>>> deviceDownloadApp(@Query("packageName") String packageName);
 
-    @POST("/v1/app-store/installer")
+    @POST("/v1/device/app")
     Observable<Response<BaseResponse>> deviceInstallComplete(@Body DeviceInstallCompleteReq req);
 
-    @DELETE("/v1/app-store/installer")
+    @DELETE("/v1/device/app")
     Observable<Response<BaseResponse>> deviceUninstallComplete(@Body StoreOperateAppReq req);
 
     @POST("/v1/app-store/installer/check")
