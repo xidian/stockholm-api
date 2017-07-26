@@ -1,7 +1,6 @@
 package com.stockholm.api.bind;
 
 
-import com.stockholm.api.base.BaseDataBean;
 import com.stockholm.api.base.BaseResponse;
 
 import retrofit2.Response;
@@ -25,12 +24,12 @@ public interface BindService {
     Observable<Response<BaseResponse<DeviceBindStateBean>>> checkDeviceBindState();
 
     @PUT("/v1/device")
-    Observable<Response<BaseDataBean>> updateUserGuideState(@Body UpdateGuideStateReq req);
+    Observable<Response<BaseResponse>> updateUserGuideState(@Body UpdateGuideStateReq req);
 
     @POST("/v1/device")
     Observable<Response<BaseResponse<DeviceBindStateBean>>> registerDevice(@Body RegisterDeviceReq req);
 
     @PUT("/v1/device")
-    Observable<Response<BaseDataBean>> updatePushToken(@Body UpdatePushTokenReq req);
+    Observable<Response<BaseResponse>> updatePushToken(@Body UpdatePushTokenReq req);
 
 }
