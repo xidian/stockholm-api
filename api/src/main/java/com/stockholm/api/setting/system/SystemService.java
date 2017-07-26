@@ -15,7 +15,7 @@ import rx.Observable;
 public interface SystemService {
 
     @GET("/v1/account/devices")
-    Observable<Response<DeviceListResp>> getDeviceList();
+    Observable<Response<BaseResponse<DeviceListData>>> getDeviceList();
 
     @PUT("/v1/account/devices/switch")
     Observable<Response<BaseResponse>> switchDevice(@Body SwitchDeviceReq req);

@@ -3,7 +3,7 @@ package com.stockholm.api.setting.system;
 
 import java.util.List;
 
-public class DeviceListResp {
+public class DeviceListData {
 
     private List<DeviceBean> list;
     private ActiveBean active;

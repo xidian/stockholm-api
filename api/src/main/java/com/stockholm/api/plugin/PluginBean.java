@@ -42,22 +42,12 @@ public class PluginBean implements Serializable {
     }
 
     public static class UserBean implements Serializable {
-        private String userId;
         private String deviceId;
         private String accessToken;
 
-        public UserBean(String userId, String deviceId, String accessToken) {
-            setUserId(userId);
+        public UserBean(String deviceId, String accessToken) {
             setDeviceId(deviceId);
             setAccessToken(accessToken);
-        }
-
-        public String getUserId() {
-            return userId;
-        }
-
-        public void setUserId(String userId) {
-            this.userId = userId;
         }
 
         public String getDeviceId() {
