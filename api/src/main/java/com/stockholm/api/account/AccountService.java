@@ -1,7 +1,7 @@
 package com.stockholm.api.account;
 
 
-import com.stockholm.api.NoBodyResp;
+import com.stockholm.api.base.BaseResponse;
 
 import retrofit2.Response;
 import retrofit2.http.Body;
@@ -17,34 +17,34 @@ public interface AccountService {
     Observable<Response<LoginResp>> login(@Body LoginReq req);
 
     @DELETE("/v1/account/session")
-    Observable<Response<LogoutResp>> logout();
+    Observable<Response<BaseResponse>> logout();
 
     @POST("/v1/account/user")
     Observable<Response<RegisterResp>> register(@Body RegisterReq req);
 
     @PUT("/v1/account/user")
-    Observable<Response<NoBodyResp>> updateUser(@Body UpdateUserReq updateUserReq);
+    Observable<Response<BaseResponse>> updateUser(@Body UpdateUserReq updateUserReq);
 
     @POST("/v1/verification-code")
-    Observable<Response<SendVerifyCodeResp>> sendVerifyCode(@Body SendVerifyCodeReq verifyCodeReq);
+    Observable<Response<BaseResponse>> sendVerifyCode(@Body SendVerifyCodeReq verifyCodeReq);
 
     @POST("/v1/account/avatar")
     Observable<Response<AvatarTokenResp>> getAvatarToken();
 
     @POST("/v1/verification-code/verify")
-    Observable<Response<CheckVerifyCodeResp>> checkVerifyCode(@Body CheckVerifyCodeReq checkVerifyCodeReq);
+    Observable<Response<BaseResponse>> checkVerifyCode(@Body CheckVerifyCodeReq checkVerifyCodeReq);
 
     @PUT("/v1/account/password")
-    Observable<Response<UpdatePasswordResp>> updatePassword(@Body UpdatePasswordReq updatePasswordReq);
+    Observable<Response<BaseResponse>> updatePassword(@Body UpdatePasswordReq updatePasswordReq);
 
     @PUT("/v1/account/password/reset")
-    Observable<Response<ResetPasswordResp>> resetPassword(@Body ResetPasswordReq resetPasswordReq);
+    Observable<Response<BaseResponse>> resetPassword(@Body ResetPasswordReq resetPasswordReq);
 
     @POST("/v1/account/wechat")
     Observable<Response<BindWechatResp>> bindWechat(@Body BindWechatReq bindWechatReq);
 
     @DELETE("/v1/account/wechat")
-    Observable<Response<UnbindWechatResp>> unbindWechat();
+    Observable<Response<BaseResponse>> unbindWechat();
 
     @POST("/v1/account/session/wechat")
     Observable<Response<WechatLoginResp>> loginWithinWechat(@Body WechatLoginReq wechatLoginReq);
@@ -56,5 +56,5 @@ public interface AccountService {
     Observable<Response<VerifySessionResp>> verifySession();
 
     @PUT("/v1/account/phone-number")
-    Observable<Response<UpdatePhoneResp>> updatePhone(@Body UpdatePhoneReq updatePhoneReq);
+    Observable<Response<BaseResponse>> updatePhone(@Body UpdatePhoneReq updatePhoneReq);
 }

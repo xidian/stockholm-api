@@ -2,17 +2,10 @@ package com.stockholm.api.account;
 
 public class ResetPasswordReq {
 
-
     public ResetPasswordReq(String password, VerificationBean verification) {
         this.password = password;
         this.verification = verification;
     }
-
-    /**
-     * password : password
-     * verification : {"phoneNumer":"13709837763","code":"5678"}
-     */
-
 
     private String password;
     private VerificationBean verification;
@@ -35,25 +28,20 @@ public class ResetPasswordReq {
 
     public static class VerificationBean {
 
-        public VerificationBean(String phoneNumer, String code) {
-            this.phoneNumer = phoneNumer;
+        private String phoneNumber;
+        private String code;
+
+        public VerificationBean(String phoneNumber, String code) {
+            this.phoneNumber = phoneNumber;
             this.code = code;
         }
 
-        /**
-         * phoneNumer : 13709837763
-         * code : 5678
-         */
-
-        private String phoneNumer;
-        private String code;
-
-        public String getPhoneNumer() {
-            return phoneNumer;
+        public String getPhoneNumber() {
+            return phoneNumber;
         }
 
-        public void setPhoneNumer(String phoneNumer) {
-            this.phoneNumer = phoneNumer;
+        public void setPhoneNumber(String phoneNumber) {
+            this.phoneNumber = phoneNumber;
         }
 
         public String getCode() {
@@ -64,4 +52,5 @@ public class ResetPasswordReq {
             this.code = code;
         }
     }
+
 }
