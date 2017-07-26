@@ -7,8 +7,8 @@ import java.util.List;
 
 import retrofit2.Response;
 import retrofit2.http.Body;
-import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.HTTP;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -49,7 +49,7 @@ public interface AppStoreService {
     @POST("/v1/device/app")
     Observable<Response<BaseResponse>> deviceInstallComplete(@Body DeviceInstallCompleteReq req);
 
-    @DELETE("/v1/device/app")
+    @HTTP(method = "DELETE" , path = "/v1/device/app", hasBody = true)
     Observable<Response<BaseResponse>> deviceUninstallComplete(@Body StoreOperateAppReq req);
 
     @POST("/v1/app-store/installer/check")
