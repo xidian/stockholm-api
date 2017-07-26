@@ -2,28 +2,46 @@ package com.stockholm.api.store;
 
 
 public class DeviceInstallCompleteReq {
-    private String packageName;
-    private int versionCode;
+
+    private AppBean app;
 
     public DeviceInstallCompleteReq(String packageName, int versionCode) {
-        this.packageName = packageName;
-        this.versionCode = versionCode;
+        this.app = new AppBean(packageName, versionCode);
     }
 
-    public String getPackageName() {
-        return packageName;
+    public AppBean getApp() {
+        return app;
     }
 
-    public void setPackageName(String packageName) {
-        this.packageName = packageName;
+    public void setApp(AppBean app) {
+        this.app = app;
     }
 
-    public int getVersionCode() {
-        return versionCode;
-    }
+    public static class AppBean {
 
-    public void setVersionCode(int versionCode) {
-        this.versionCode = versionCode;
+        private String packageName;
+        private int versionCode;
+
+        public AppBean(String packageName, int versionCode) {
+            this.packageName = packageName;
+            this.versionCode = versionCode;
+        }
+
+        public String getPackageName() {
+            return packageName;
+        }
+
+        public void setPackageName(String packageName) {
+            this.packageName = packageName;
+        }
+
+        public int getVersionCode() {
+            return versionCode;
+        }
+
+        public void setVersionCode(int versionCode) {
+            this.versionCode = versionCode;
+        }
     }
 
 }

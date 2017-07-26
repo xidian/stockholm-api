@@ -43,7 +43,7 @@ public interface AppStoreService {
     @POST("/v1/app-store/installer/uninstall")
     Observable<Response<BaseResponse>> mobileUninstallApp(@Body StoreOperateAppReq req);
 
-    @GET("/v1/app/store/installer/url")
+    @GET("/v1/app-store/installer/url")
     Observable<Response<BaseResponse<DeviceDownloadBean>>> deviceDownloadApp(@Query("packageName") String packageName);
 
     @POST("/v1/device/app")
