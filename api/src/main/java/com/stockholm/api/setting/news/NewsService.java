@@ -11,10 +11,10 @@ import rx.Observable;
 
 public interface NewsService {
 
-    @GET("app/news/channels")
+    @GET("/app/news/channels")
     Observable<GetAllChannelsResp> getAllChannels();
 
-    @GET("app/news/subscriptions")
+    @GET("/app/news/subscriptions")
     Observable<NewsConfigResp> getNewsConfig();
 
     @POST("/app/news/channels/{categoryId}/subscribe")
@@ -23,7 +23,7 @@ public interface NewsService {
     @HTTP(method = "DELETE" , path = "/app/news/channels/{categoryId}/unsubscribe")
     Observable<NewsCommonResp> unSubscribeChannel(@Path("categoryId") long categoryId);
 
-    @GET("app/news/contents")
+    @GET("/app/news/contents")
     Observable<DeviceNewsListResp> deviceAllNews();
 
     @GET("/app/news/channels/{categoryId}/contents")

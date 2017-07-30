@@ -52,7 +52,7 @@ public interface AppStoreService {
     @HTTP(method = "DELETE" , path = "/v1/device/app", hasBody = true)
     Observable<Response<BaseResponse>> deviceUninstallComplete(@Body StoreOperateAppReq req);
 
-    @POST("/v1/app-store/installer/check")
-    Observable<Response<BaseResponse<List<CheckUpdateBean>>>> forceUpdate(@Body CheckUpdateReq req);
+    @GET("/v1/app-store/installer/check")
+    Observable<Response<BaseResponse<List<CheckUpdateBean>>>> forceUpdate();
 
 }
