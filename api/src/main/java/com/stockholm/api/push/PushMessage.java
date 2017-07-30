@@ -5,7 +5,6 @@ import com.google.gson.Gson;
 
 public class PushMessage {
     private int order;
-    private boolean timestamp;
     private String packageName;
     private String addition;
 
@@ -25,13 +24,6 @@ public class PushMessage {
         setOrder(order);
         setPackageName(packageName);
         setAddition(addition);
-    }
-
-    public PushMessage(int order, String packageName, String addition, boolean timestamp) {
-        setOrder(order);
-        setPackageName(packageName);
-        setAddition(addition);
-        setTimestamp(timestamp);
     }
 
     public int getOrder() {
@@ -56,14 +48,6 @@ public class PushMessage {
 
     public void setAddition(String addition) {
         this.addition = addition;
-    }
-
-    public void setTimestamp(boolean timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public boolean isTimestamp() {
-        return timestamp;
     }
 
     @Override
