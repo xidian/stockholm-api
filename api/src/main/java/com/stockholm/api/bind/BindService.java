@@ -32,4 +32,7 @@ public interface BindService {
     @PUT("/v1/device")
     Observable<Response<BaseResponse>> updatePushToken(@Body UpdatePushTokenReq req);
 
+    @GET("/v1/device")
+    Observable<Response<BaseResponse>> skipUserGuide();
+
 }
