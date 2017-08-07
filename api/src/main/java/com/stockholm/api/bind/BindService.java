@@ -10,6 +10,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Query;
 import rx.Observable;
 
 public interface BindService {
@@ -34,5 +35,8 @@ public interface BindService {
 
     @GET("/v1/device")
     Observable<Response<BaseResponse>> skipUserGuide();
+
+    @GET("/v1/device/user/new")
+    Observable<Response<BaseResponse<ShareUserInfoBean>>> getShareUserInfo(@Query("user[phoneNumber]") String phoneNumber);
 
 }
