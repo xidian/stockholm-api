@@ -3,6 +3,8 @@ package com.stockholm.api.bind;
 
 import com.stockholm.api.base.BaseResponse;
 
+import java.util.List;
+
 import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -37,9 +39,12 @@ public interface BindService {
     Observable<Response<BaseResponse>> skipUserGuide();
 
     @GET("/v1/device/user/new")
-    Observable<Response<BaseResponse<ShareUserInfoBean>>> getShareUserInfo(@Query("user[phoneNumber]") String phoneNumber);
+    Observable<Response<BaseResponse<ShareUserBean>>> getShareUserInfo(@Query("user[phoneNumber]") String phoneNumber);
 
     @POST("/v1/device/user")
     Observable<Response<BaseResponse>> addShareUser(@Body AddShareReq addShareReq);
+
+    @GET("/v1/device/user")
+    Observable<Response<BaseResponse<List<ShareUserBean>>>> getSharedUsers();
 
 }

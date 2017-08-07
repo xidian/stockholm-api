@@ -2,7 +2,7 @@ package com.stockholm.api.bind;
 
 import java.io.Serializable;
 
-public class ShareUserInfoBean implements Serializable {
+public class ShareUserBean implements Serializable {
 
     private String phoneNumber;
 
