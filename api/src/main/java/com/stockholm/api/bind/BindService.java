@@ -39,4 +39,7 @@ public interface BindService {
     @GET("/v1/device/user/new")
     Observable<Response<BaseResponse<ShareUserInfoBean>>> getShareUserInfo(@Query("user[phoneNumber]") String phoneNumber);
 
+    @POST("/v1/device/user")
+    Observable<Response<BaseResponse>> addShareUser(@Body AddShareReq addShareReq);
+
 }
