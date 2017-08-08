@@ -9,6 +9,7 @@ import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.HTTP;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -47,7 +48,7 @@ public interface BindService {
     @GET("/v1/device/user")
     Observable<Response<BaseResponse<List<ShareUserBean>>>> getSharedUsers();
 
-    @DELETE("/v1/device/user")
+    @HTTP(method = "DELETE",path = "/v1/device/user",hasBody = true)
     Observable<Response<BaseResponse>> deleteShareUser(@Body DeleteShareReq deleteShareReq);
 
 }
