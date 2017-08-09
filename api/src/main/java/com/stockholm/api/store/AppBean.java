@@ -13,6 +13,7 @@ public class AppBean implements Serializable {
     private String packageName;
     private List<String> screenshotsUrl;
     private String developer;
+    private String poster;
     private float star;
     private int versionCode;
     private long downloads;
@@ -57,6 +58,14 @@ public class AppBean implements Serializable {
 
     public void setScreenshotsUrl(List<String> screenshotsUrl) {
         this.screenshotsUrl = screenshotsUrl;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 
     public String getDeveloper() {
@@ -114,6 +123,16 @@ public class AppBean implements Serializable {
 
     public static AppBean get(String json) {
         return new Gson().fromJson(json, AppBean.class);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof AppBean) {
+            if (((AppBean) obj).getId() == id && ((AppBean) obj).getPackageName().equals(packageName)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
