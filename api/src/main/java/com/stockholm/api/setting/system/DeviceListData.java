@@ -28,6 +28,15 @@ public class DeviceListData {
         private String uuid;
         private String name;
         private boolean guide;
+        private int ownership;
+
+        public int getOwnership() {
+            return ownership;
+        }
+
+        public void setOwnership(int ownership) {
+            this.ownership = ownership;
+        }
 
         public String getUuid() {
             return uuid;
@@ -57,6 +66,15 @@ public class DeviceListData {
     public static class DeviceBean {
         private String uuid;
         private String name;
+        private int ownership;
+
+        public int getOwnership() {
+            return ownership;
+        }
+
+        public void setOwnership(int ownership) {
+            this.ownership = ownership;
+        }
 
         public String getUuid() {
             return uuid;
