@@ -48,7 +48,10 @@ public interface BindService {
     @GET("/v1/device/user")
     Observable<Response<BaseResponse<List<ShareUserBean>>>> getSharedUsers();
 
-    @HTTP(method = "DELETE",path = "/v1/device/user",hasBody = true)
+    @HTTP(method = "DELETE", path = "/v1/device/user", hasBody = true)
     Observable<Response<BaseResponse>> deleteShareUser(@Body DeleteShareReq deleteShareReq);
+
+    @DELETE("/v1/account/devices")
+    Observable<Response<BaseResponse>> removeDevice();
 
 }
