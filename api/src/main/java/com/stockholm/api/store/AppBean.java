@@ -13,7 +13,7 @@ public class AppBean implements Serializable {
     private String packageName;
     private List<String> screenshotsUrl;
     private String developer;
-    private String poster;
+    private String posterUrl;
     private float star;
     private int versionCode;
     private long downloads;
@@ -60,12 +60,12 @@ public class AppBean implements Serializable {
         this.screenshotsUrl = screenshotsUrl;
     }
 
-    public String getPoster() {
-        return poster;
+    public String getPosterUrl() {
+        return posterUrl;
     }
 
-    public void setPoster(String poster) {
-        this.poster = poster;
+    public void setPosterUrl(String posterUrl) {
+        this.posterUrl = posterUrl;
     }
 
     public String getDeveloper() {
