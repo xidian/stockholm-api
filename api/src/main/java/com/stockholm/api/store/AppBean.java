@@ -14,6 +14,7 @@ public class AppBean implements Serializable {
     private List<String> screenshotsUrl;
     private String developer;
     private String posterUrl;
+    private String description;
     private float star;
     private int versionCode;
     private long downloads;
@@ -66,6 +67,14 @@ public class AppBean implements Serializable {
 
     public void setPosterUrl(String posterUrl) {
         this.posterUrl = posterUrl;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getDeveloper() {
