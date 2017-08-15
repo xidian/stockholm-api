@@ -6,6 +6,7 @@ import com.stockholm.api.base.BaseResponse;
 import retrofit2.Response;
 import retrofit2.http.GET;
 import retrofit2.http.PUT;
+import retrofit2.http.Path;
 import rx.Observable;
 
 public interface LogService {
@@ -28,8 +29,8 @@ public interface LogService {
     /**
      * @param id order=998的push返回的id
      */
-    @GET("/v1/device/log")
-    Observable<Response<BaseResponse>> getUploadToken(String id);
+    @GET("/v1/device/logs/{id}")
+    Observable<Response<BaseResponse<LogResp>>> getUploadToken(@Path("id") String id);
 
     @PUT("/v1/device/log")
     Observable<Response<BaseResponse>> updateUploadStatus(int status);
