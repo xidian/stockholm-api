@@ -12,7 +12,12 @@ import rx.Observable;
 public interface LogService {
 
     /**
-     * 找到日志并上传
+     * 失败
+     */
+    public static final int STATUS_FAIL = 0;
+
+    /**
+     * 找到日志并上传七牛成功
      */
     public static final int STATUS_OK = 1;
 
@@ -27,11 +32,16 @@ public interface LogService {
     public static final int STATUS_NO_LOG_DURATION = 3;
 
     /**
+     * 上传七牛失败
+     */
+    public static final int STATUS_UPLOAD_FAIL = 4;
+
+    /**
      * @param id order=998的push返回的id
      */
     @GET("/v1/device/logs/{id}")
     Observable<Response<BaseResponse<LogResp>>> getUploadToken(@Path("id") String id);
 
-    @PUT("/v1/device/log")
-    Observable<Response<BaseResponse>> updateUploadStatus(int status);
+    @PUT("/v1/device/log／{id}")
+    Observable<Response<BaseResponse>> updateUploadStatus(@Path("id") String id, LogStatusReq req);
 }
