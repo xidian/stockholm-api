@@ -43,6 +43,6 @@ public interface LogService {
     @GET("/v1/device/logs/{id}")
     Observable<Response<BaseResponse<LogResp>>> getUploadToken(@Path("id") int id);
 
-    @PUT("/v1/device/log／{id}")
+    @PUT("/v1/device/logs/{id}")
     Observable<Response<BaseResponse>> updateUploadStatus(@Path("id") int id, @Body LogStatusReq req);
 }
