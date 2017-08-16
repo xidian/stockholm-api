@@ -4,6 +4,7 @@ package com.stockholm.api.log;
 import com.stockholm.api.base.BaseResponse;
 
 import retrofit2.Response;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
@@ -43,5 +44,5 @@ public interface LogService {
     Observable<Response<BaseResponse<LogResp>>> getUploadToken(@Path("id") int id);
 
     @PUT("/v1/device/log／{id}")
-    Observable<Response<BaseResponse>> updateUploadStatus(@Path("id") int id, LogStatusReq req);
+    Observable<Response<BaseResponse>> updateUploadStatus(@Path("id") int id, @Body LogStatusReq req);
 }
