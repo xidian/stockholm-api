@@ -40,8 +40,8 @@ public interface LogService {
      * @param id order=998的push返回的id
      */
     @GET("/v1/device/logs/{id}")
-    Observable<Response<BaseResponse<LogResp>>> getUploadToken(@Path("id") String id);
+    Observable<Response<BaseResponse<LogResp>>> getUploadToken(@Path("id") int id);
 
     @PUT("/v1/device/log／{id}")
-    Observable<Response<BaseResponse>> updateUploadStatus(@Path("id") String id, LogStatusReq req);
+    Observable<Response<BaseResponse>> updateUploadStatus(@Path("id") int id, LogStatusReq req);
 }
