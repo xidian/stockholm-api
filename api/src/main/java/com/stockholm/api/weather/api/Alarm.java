@@ -1,109 +1,120 @@
 
 package com.stockholm.api.weather.api;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Alarm {
 
-    private String icon;
-    private String pubTime;
-    private String degree;
-    private String desc;
-    private String details;
-    private String standard;
-    private String location;
-    private String suggestion;
-    private String cityRange;
-    private String type;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public String getIcon() {
-        return icon;
+    /**
+     * w7 : 黄色
+     * w8 : 2017-08-26 17:12
+     * w9 : 江门市气象台于08月26日17时12分发布雷雨大风黄色预警信号，请注意防御。
+     * w11 : http://mobile.weathercn.com/alert.do?id=44070041600000_20170826171041
+     * w10 : 44070041600000_20170826171041
+     * w1 : 广东省
+     * w2 : 江门市
+     * w3 :
+     * w4 : gd08
+     * w5 : 雷雨大风
+     * w6 : 03
+     */
+
+    private String w7;
+    private String w8;
+    private String w9;
+    private String w11;
+    private String w10;
+    private String w1;
+    private String w2;
+    private String w3;
+    private String w4;
+    private String w5;
+    private String w6;
+
+    public String getW7() {
+        return w7;
     }
 
-    public void setIcon(String icon) {
-        this.icon = icon;
+    public void setW7(String w7) {
+        this.w7 = w7;
     }
 
-    public String getPubTime() {
-        return pubTime;
+    public String getW8() {
+        return w8;
     }
 
-    public void setPubTime(String pubTime) {
-        this.pubTime = pubTime;
+    public void setW8(String w8) {
+        this.w8 = w8;
     }
 
-    public String getDegree() {
-        return degree;
+    public String getW9() {
+        return w9;
     }
 
-    public void setDegree(String degree) {
-        this.degree = degree;
+    public void setW9(String w9) {
+        this.w9 = w9;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getW11() {
+        return w11;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setW11(String w11) {
+        this.w11 = w11;
     }
 
-    public String getDetails() {
-        return details;
+    public String getW10() {
+        return w10;
     }
 
-    public void setDetails(String details) {
-        this.details = details;
+    public void setW10(String w10) {
+        this.w10 = w10;
     }
 
-    public String getStandard() {
-        return standard;
+    public String getW1() {
+        return w1;
     }
 
-    public void setStandard(String standard) {
-        this.standard = standard;
+    public void setW1(String w1) {
+        this.w1 = w1;
     }
 
-    public String getLocation() {
-        return location;
+    public String getW2() {
+        return w2;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setW2(String w2) {
+        this.w2 = w2;
     }
 
-    public String getSuggestion() {
-        return suggestion;
+    public String getW3() {
+        return w3;
     }
 
-    public void setSuggestion(String suggestion) {
-        this.suggestion = suggestion;
+    public void setW3(String w3) {
+        this.w3 = w3;
     }
 
-    public String getCityRange() {
-        return cityRange;
+    public String getW4() {
+        return w4;
     }
 
-    public void setCityRange(String cityRange) {
-        this.cityRange = cityRange;
+    public void setW4(String w4) {
+        this.w4 = w4;
     }
 
-    public String getType() {
-        return type;
+    public String getW5() {
+        return w5;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setW5(String w5) {
+        this.w5 = w5;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
+    public String getW6() {
+        return w6;
     }
 
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
+    public void setW6(String w6) {
+        this.w6 = w6;
     }
-
 }
