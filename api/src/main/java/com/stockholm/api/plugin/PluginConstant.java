@@ -12,6 +12,8 @@ public final class PluginConstant {
     public static final String ACTION_PLUGIN_SYNC_SYSTEM_CONFIG = "action.stockholm.plugin.sync.system.config";
     public static final String KEY_PLUGIN_SYNC_SYSTEM_CONFIG = "key_plugin_sync_system_config";
 
+    public static final String ACTION_PLUGIN_CLOSE_VOLUME_GUIDE = "action.stockholm.plugin.CLOSE_VOLUME_GUIDE";
+
     private PluginConstant() {
 
     }
