@@ -62,3 +62,14 @@ extras: {
   "addition": "{\"uuid\":\"bce274876858367cde087710f68a\"}"
 }
 ```
+
+
+## ROM更新完成通知手机
+
+```
+message: null,
+extras: {
+	"order": 25,
+	"addition": "{\"info\":\"The Text you sent to me. I pay it back\"}"
+}
+```
