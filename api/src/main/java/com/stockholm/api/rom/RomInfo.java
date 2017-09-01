@@ -2,7 +2,7 @@ package com.stockholm.api.rom;
 
 public class RomInfo {
 
-    public RomInfo(String mid, String oem, String models, String platform, String deviceType, String versionName, String version) {
+    public RomInfo(String mid, String oem, String models, String platform, String deviceType, String version, String versionName, String launcherVersion) {
         this.mid = mid;
         this.oem = oem;
         this.models = models;
@@ -10,6 +10,7 @@ public class RomInfo {
         this.deviceType = deviceType;
         this.versionName = versionName;
         this.version = version;
+        this.launcherVersion = launcherVersion;
     }
 
     private String mid;
@@ -25,6 +26,8 @@ public class RomInfo {
     private String versionName;
 
     private String version;
+
+    private String launcherVersion;
 
     public String getMid() {
         return mid;
@@ -80,5 +83,13 @@ public class RomInfo {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public String getLauncherVersion() {
+        return launcherVersion;
+    }
+
+    public void setLauncherVersion(String launcherVersion) {
+        this.launcherVersion = launcherVersion;
     }
 }
