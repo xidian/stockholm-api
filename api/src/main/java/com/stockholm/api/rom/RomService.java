@@ -11,8 +11,8 @@ import rx.Observable;
 public interface RomService {
 
     @PUT("/v1/device/rom")
-    Observable<Response<BaseResponse>> updateVersion(@Body VersionReq req);
+    Observable<Response<BaseResponse>> updateVersion(@Body RomInfoReq req);
 
     @GET("/v1/device/rom")
-    Observable<Response<BaseResponse>> getVersion();
+    Observable<Response<BaseResponse<RomInfoResp>>> getVersion();
 }
