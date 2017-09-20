@@ -2,18 +2,26 @@ package com.stockholm.api.rom;
 
 public class VersionReq {
 
-    private String romInfo;
+    private RomBean rom;
 
-    public String getRomInfo() {
-        return romInfo;
+    public RomBean getRom() {
+        return rom;
     }
 
-    public void setRomInfo(String romInfo) {
-        this.romInfo = romInfo;
+    public void setRom(RomBean rom) {
+        this.rom = rom;
     }
 
-    public VersionReq(String romInfo) {
-        this.romInfo = romInfo;
+    public static class RomBean {
+
+        private String info;
+
+        public String getInfo() {
+            return info;
+        }
+
+        public void setInfo(String info) {
+            this.info = info;
+        }
     }
 }
-
