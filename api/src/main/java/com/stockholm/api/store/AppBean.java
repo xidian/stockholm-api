@@ -20,6 +20,7 @@ public class AppBean implements Serializable {
     private long downloads;
     private int category;
     private boolean installed;
+    private long apkSize;
 
     public long getId() {
         return id;
@@ -123,6 +124,14 @@ public class AppBean implements Serializable {
 
     public void setInstalled(boolean installed) {
         this.installed = installed;
+    }
+
+    public long getApkSize() {
+        return apkSize;
+    }
+
+    public void setApkSize(long apkSize) {
+        this.apkSize = apkSize;
     }
 
     @Override

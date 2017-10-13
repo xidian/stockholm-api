@@ -12,12 +12,13 @@ public class AppsBean {
     private String downloadUrl;
     private boolean hidden;
     private int orderNumber;
+    private long apkSize;
 
     public AppsBean() {
     }
 
     public AppsBean(String packageName, String name, String iconUrl, String grayedIconUrl, int versionCode,
-                    boolean removable, String downloadUrl, boolean hidden, int orderNumber) {
+                    boolean removable, String downloadUrl, boolean hidden, int orderNumber, int apkSize) {
         this.packageName = packageName;
         this.name = name;
         this.iconUrl = iconUrl;
@@ -27,6 +28,7 @@ public class AppsBean {
         this.downloadUrl = downloadUrl;
         this.hidden = hidden;
         this.orderNumber = orderNumber;
+        this.apkSize = apkSize;
     }
 
     public String getPackageName() {
@@ -99,6 +101,14 @@ public class AppsBean {
 
     public void setOrderNumber(int orderNumber) {
         this.orderNumber = orderNumber;
+    }
+
+    public long getApkSize() {
+        return apkSize;
+    }
+
+    public void setApkSize(long apkSize) {
+        this.apkSize = apkSize;
     }
 
 }
