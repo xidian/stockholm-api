@@ -52,4 +52,6 @@ public interface AppStoreService {
     @GET("/v1/app-store/installer/check")
     Observable<Response<BaseResponse<List<CheckUpdateBean>>>> forceUpdate();
 
+
+
 }

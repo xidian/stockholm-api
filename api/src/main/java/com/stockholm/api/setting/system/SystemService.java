@@ -47,4 +47,7 @@ public interface SystemService {
     @GET("/v1/device/apps-config")
     Observable<Response<BaseResponse<List<AppStateBean>>>> getAppState();
 
+    @PUT("/v1/device/apps-config/sort")
+    Observable<Response<BaseResponse>> sortVisbilityApps(@Body SortVisibilityReq req);
+
 }
