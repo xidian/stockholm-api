@@ -21,6 +21,7 @@ public class AppBean implements Serializable {
     private int category;
     private boolean installed;
     private long apkSize;
+    private String downloadUrl;
 
     public long getId() {
         return id;
@@ -124,6 +125,14 @@ public class AppBean implements Serializable {
 
     public void setInstalled(boolean installed) {
         this.installed = installed;
+    }
+
+    public String getDownloadUrl() {
+        return downloadUrl;
+    }
+
+    public void setDownloadUrl(String downloadUrl) {
+        this.downloadUrl = downloadUrl;
     }
 
     public long getApkSize() {
