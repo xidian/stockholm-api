@@ -18,7 +18,7 @@ public class AppsBean {
     }
 
     public AppsBean(String packageName, String name, String iconUrl, String grayedIconUrl, int versionCode,
-                    boolean removable, String downloadUrl, boolean hidden, int orderNumber, int apkSize) {
+                    boolean removable, String downloadUrl, boolean hidden, int orderNumber, long apkSize) {
         this.packageName = packageName;
         this.name = name;
         this.iconUrl = iconUrl;
