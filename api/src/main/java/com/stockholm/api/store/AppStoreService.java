@@ -41,7 +41,8 @@ public interface AppStoreService {
     Observable<Response<BaseResponse>> mobileUninstallApp(@Body StoreOperateAppReq req);
 
     @GET("/v1/app-store/installer/url")
-    Observable<Response<BaseResponse<DeviceDownloadBean>>> deviceDownloadApp(@Query("packageName") String packageName);
+    Observable<Response<BaseResponse<DeviceDownloadBean>>> deviceDownloadApp(@Query("packageName") String packageName,
+                                                                             @Query("versionCode") int versionCode);
 
     @POST("/v1/device/app")
     Observable<Response<BaseResponse>> deviceInstallComplete(@Body DeviceInstallCompleteReq req);
