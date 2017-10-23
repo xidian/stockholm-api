@@ -34,7 +34,7 @@ public class ConnectionManager {
         connector.getSessionConfig().setReadBufferSize(connectionConfig.getReadBufferSize());
         connector.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, connectionConfig.getIdleTime());
         connector.setConnectTimeoutCheckInterval(connectionConfig.getConnectionTimeout());
-        connector.getFilterChain().addFirst("reconnection", new MyIoFilterAdapter());
+//        connector.getFilterChain().addFirst("reconnection", new MyIoFilterAdapter());
         connector.getFilterChain().addLast("codec",
                 new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));
         connector.setHandler(connectionConfig.getIoHandler());
