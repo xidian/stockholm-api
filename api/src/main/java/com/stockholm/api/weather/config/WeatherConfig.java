@@ -46,7 +46,7 @@ public class WeatherConfig {
             if (location != null && location.isLocation()) {
                 cityBeanList.add(1, bean);
             } else {
-                cityBeanList.add(bean);
+                cityBeanList.add(0, bean);
             }
             setCities(cityBeanList);
             return true;
