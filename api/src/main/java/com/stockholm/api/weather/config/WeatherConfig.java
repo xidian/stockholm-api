@@ -42,7 +42,7 @@ public class WeatherConfig {
         if (bean == null) return false;
         List<CityBean> cityBeanList = getCityBeanList();
         if (!cityBeanList.contains(bean)) {
-            if (cityBeanList.isEmpty()) {
+            if (cityBeanList.size() == 0) {
                 cityBeanList.add(bean);
             } else {
                 CityBean location = cityBeanList.get(0);
