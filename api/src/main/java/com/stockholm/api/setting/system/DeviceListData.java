@@ -29,6 +29,7 @@ public class DeviceListData {
         private String name;
         private boolean guide;
         private int ownership;
+        private boolean enableAutoDisplay;
 
         public int getOwnership() {
             return ownership;
@@ -60,6 +61,14 @@ public class DeviceListData {
 
         public void setGuide(boolean guide) {
             this.guide = guide;
+        }
+
+        public boolean isEnableAutoDisplay() {
+            return enableAutoDisplay;
+        }
+
+        public void setEnableAutoDisplay(boolean enableAutoDisplay) {
+            this.enableAutoDisplay = enableAutoDisplay;
         }
     }
 
