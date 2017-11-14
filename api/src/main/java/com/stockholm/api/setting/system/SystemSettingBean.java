@@ -15,7 +15,6 @@ public class SystemSettingBean implements Serializable {
     private int nightModeType;
     private String nightModeStartTime ;
     private String nightModeEndTime ;
-    private boolean openAutoDisplay;
 
     public int getAlarmVolume() {
         return alarmVolume;
@@ -79,14 +78,6 @@ public class SystemSettingBean implements Serializable {
 
     public void setNightModeEndTime(String nightModeEndTime) {
         this.nightModeEndTime = nightModeEndTime;
-    }
-
-    public boolean isOpenAutoDisplay() {
-        return openAutoDisplay;
-    }
-
-    public void setOpenAutoDisplay(boolean openAutoDisplay) {
-        this.openAutoDisplay = openAutoDisplay;
     }
 
     @Override

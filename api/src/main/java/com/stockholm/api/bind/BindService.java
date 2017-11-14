@@ -30,6 +30,9 @@ public interface BindService {
     @PUT("/v1/device")
     Observable<Response<BaseResponse>> updateUserGuideState(@Body UpdateGuideStateReq req);
 
+    @PUT("/v1/device")
+    Observable<Response<BaseResponse>> enableAutoDisplay(@Body UpdateDisplayStateReq req);
+
     @POST("/v1/device")
     Observable<Response<BaseResponse<DeviceBindStateBean>>> registerDevice(@Body RegisterDeviceReq req);
 
