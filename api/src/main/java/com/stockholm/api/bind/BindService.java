@@ -19,8 +19,7 @@ import rx.Observable;
 public interface BindService {
 
     @POST("/v1/device/binding")
-    Observable<Response<BaseResponse<DeviceBindStateBean>>> bind(@Header("Access-Token") String accessToken
-            , @Header("SN") String SN,@Body BindReq bindReq);
+    Observable<Response<BaseResponse<DeviceBindStateBean>>> bind(@Header("Access-Token") String accessToken, @Header("SN") String SN);
 
     @DELETE("/v1/device/binding")
     Observable<Response<BaseResponse>> unbind();
