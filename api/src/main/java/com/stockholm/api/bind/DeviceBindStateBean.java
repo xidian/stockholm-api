@@ -4,6 +4,7 @@ package com.stockholm.api.bind;
 public class DeviceBindStateBean {
     private int usersCount;
     private boolean showGuide;
+    private boolean enableAutoDisplay;
 
     public int getUsersCount() {
         return usersCount;
@@ -23,6 +24,14 @@ public class DeviceBindStateBean {
 
     public boolean isDeviceBinded() {
         return usersCount > 0;
+    }
+
+    public boolean isEnableAutoDisplay() {
+        return enableAutoDisplay;
+    }
+
+    public void setEnableAutoDisplay(boolean enableAutoDisplay) {
+        this.enableAutoDisplay = enableAutoDisplay;
     }
 
 }
