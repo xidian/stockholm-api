@@ -3,8 +3,11 @@ package com.stockholm.api.display;
 
 import com.google.gson.Gson;
 
+import java.util.List;
+
 public class DisplayConfigBean {
     private boolean openAutoDisplay;
+    private List<String> urls;
 
     public DisplayConfigBean(boolean openAutoDisplay) {
         this.openAutoDisplay = openAutoDisplay;
@@ -16,6 +19,14 @@ public class DisplayConfigBean {
 
     public void setOpenAutoDisplay(boolean openAutoDisplay) {
         this.openAutoDisplay = openAutoDisplay;
+    }
+
+    public List<String> getUrls() {
+        return urls;
+    }
+
+    public void setUrls(List<String> urls) {
+        this.urls = urls;
     }
 
     @Override
