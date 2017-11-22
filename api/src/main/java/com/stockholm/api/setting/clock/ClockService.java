@@ -37,6 +37,6 @@ public interface ClockService {
     @DELETE("/app/clock/alarms/{alarmId}")
     Observable<Response<NoBodyResp>> deleteAlarm(@Path("alarmId") String alarmId);
 
-    @PUT("/app/clock/alarms/alarmId/switch")
-    Observable<Response<NoBodyResp>> switchAlarm(@Body SwitchAlarmReq switchAlarmReq);
+    @PUT("/app/clock/alarms/{alarmId}/switch")
+    Observable<Response<NoBodyResp>> switchAlarm(@Path("alarmId") String alarmId, @Body SwitchAlarmReq switchAlarmReq);
 }

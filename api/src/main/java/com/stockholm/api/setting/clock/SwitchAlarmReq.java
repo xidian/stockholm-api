@@ -2,8 +2,11 @@ package com.stockholm.api.setting.clock;
 
 public class SwitchAlarmReq {
 
+    /**
+     * alarm : {"status":true}
+     */
+
     private AlarmBean alarm;
-    private TaskBean task;
 
     public AlarmBean getAlarm() {
         return alarm;
@@ -11,14 +14,6 @@ public class SwitchAlarmReq {
 
     public void setAlarm(AlarmBean alarm) {
         this.alarm = alarm;
-    }
-
-    public TaskBean getTask() {
-        return task;
-    }
-
-    public void setTask(TaskBean task) {
-        this.task = task;
     }
 
     public static class AlarmBean {
@@ -34,22 +29,6 @@ public class SwitchAlarmReq {
 
         public void setStatus(boolean status) {
             this.status = status;
-        }
-    }
-
-    public static class TaskBean {
-        /**
-         * open : true
-         */
-
-        private boolean open;
-
-        public boolean isOpen() {
-            return open;
-        }
-
-        public void setOpen(boolean open) {
-            this.open = open;
         }
     }
 }
