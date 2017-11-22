@@ -23,15 +23,19 @@ public interface MozikService {
     @Headers(HEADER)
     @GET("/v3/musics/filekey/{fileKey}")
     Observable<Response<SongUrlResp>> querySongUrl(@Path("fileKey") String fileKey);
+
     @Headers(HEADER)
     @GET("/v3/users/uid/{uid}/like")
     Observable<Response<CollectionListResp>> queryCollectionList(@Path("uid") int uid, @Query("page") int page);
+
     @Headers(HEADER)
     @POST("/v3/users/uid/{uid}/like/mid/{mid}?uuid=0")
     Observable<Response<UpdateCollectionResp>> collectSong(@Path("uid") int uid, @Path("mid") long songId);
+
     @Headers(HEADER)
     @DELETE("/v3/users/uid/{uid}/like/mid/{mid}?uuid=0")
     Observable<Response<UpdateCollectionResp>> unCollectSong(@Path("uid") int uid, @Path("mid") long songId);
+
     @Headers(HEADER)
     @GET("/v3/share/image/type/jummo")
     Observable<Response<WallpaperListResp>> queryWallpaperList();
