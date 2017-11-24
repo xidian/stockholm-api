@@ -5,15 +5,15 @@ import com.google.gson.Gson;
 import com.stockholm.api.mozik.api.WallpaperBean;
 
 public class ConfigBean {
-    private String token;
+    private UserBean user;
     private WallpaperBean wallpaper;
 
-    public String getToken() {
-        return token;
+    public UserBean getUser() {
+        return user;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setUser(UserBean user) {
+        this.user = user;
     }
 
     public WallpaperBean getWallpaper() {

@@ -18,7 +18,7 @@ public interface MozikService {
 
     @Headers(HEADER)
     @GET("/v3/musics/type/{type}/random")
-    Observable<Response<MusicListResp>> queryRandomByType(@Path("type") int type);
+    Observable<Response<MusicListResp>> queryRandomByType(@Path("type") int type, @Query("num") int num);
 
     @Headers(HEADER)
     @GET("/v3/musics/filekey/{fileKey}")
@@ -30,11 +30,11 @@ public interface MozikService {
 
     @Headers(HEADER)
     @POST("/v3/users/uid/{uid}/like/mid/{mid}?uuid=0")
-    Observable<Response<UpdateCollectionResp>> collectSong(@Path("uid") int uid, @Path("mid") long songId);
+    Observable<Response<UpdateCollectionResp>> collectSong(@Path("uid") int uid, @Path("mid") String songId);
 
     @Headers(HEADER)
     @DELETE("/v3/users/uid/{uid}/like/mid/{mid}?uuid=0")
-    Observable<Response<UpdateCollectionResp>> unCollectSong(@Path("uid") int uid, @Path("mid") long songId);
+    Observable<Response<UpdateCollectionResp>> unCollectSong(@Path("uid") int uid, @Path("mid") String songId);
 
     @Headers(HEADER)
     @GET("/v3/share/image/type/jummo")

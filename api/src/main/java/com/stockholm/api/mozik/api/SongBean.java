@@ -2,7 +2,7 @@ package com.stockholm.api.mozik.api;
 
 
 public class SongBean {
-    private long id;
+    private String id;
     private String filekey;
     private String cid;
     private String song_name;
@@ -11,11 +11,11 @@ public class SongBean {
     private String lyrics;
     private String album;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
