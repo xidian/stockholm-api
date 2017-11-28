@@ -4,9 +4,15 @@ package com.stockholm.api.store;
 public class DeviceInstallCompleteReq {
 
     private AppBean app;
+    private String accessToken;
 
     public DeviceInstallCompleteReq(String packageName, int versionCode) {
         this.app = new AppBean(packageName, versionCode);
+    }
+
+    public DeviceInstallCompleteReq(String packageName, int versionCode, String accessToken) {
+        this.app = new AppBean(packageName, versionCode);
+        this.accessToken = accessToken;
     }
 
     public AppBean getApp() {
@@ -15,6 +21,14 @@ public class DeviceInstallCompleteReq {
 
     public void setApp(AppBean app) {
         this.app = app;
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 
     public static class AppBean {
