@@ -15,7 +15,7 @@ public interface MozikConfigService {
     Observable<Response<BaseResponse<ConfigBean>>> queryConfig();
 
     @PUT("/app/mozik")
-    Observable<Response<BaseResponse>> updateToken(@Body UpdateTokenReq req);
+    Observable<Response<BaseResponse>> updateUser(@Body UpdateUserReq req);
 
     @PUT("/app/mozik")
     Observable<Response<BaseResponse>> updateWallpaper(@Body UpdateWallpaperReq req);
