@@ -4,14 +4,14 @@ package com.stockholm.api.mozik.api;
 import java.util.List;
 
 public class WallpaperListResp extends MozikBaseResp {
-    private List<WallpaperBean> bgs;
+    private List<WallpaperBean> imgs;
 
-    public List<WallpaperBean> getBgs() {
-        return bgs;
+    public List<WallpaperBean> getImgs() {
+        return imgs;
     }
 
-    public void setBgs(List<WallpaperBean> bgs) {
-        this.bgs = bgs;
+    public void setImgs(List<WallpaperBean> imgs) {
+        this.imgs = imgs;
     }
 
 }
