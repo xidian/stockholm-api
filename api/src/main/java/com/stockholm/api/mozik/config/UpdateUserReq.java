@@ -18,18 +18,18 @@ public class UpdateUserReq {
     }
 
     public static class UpdateBean {
-        private int userId;
+        private UserBean user;
 
         public UpdateBean(int userId) {
-            this.userId = userId;
+            this.user = new UserBean(userId);
         }
 
-        public int getUserId() {
-            return userId;
+        public UserBean getUser() {
+            return user;
         }
 
-        public void setUserId(int userId) {
-            this.userId = userId;
+        public void setUser(UserBean user) {
+            this.user = user;
         }
     }
 
