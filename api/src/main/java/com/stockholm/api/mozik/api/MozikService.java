@@ -13,7 +13,7 @@ import rx.Observable;
 
 public interface MozikService {
 
-    String HEADER = "Authorization:Bearer eWlueGlhbmcyLjAuMA==";
+    String HEADER = "Authorization:Bearer Z3VhemhvbmcyLjAuMA==";
     int TEST_UID = 18756;
 
     @Headers(HEADER)
