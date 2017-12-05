@@ -8,6 +8,7 @@ import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.PUT;
 import retrofit2.http.Query;
 import rx.Observable;
@@ -16,6 +17,9 @@ public interface SystemService {
 
     @GET("/v1/account/devices")
     Observable<Response<BaseResponse<DeviceListData>>> getDeviceList();
+
+    @GET("/v1/account/devices")
+    Observable<Response<BaseResponse<DeviceListData>>> getDeviceList(@Header("UUID") String uuid);
 
     @PUT("/v1/account/devices/switch")
     Observable<Response<BaseResponse>> switchDevice(@Body SwitchDeviceReq req);
