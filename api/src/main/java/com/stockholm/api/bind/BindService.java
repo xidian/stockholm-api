@@ -27,6 +27,9 @@ public interface BindService {
     @GET("/v1/device/binding")
     Observable<Response<BaseResponse<DeviceBindStateBean>>> checkDeviceBindState();
 
+    @GET("/v1/device/binding")
+    Observable<Response<BaseResponse<DeviceBindStateBean>>> checkBindState(@Header("UUID") String uuid);
+
     @PUT("/v1/device")
     Observable<Response<BaseResponse>> updateUserGuideState(@Body UpdateGuideStateReq req);
 
