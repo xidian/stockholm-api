@@ -61,9 +61,12 @@ public class WeatherConfig {
 
     public boolean removeCityBean(CityBean bean) {
         List<CityBean> cityBeanList = getCityBeanList();
-        cityBeanList.remove(bean);
-        setCities(cityBeanList);
-        return true;
+        if (cityBeanList != null && cityBeanList.size() > 0) {
+            cityBeanList.remove(bean);
+            setCities(cityBeanList);
+            return true;
+        }
+        return false;
     }
 
     public CityBean getLocationCity() {
