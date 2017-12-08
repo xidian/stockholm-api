@@ -12,8 +12,9 @@ import java.util.List;
 
 public class WeatherConfig {
 
-    private String cities;
     private String alert;
+    private String cities;
+    private String location;
 
     public WeatherConfig() {
 
@@ -28,8 +29,28 @@ public class WeatherConfig {
         this.alert = alertBean.toString();
     }
 
+    public CityBean getLocationCity() {
+        if (!TextUtils.isEmpty(location)) {
+            return CityBean.get(location);
+        }
+        return null;
+    }
+
+    public void setLocationCity(CityBean locationCity) {
+        this.location = locationCity.toString();
+    }
+
     public void setCities(List<CityBean> cities) {
         this.cities = new Gson().toJson(cities);
+    }
+
+    public List<CityBean> getAllCity() {
+        List<CityBean> list = getCityBeanList();
+        CityBean locationCity = getLocationCity();
+        if (locationCity != null) {
+            list.add(0, locationCity);
+        }
+        return list;
     }
 
     public List<CityBean> getCityBeanList() {
@@ -45,12 +66,7 @@ public class WeatherConfig {
             if (cityBeanList.size() == 0) {
                 cityBeanList.add(bean);
             } else {
-                CityBean location = cityBeanList.get(0);
-                if (location != null && location.isLocation()) {
-                    cityBeanList.add(1, bean);
-                } else {
-                    cityBeanList.add(0, bean);
-                }
+                cityBeanList.add(0, bean);
             }
             setCities(cityBeanList);
             return true;
@@ -66,24 +82,6 @@ public class WeatherConfig {
             setCities(cityBeanList);
             return true;
         }
-        return false;
-    }
-
-    public CityBean getLocationCity() {
-        for (CityBean cityBean : getCityBeanList()) {
-            if (cityBean.isLocation()) return cityBean;
-        }
-
-        return null;
-    }
-
-    public boolean setLocationCityVisible(boolean visible) {
-        CityBean cityBean = getLocationCity();
-        if (cityBean != null) {
-            cityBean.setVisible(visible);
-            return true;
-        }
-
         return false;
     }
 
