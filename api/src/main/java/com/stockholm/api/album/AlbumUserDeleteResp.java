@@ -1,4 +1,4 @@
-package com.stockholm.api.setting.album;
+package com.stockholm.api.album;
 
 import java.util.List;
 
