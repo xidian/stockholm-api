@@ -2,12 +2,15 @@ package com.stockholm.api.album;
 
 import com.stockholm.api.base.BaseResponse;
 
+import java.util.List;
+
 import retrofit2.Response;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
-import retrofit2.http.HTTP;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Query;
 import rx.Observable;
 
 public interface AlbumService {
@@ -18,16 +21,16 @@ public interface AlbumService {
     @PUT("/app/album")
     Observable<Response<BaseResponse<AlbumConfigBean>>> updateConfig(@Body UpdateAlbumConfigReq req);
 
-    @POST("")
-    Observable<Response<BaseResponse<AlbumTokenBean>>> getQiniuToken(@Body AlbumTokenReq albumTokenReq);
+    @POST("/app/album/uptokens")
+    Observable<Response<BaseResponse<List<AlbumTokenBean>>>> getQiniuToken(@Body AlbumTokenReq albumTokenReq);
 
-    @GET("")
-    Observable<Response<BaseResponse<AlbumImageBean>>> getImagePath();
+    @GET("/app/album/photos")
+    Observable<Response<BaseResponse<DevicePathBean>>> getImagePath();
 
-    @GET("")
-    Observable<Response<BaseResponse<AlbumImageBean>>> getImagePathByPage();
+    @GET("/app/album/photos/paginate")
+    Observable<Response<MobilePathResp>> getImagePathByPage(@Query("currentPhoto") String currentPhoto);
 
-    @HTTP(method = "DELETE", path = "", hasBody = true)
-    Observable<Response<BaseResponse>> deleteImage(@Body AlbumUserDeleteReq albumUserDeleteReq);
+    @DELETE("/app/album/photos/{id}")
+    Observable<Response<BaseResponse>> deleteImage(String imageId);
 
 }
