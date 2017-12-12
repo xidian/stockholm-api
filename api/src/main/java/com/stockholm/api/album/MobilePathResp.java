@@ -6,7 +6,7 @@ import java.util.List;
 public class MobilePathResp {
 
     private int errorCode;
-    private List<String> data;
+    private DataBean data;
     private PageBean page;
 
     public int getErrorCode() {
@@ -17,11 +17,11 @@ public class MobilePathResp {
         this.errorCode = errorCode;
     }
 
-    public List<String> getData() {
+    public DataBean getData() {
         return data;
     }
 
-    public void setData(List<String> data) {
+    public void setData(DataBean data) {
         this.data = data;
     }
 
@@ -35,6 +35,27 @@ public class MobilePathResp {
 
     public boolean isSuccess() {
         return errorCode == 0;
+    }
+
+    public static class DataBean {
+        private String domain;
+        private List<String> paths;
+
+        public String getDomain() {
+            return domain;
+        }
+
+        public void setDomain(String domain) {
+            this.domain = domain;
+        }
+
+        public List<String> getPaths() {
+            return paths;
+        }
+
+        public void setPaths(List<String> paths) {
+            this.paths = paths;
+        }
     }
 
 }
