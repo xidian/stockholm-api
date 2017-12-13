@@ -8,6 +8,7 @@ public final class PluginConstant {
 
     public static final String ACTION_PLUGIN_SYNC_CONFIG = "action.stockholm.plugin.sync.config";
     public static final String ACTION_PLUGIN_SYNC_MEDIA_STATE = "action.stockholm.plugin.sync.media.state";
+    public static final String ACTION_PLUGIN_SYNC_ALARM = "action.stockholm.plugin.sync.alarm";
 
     public static final String ACTION_PLUGIN_SYNC_SYSTEM_CONFIG = "action.stockholm.plugin.sync.system.config";
     public static final String KEY_PLUGIN_SYNC_SYSTEM_CONFIG = "key_plugin_sync_system_config";

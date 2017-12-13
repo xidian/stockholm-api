@@ -22,17 +22,26 @@ public class PluginBean implements Parcelable {
     private UserBean userBean;
     private ConfigBean configBean;
     private SocketBean socketBean;
+    private TaskAppBean taskAppBean;
 
     protected PluginBean(Parcel in) {
         this.userBean = in.readParcelable(UserBean.class.getClassLoader());
         this.configBean = in.readParcelable(ConfigBean.class.getClassLoader());
         this.socketBean = in.readParcelable(SocketBean.class.getClassLoader());
+        this.taskAppBean = in.readParcelable(TaskAppBean.class.getClassLoader());
     }
 
     public PluginBean(UserBean userBean, ConfigBean configBean, SocketBean socketBean) {
         setUserBean(userBean);
         setConfigBean(configBean);
         setSocketBean(socketBean);
+    }
+
+    public PluginBean(UserBean userBean, ConfigBean configBean, SocketBean socketBean, TaskAppBean taskAppBean) {
+        setUserBean(userBean);
+        setConfigBean(configBean);
+        setSocketBean(socketBean);
+        setTaskAppBean(taskAppBean);
     }
 
     public UserBean getUserBean() {
@@ -57,6 +66,14 @@ public class PluginBean implements Parcelable {
 
     public void setSocketBean(SocketBean socketBean) {
         this.socketBean = socketBean;
+    }
+
+    public TaskAppBean getTaskAppBean() {
+        return taskAppBean;
+    }
+
+    public void setTaskAppBean(TaskAppBean taskAppBean) {
+        this.taskAppBean = taskAppBean;
     }
 
     public static class UserBean implements Parcelable {
@@ -249,6 +266,87 @@ public class PluginBean implements Parcelable {
         };
     }
 
+    public static class TaskAppBean implements Parcelable {
+        private boolean weather;
+        private boolean fm;
+        private boolean news;
+        private boolean music;
+
+        public TaskAppBean() {
+        }
+
+        public TaskAppBean(boolean weather, boolean fm, boolean news, boolean music) {
+            this.weather = weather;
+            this.fm = fm;
+            this.news = news;
+            this.music = music;
+        }
+
+        public boolean isWeather() {
+            return weather;
+        }
+
+        public void setWeather(boolean weather) {
+            this.weather = weather;
+        }
+
+        public boolean isFm() {
+            return fm;
+        }
+
+        public void setFm(boolean fm) {
+            this.fm = fm;
+        }
+
+        public boolean isNews() {
+            return news;
+        }
+
+        public void setNews(boolean news) {
+            this.news = news;
+        }
+
+        public boolean isMusic() {
+            return music;
+        }
+
+        public void setMusic(boolean music) {
+            this.music = music;
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeByte(this.weather ? (byte) 1 : (byte) 0);
+            dest.writeByte(this.fm ? (byte) 1 : (byte) 0);
+            dest.writeByte(this.news ? (byte) 1 : (byte) 0);
+            dest.writeByte(this.music ? (byte) 1 : (byte) 0);
+        }
+
+        protected TaskAppBean(Parcel in) {
+            this.weather = in.readByte() != 0;
+            this.fm = in.readByte() != 0;
+            this.news = in.readByte() != 0;
+            this.music = in.readByte() != 0;
+        }
+
+        public static final Creator<TaskAppBean> CREATOR = new Creator<TaskAppBean>() {
+            @Override
+            public TaskAppBean createFromParcel(Parcel source) {
+                return new TaskAppBean(source);
+            }
+
+            @Override
+            public TaskAppBean[] newArray(int size) {
+                return new TaskAppBean[size];
+            }
+        };
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -259,6 +357,7 @@ public class PluginBean implements Parcelable {
         dest.writeParcelable(this.userBean, flags);
         dest.writeParcelable(this.configBean, flags);
         dest.writeParcelable(this.socketBean, flags);
+        dest.writeParcelable(this.taskAppBean, flags);
     }
 
     @Override
