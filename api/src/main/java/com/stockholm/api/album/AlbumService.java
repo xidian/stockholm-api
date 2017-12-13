@@ -10,6 +10,7 @@ import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
 
@@ -31,6 +32,9 @@ public interface AlbumService {
     Observable<Response<MobilePathResp>> getImagePathByPage(@Query("currentPhoto") String currentPhoto);
 
     @DELETE("/app/album/photos/{id}")
-    Observable<Response<BaseResponse>> deleteImage(String imageId);
+    Observable<Response<BaseResponse>> deleteImage(@Path("id") String imageId);
+
+    @GET("/app/album/photos/{id}")
+    Observable<Response<BaseResponse<String>>> getLargeImage(@Path("id") String imageId);
 
 }
