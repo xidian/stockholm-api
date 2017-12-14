@@ -20,7 +20,7 @@ public interface AlbumService {
     Observable<Response<BaseResponse<AlbumConfigBean>>> queryConfig();
 
     @PUT("/app/album")
-    Observable<Response<BaseResponse<AlbumConfigBean>>> updateConfig(@Body UpdateAlbumConfigReq req);
+    Observable<Response<BaseResponse>> updateConfig(@Body UpdateAlbumConfigReq req);
 
     @POST("/app/album/uptokens")
     Observable<Response<BaseResponse<List<AlbumTokenBean>>>> getQiniuToken(@Body AlbumTokenReq albumTokenReq);
