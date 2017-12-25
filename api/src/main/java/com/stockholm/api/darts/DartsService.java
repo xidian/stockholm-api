@@ -18,6 +18,6 @@ public interface DartsService {
     Observable<Response<BaseResponse>> updateRecord(@Body UpdateRecordReq req);
 
     @PUT("")
-    Observable<Response<BaseResponse>> updateScores();
+    Observable<Response<BaseResponse>> updateScores(@Body UpdateScoresReq req);
 
 }
