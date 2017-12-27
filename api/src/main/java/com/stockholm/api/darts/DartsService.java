@@ -11,13 +11,13 @@ import rx.Observable;
 
 public interface DartsService {
 
-    @GET("")
+    @GET("app/darts")
     Observable<Response<BaseResponse<DartsConfigBean>>> queryConfig();
 
-    @PUT("")
+    @PUT("app/darts")
     Observable<Response<BaseResponse>> updateRecord(@Body UpdateRecordReq req);
 
-    @PUT("")
+    @PUT("app/darts")
     Observable<Response<BaseResponse>> updateScores(@Body UpdateScoresReq req);
 
 }
