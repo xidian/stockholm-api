@@ -15,6 +15,9 @@ public interface DartsService {
     Observable<Response<BaseResponse<DartsConfigBean>>> queryConfig();
 
     @PUT("app/darts")
+    Observable<Response<BaseResponse>> updateConfig(@Body UpdateConfigReq req);
+
+    @PUT("app/darts")
     Observable<Response<BaseResponse>> updateRecord(@Body UpdateRecordReq req);
 
     @PUT("app/darts")

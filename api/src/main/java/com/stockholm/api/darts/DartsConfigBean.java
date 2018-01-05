@@ -9,6 +9,14 @@ public class DartsConfigBean {
     private int record;
     private List<Integer> scores;
 
+    public DartsConfigBean() {
+    }
+
+    public DartsConfigBean(int record, List<Integer> scores) {
+        this.record = record;
+        this.scores = scores;
+    }
+
     public int getRecord() {
         return record;
     }
