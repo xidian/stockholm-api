@@ -7,14 +7,15 @@ import java.io.Serializable;
 
 public class SystemSettingBean implements Serializable {
 
-    private int alarmVolume ;
-    private int mediaVolume ;
+    private int alarmVolume;
+    private int mediaVolume;
     private boolean autoBrightness;
-    private int brightness ;
+    private int brightness;
     private boolean enableNightMode;
     private int nightModeType;
-    private String nightModeStartTime ;
-    private String nightModeEndTime ;
+    private String nightModeStartTime;
+    private String nightModeEndTime;
+    private TimingPauseBean timingPause;
 
     public int getAlarmVolume() {
         return alarmVolume;
@@ -78,6 +79,14 @@ public class SystemSettingBean implements Serializable {
 
     public void setNightModeEndTime(String nightModeEndTime) {
         this.nightModeEndTime = nightModeEndTime;
+    }
+
+    public TimingPauseBean getTimingPause() {
+        return timingPause;
+    }
+
+    public void setTimingPause(TimingPauseBean timingPause) {
+        this.timingPause = timingPause;
     }
 
     @Override
