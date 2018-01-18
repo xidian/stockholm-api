@@ -28,6 +28,7 @@ public class MineTask {
     private String invalidTime;
     private boolean open;
     private List<TaskBean> tasks;
+    private int templateType;
 
     public int getId() {
         return id;
@@ -109,4 +110,11 @@ public class MineTask {
         this.tasks = tasks;
     }
 
+    public int getTemplateType() {
+        return templateType;
+    }
+
+    public void setTemplateType(int templateType) {
+        this.templateType = templateType;
+    }
 }
