@@ -1,6 +1,7 @@
 package com.stockholm.api.setting.task;
 
 import com.stockholm.api.NoBodyResp;
+import com.stockholm.api.base.BaseResponse;
 
 import retrofit2.Response;
 import retrofit2.http.Body;
@@ -17,10 +18,10 @@ public interface TaskService {
     Observable<MineTaskResp> listMineTask();
 
     @POST("/v1/auto-tasks")
-    Observable<Response<NoBodyResp>> createTask(@Body MineTask mineTask);
+    Observable<Response<BaseResponse>> createTask(@Body MineTask mineTask);
 
     @PUT("/v1/auto-tasks/{autoTaskId}")
-    Observable<Response<NoBodyResp>> updateTask(@Path("autoTaskId") String taskId, @Body MineTask mineTask);
+    Observable<Response<BaseResponse>> updateTask(@Path("autoTaskId") String taskId, @Body MineTask mineTask);
 
     @DELETE("/v1/auto-tasks/{autoTaskId}")
     Observable<Response<NoBodyResp>> deleteTask(@Path("autoTaskId") String taskId);
