@@ -27,7 +27,8 @@ public class MineTask implements Parcelable {
     private String startTime;
     private int repeatType;
     private String repeatValue;
-    private String duration;
+    private int durationType;
+    private int durationValue;
     private boolean enableManual;
     private String invalidTime;
     private boolean open;
@@ -74,13 +75,6 @@ public class MineTask implements Parcelable {
         this.repeatValue = repeatValue;
     }
 
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
 
     public boolean isEnableManual() {
         return enableManual;
@@ -122,6 +116,42 @@ public class MineTask implements Parcelable {
         this.templateType = templateType;
     }
 
+    public int getDurationType() {
+        return durationType;
+    }
+
+    public void setDurationType(int durationType) {
+        this.durationType = durationType;
+    }
+
+    public int getDurationValue() {
+        return durationValue;
+    }
+
+    public void setDurationValue(int durationValue) {
+        this.durationValue = durationValue;
+    }
+
+    @Override
+    public MineTask clone() {
+        MineTask mineTask = new MineTask();
+        mineTask.setRepeatValue(this.getRepeatValue());
+        mineTask.setRepeatType(this.getRepeatType());
+        mineTask.setOpen(this.isOpen());
+        mineTask.setDurationType(this.getDurationType());
+        mineTask.setDurationValue(this.getDurationValue());
+        mineTask.setEnableManual(this.isEnableManual());
+        mineTask.setId(this.getId());
+        mineTask.setName(this.getName());
+        mineTask.setInvalidTime(this.getInvalidTime());
+        mineTask.setTemplateType(this.getTemplateType());
+        mineTask.setStartTime(this.getStartTime());
+        List<TaskBean> taskBeans = new ArrayList<>();
+        taskBeans.addAll(this.getTasks());
+        mineTask.setTasks(taskBeans);
+        return mineTask;
+    }
+
 
     @Override
     public int describeContents() {
@@ -135,7 +165,8 @@ public class MineTask implements Parcelable {
         dest.writeString(this.startTime);
         dest.writeInt(this.repeatType);
         dest.writeString(this.repeatValue);
-        dest.writeString(this.duration);
+        dest.writeInt(this.durationType);
+        dest.writeInt(this.durationValue);
         dest.writeByte(this.enableManual ? (byte) 1 : (byte) 0);
         dest.writeString(this.invalidTime);
         dest.writeByte(this.open ? (byte) 1 : (byte) 0);
@@ -152,7 +183,8 @@ public class MineTask implements Parcelable {
         this.startTime = in.readString();
         this.repeatType = in.readInt();
         this.repeatValue = in.readString();
-        this.duration = in.readString();
+        this.durationType = in.readInt();
+        this.durationValue = in.readInt();
         this.enableManual = in.readByte() != 0;
         this.invalidTime = in.readString();
         this.open = in.readByte() != 0;
@@ -172,23 +204,4 @@ public class MineTask implements Parcelable {
             return new MineTask[size];
         }
     };
-
-    @Override
-    public MineTask clone() {
-        MineTask mineTask = new MineTask();
-        mineTask.setRepeatValue(this.getRepeatValue());
-        mineTask.setRepeatType(this.getRepeatType());
-        mineTask.setOpen(this.isOpen());
-        mineTask.setDuration(this.getDuration());
-        mineTask.setEnableManual(this.isEnableManual());
-        mineTask.setId(this.getId());
-        mineTask.setName(this.getName());
-        mineTask.setInvalidTime(this.getInvalidTime());
-        mineTask.setTemplateType(this.getTemplateType());
-        mineTask.setStartTime(this.getStartTime());
-        List<TaskBean> taskBeans = new ArrayList<>();
-        taskBeans.addAll(this.getTasks());
-        mineTask.setTasks(taskBeans);
-        return mineTask;
-    }
 }
