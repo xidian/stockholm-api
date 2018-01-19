@@ -1,8 +1,12 @@
 package com.stockholm.api.setting.task;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class MineTask {
+public class MineTask implements Parcelable{
 
 
     /**
@@ -117,4 +121,55 @@ public class MineTask {
     public void setTemplateType(int templateType) {
         this.templateType = templateType;
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeString(this.name);
+        dest.writeString(this.startTime);
+        dest.writeInt(this.repeatType);
+        dest.writeString(this.repeatValue);
+        dest.writeString(this.duration);
+        dest.writeByte(this.enableManual ? (byte) 1 : (byte) 0);
+        dest.writeString(this.invalidTime);
+        dest.writeByte(this.open ? (byte) 1 : (byte) 0);
+        dest.writeList(this.tasks);
+        dest.writeInt(this.templateType);
+    }
+
+    public MineTask() {
+    }
+
+    protected MineTask(Parcel in) {
+        this.id = in.readInt();
+        this.name = in.readString();
+        this.startTime = in.readString();
+        this.repeatType = in.readInt();
+        this.repeatValue = in.readString();
+        this.duration = in.readString();
+        this.enableManual = in.readByte() != 0;
+        this.invalidTime = in.readString();
+        this.open = in.readByte() != 0;
+        this.tasks = new ArrayList<TaskBean>();
+        in.readList(this.tasks, TaskBean.class.getClassLoader());
+        this.templateType = in.readInt();
+    }
+
+    public static final Creator<MineTask> CREATOR = new Creator<MineTask>() {
+        @Override
+        public MineTask createFromParcel(Parcel source) {
+            return new MineTask(source);
+        }
+
+        @Override
+        public MineTask[] newArray(int size) {
+            return new MineTask[size];
+        }
+    };
 }
