@@ -172,4 +172,9 @@ public class MineTask implements Parcelable{
             return new MineTask[size];
         }
     };
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
