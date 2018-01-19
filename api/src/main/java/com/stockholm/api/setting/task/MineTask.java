@@ -174,7 +174,7 @@ public class MineTask implements Parcelable {
     };
 
     @Override
-    public MineTask clone() throws CloneNotSupportedException {
+    public MineTask clone() {
         MineTask mineTask = new MineTask();
         mineTask.setRepeatValue(this.getRepeatValue());
         mineTask.setRepeatType(this.getRepeatType());
