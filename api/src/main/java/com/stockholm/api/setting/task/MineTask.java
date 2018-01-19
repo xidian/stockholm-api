@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MineTask implements Parcelable{
+public class MineTask implements Parcelable {
 
 
     /**
@@ -174,7 +174,21 @@ public class MineTask implements Parcelable{
     };
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public MineTask clone() throws CloneNotSupportedException {
+        MineTask mineTask = new MineTask();
+        mineTask.setRepeatValue(this.getRepeatValue());
+        mineTask.setRepeatType(this.getRepeatType());
+        mineTask.setOpen(this.isOpen());
+        mineTask.setDuration(this.getDuration());
+        mineTask.setEnableManual(this.isEnableManual());
+        mineTask.setId(this.getId());
+        mineTask.setName(this.getName());
+        mineTask.setInvalidTime(this.getInvalidTime());
+        mineTask.setTemplateType(this.getTemplateType());
+        mineTask.setStartTime(this.getStartTime());
+        List<TaskBean> taskBeans = new ArrayList<>();
+        taskBeans.addAll(this.getTasks());
+        mineTask.setTasks(taskBeans);
+        return mineTask;
     }
 }
