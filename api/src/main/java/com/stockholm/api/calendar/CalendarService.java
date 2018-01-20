@@ -20,7 +20,7 @@ public interface CalendarService {
     @GET("app/calendar/events")
     Observable<Response<List<EventBean>>> queryEventList();
 
-    @GET("/v1/app/calendar/events")
+    @GET("app/calendar/v1/events")
     Observable<Response<BaseResponse<CalendarConfigBean>>> queryEventConfig();
 
     @POST("app/calendar/events")
