@@ -2,6 +2,7 @@ package com.stockholm.api.calendar;
 
 
 import com.stockholm.api.NoBodyResp;
+import com.stockholm.api.base.BaseResponse;
 
 import java.util.List;
 
@@ -19,6 +20,9 @@ public interface CalendarService {
     @GET("app/calendar/events")
     Observable<Response<List<EventBean>>> queryEventList();
 
+    @GET("/v1/app/calendar/events")
+    Observable<Response<BaseResponse<CalendarConfigBean>>> queryEventConfig();
+
     @POST("app/calendar/events")
     Observable<Response<Object>> createEvent(@Body UpdateEventReq req);
 
@@ -27,5 +31,8 @@ public interface CalendarService {
 
     @HTTP(method = "DELETE" , path = "/app/calendar/events/{eventId}")
     Observable<Response<NoBodyResp>> deleteEvent(@Path("eventId") long eventId);
+
+    @POST("/app/calendar/events/batch")
+    Observable<Response<BaseResponse<SyncEventData>>> syncEvent(@Body SyncEventReq req);
 
 }
