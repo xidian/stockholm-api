@@ -30,7 +30,7 @@ public class MineTask implements Parcelable {
     private int durationType;
     private int durationValue;
     private boolean enableManual;
-    private String invalidTime;
+    private int invalidTime;
     private boolean open;
     private List<TaskBean> tasks;
     private int templateType;
@@ -84,11 +84,11 @@ public class MineTask implements Parcelable {
         this.enableManual = enableManual;
     }
 
-    public String getInvalidTime() {
+    public int getInvalidTime() {
         return invalidTime;
     }
 
-    public void setInvalidTime(String invalidTime) {
+    public void setInvalidTime(int invalidTime) {
         this.invalidTime = invalidTime;
     }
 
@@ -168,7 +168,7 @@ public class MineTask implements Parcelable {
         dest.writeInt(this.durationType);
         dest.writeInt(this.durationValue);
         dest.writeByte(this.enableManual ? (byte) 1 : (byte) 0);
-        dest.writeString(this.invalidTime);
+        dest.writeInt(this.invalidTime);
         dest.writeByte(this.open ? (byte) 1 : (byte) 0);
         dest.writeList(this.tasks);
         dest.writeInt(this.templateType);
@@ -186,7 +186,7 @@ public class MineTask implements Parcelable {
         this.durationType = in.readInt();
         this.durationValue = in.readInt();
         this.enableManual = in.readByte() != 0;
-        this.invalidTime = in.readString();
+        this.invalidTime = in.readInt();
         this.open = in.readByte() != 0;
         this.tasks = new ArrayList<TaskBean>();
         in.readList(this.tasks, TaskBean.class.getClassLoader());
