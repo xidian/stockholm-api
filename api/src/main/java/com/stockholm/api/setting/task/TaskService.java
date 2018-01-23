@@ -18,7 +18,7 @@ public interface TaskService {
     Observable<Response<MineTaskResp>> listMineTask();
 
     @POST("/v1/auto-tasks")
-    Observable<Response<BaseResponse>> createTask(@Body MineTask mineTask);
+    Observable<Response<BaseResponse>> createTask(@Body CreateReq createReq);
 
     @PUT("/v1/auto-tasks/{autoTaskId}")
     Observable<Response<BaseResponse>> updateTask(@Path("autoTaskId") String taskId, @Body MineTask mineTask);
