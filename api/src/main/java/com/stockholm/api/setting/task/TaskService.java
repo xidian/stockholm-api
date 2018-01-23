@@ -21,7 +21,7 @@ public interface TaskService {
     Observable<Response<BaseResponse>> createTask(@Body CreateReq createReq);
 
     @PUT("/v1/auto-tasks/{autoTaskId}")
-    Observable<Response<BaseResponse>> updateTask(@Path("autoTaskId") String taskId, @Body MineTask mineTask);
+    Observable<Response<BaseResponse>> updateTask(@Path("autoTaskId") String taskId, @Body CreateReq createReq);
 
     @DELETE("/v1/auto-tasks/{autoTaskId}")
     Observable<Response<NoBodyResp>> deleteTask(@Path("autoTaskId") String taskId);
