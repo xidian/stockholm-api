@@ -15,7 +15,7 @@ import rx.Observable;
 public interface TaskService {
 
     @GET("/v1/auto-tasks")
-    Observable<Response<BaseResponse<MineTaskResp>>> listMineTask();
+    Observable<Response<MineTaskResp>> listMineTask();
 
     @POST("/v1/auto-tasks")
     Observable<Response<BaseResponse>> createTask(@Body MineTask mineTask);
