@@ -12,7 +12,7 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import rx.Observable;
 
-public interface TaskService {
+public interface NewTaskService {
 
     @GET("/v1/auto-tasks")
     Observable<Response<MineTaskResp>> listMineTask();
