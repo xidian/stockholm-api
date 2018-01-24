@@ -25,4 +25,7 @@ public interface NewTaskService {
 
     @DELETE("/v1/auto-tasks/{autoTaskId}")
     Observable<Response<NoBodyResp>> deleteTask(@Path("autoTaskId") String taskId);
+
+    @GET("/v1/auto-tasks/{autoTaskId}")
+    Observable<Response<MineTask>> viewTask(@Path("autoTaskId") String taskId);
 }
