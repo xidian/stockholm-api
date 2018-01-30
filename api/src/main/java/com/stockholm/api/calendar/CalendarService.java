@@ -33,6 +33,6 @@ public interface CalendarService {
     Observable<Response<NoBodyResp>> deleteEvent(@Path("eventId") long eventId);
 
     @POST("/app/calendar/events/batch")
-    Observable<Response<BaseResponse<SyncEventData>>> syncEvent(@Body SyncEventReq req);
+    Observable<Response<BaseResponse<List<Integer>>>> syncEvent(@Body SyncEventReq req);
 
 }
