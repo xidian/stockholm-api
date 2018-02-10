@@ -59,4 +59,15 @@ public class EventBean implements Serializable {
         this.repeatType = repeatType;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (null == obj) {
+            return false;
+        }
+        EventBean other = (EventBean) obj;
+        return other.getName().equals(this.getName())
+                && other.getRepeatType() == this.getRepeatType()
+                && other.getTime().equals(this.getTime())
+                && other.getRepeatValue().equals(this.getRepeatValue());
+    }
 }
