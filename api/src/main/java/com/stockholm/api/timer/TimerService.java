@@ -23,8 +23,8 @@ public interface TimerService {
     Observable<Response<BaseResponse<NoBodyResp>>> createTimer(@Body CreateUpdateReq createUpdateReq);
 
     @PUT("/app/timer/events/{timerId}")
-    Observable<Response<BaseResponse<NoBodyResp>>> updateTimer(@Path("id") String timerId, @Body CreateUpdateReq createUpdateReq);
+    Observable<Response<BaseResponse<NoBodyResp>>> updateTimer(@Path("timerId") String timerId, @Body CreateUpdateReq createUpdateReq);
 
     @DELETE("/app/timer/events/{timerId}")
-    Observable<Response<BaseResponse<NoBodyResp>>> deleteTimer(@Path("id") String timerId);
+    Observable<Response<BaseResponse<NoBodyResp>>> deleteTimer(@Path("timerId") String timerId);
 }
