@@ -12,6 +12,9 @@ public class TimerBean {
         this.interval = interval;
     }
 
+    public TimerBean() {
+    }
+
     public int getId() {
         return id;
     }
