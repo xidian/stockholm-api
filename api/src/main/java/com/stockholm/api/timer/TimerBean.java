@@ -1,6 +1,9 @@
 package com.stockholm.api.timer;
 
-public class TimerBean {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class TimerBean implements Parcelable{
 
     private int id;
     private String name;
@@ -39,4 +42,34 @@ public class TimerBean {
         this.interval = interval;
     }
 
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeString(this.name);
+        dest.writeInt(this.interval);
+    }
+
+    protected TimerBean(Parcel in) {
+        this.id = in.readInt();
+        this.name = in.readString();
+        this.interval = in.readInt();
+    }
+
+    public static final Creator<TimerBean> CREATOR = new Creator<TimerBean>() {
+        @Override
+        public TimerBean createFromParcel(Parcel source) {
+            return new TimerBean(source);
+        }
+
+        @Override
+        public TimerBean[] newArray(int size) {
+            return new TimerBean[size];
+        }
+    };
 }
