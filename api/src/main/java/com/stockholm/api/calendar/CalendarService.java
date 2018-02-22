@@ -17,19 +17,25 @@ import rx.Observable;
 
 public interface CalendarService {
 
-    @GET("app/calendar/events")
+    @GET("/app/calendar")
+    Observable<Response<BaseResponse<CalendarDataBean>>> queryConfig();
+
+    @PUT("/app/calendar")
+    Observable<Response<BaseResponse>> updateConfig(@Body UpdateConfigReq req);
+
+    @GET("/app/calendar/events")
     Observable<Response<List<EventBean>>> queryEventList();
 
-    @GET("app/calendar/v1/events")
+    @GET("/app/calendar/v1/events")
     Observable<Response<BaseResponse<CalendarConfigBean>>> queryEventConfig();
 
-    @POST("app/calendar/events")
+    @POST("/app/calendar/events")
     Observable<Response<Object>> createEvent(@Body UpdateEventReq req);
 
-    @PUT("app/calendar/events/{eventId}")
+    @PUT("//calendar/events/{eventId}")
     Observable<Response<NoBodyResp>> updateEvent(@Path("eventId") long eventId, @Body UpdateEventReq req);
 
-    @HTTP(method = "DELETE" , path = "/app/calendar/events/{eventId}")
+    @HTTP(method = "DELETE", path = "/app/calendar/events/{eventId}")
     Observable<Response<NoBodyResp>> deleteEvent(@Path("eventId") long eventId);
 
     @POST("/app/calendar/events/batch")
