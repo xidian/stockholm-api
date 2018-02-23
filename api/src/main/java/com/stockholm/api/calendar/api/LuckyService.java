@@ -21,6 +21,7 @@ public interface LuckyService {
     @GET("/Ecalender/openapi/horoscope")
     Observable<Response<LuckDataResp>> getLuckyData(@Query("key") String key,
                                                     @Query("timeType") String timeType,
+                                                    @Query("date") String date,
                                                     @Query("type") String type);
 
 }
