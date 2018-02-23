@@ -31,9 +31,9 @@ public class LuckDataResp {
     }
 
     public static class LuckyBean {
-        private int LoveIndex = 5;
-        private int WorkingIndex = 5;
-        private int ComprehensiveIndex = 5;
+        private int LoveIndex;
+        private int WorkingIndex;
+        private int FinancialIndex;
 
         public int getLoveIndex() {
             return LoveIndex;
@@ -51,12 +51,12 @@ public class LuckDataResp {
             WorkingIndex = workingIndex;
         }
 
-        public int getComprehensiveIndex() {
-            return ComprehensiveIndex;
+        public int getFinancialIndex() {
+            return FinancialIndex;
         }
 
-        public void setComprehensiveIndex(int comprehensiveIndex) {
-            ComprehensiveIndex = comprehensiveIndex;
+        public void setFinancialIndex(int financialIndex) {
+            FinancialIndex = financialIndex;
         }
     }
 
