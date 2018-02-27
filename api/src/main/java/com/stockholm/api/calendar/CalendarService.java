@@ -32,7 +32,7 @@ public interface CalendarService {
     @POST("/app/calendar/events")
     Observable<Response<Object>> createEvent(@Body UpdateEventReq req);
 
-    @PUT("//calendar/events/{eventId}")
+    @PUT("/calendar/events/{eventId}")
     Observable<Response<NoBodyResp>> updateEvent(@Path("eventId") long eventId, @Body UpdateEventReq req);
 
     @HTTP(method = "DELETE", path = "/app/calendar/events/{eventId}")
