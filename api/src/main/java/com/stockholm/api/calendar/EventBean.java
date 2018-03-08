@@ -10,6 +10,7 @@ public class EventBean implements Serializable {
     private boolean solar;
     private String repeatValue;
     private int repeatType;
+    private boolean fromMobile;
 
     public long getEventId() {
         return eventId;
@@ -57,6 +58,14 @@ public class EventBean implements Serializable {
 
     public void setRepeatType(int repeatType) {
         this.repeatType = repeatType;
+    }
+
+    public boolean isFromMobile() {
+        return fromMobile;
+    }
+
+    public void setFromMobile(boolean fromMobile) {
+        this.fromMobile = fromMobile;
     }
 
     @Override
