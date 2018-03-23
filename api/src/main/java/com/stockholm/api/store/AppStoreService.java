@@ -56,4 +56,7 @@ public interface AppStoreService {
     @POST("/v1/app-store/installer/installed")
     Observable<Response<BaseResponse<CheckInstalledData>>> checkInstalled(@Body CheckInstalledReq req);
 
+    @POST("/v1/app-store/installer/installed")
+    Observable<Response<BaseResponse>> initPreInstallApps(@Body InitPreInstallAppsReq req);
+
 }
